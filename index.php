@@ -1,11 +1,13 @@
 <?php
 
 session_start();
+
 if (!isset ($_SESSION['login'])){
     $_SESSION['login']=false;
     $_SESSION['user']="";
 }
 $ctl = "home";
+
 
 if (isset($_REQUEST['ctl'])) {
     $ctl = $_REQUEST['ctl'];
@@ -15,30 +17,28 @@ if (isset($_REQUEST['ctl'])) {
     }
 }
 switch ($ctl) {
-    case"cervesa";
+
+    case "director";
         switch ($act) {
             case "afegir":
-                include "controler/afegircervesa_ctl.php";
+                include "controller/afegirdirector_ctl.php";
                 break;
             case "modificar":
-                include "controler/modificarcervesa_ctl.php";
+                include "controller/modificardirector_ctl.php";
                 break;
             case "eliminar":
-                include "controler/eliminarcervesa_ctl.php";
+                include "controller/eliminardirector_ctl.php";
                 break;
         }
         break;
-    case"usuari";
+    case "usuari";
         switch ($act) {
             case "login":
-                include "controler/login_ctl.php";
+                include "controller/login_ctl.php";
                 break;
-            case "registre":
-                include "controler/registreusuari_ctl.php";
-                break;
-            case"sortir";
-                include "controler/logout.php";
-                break;
+            case "logout":
+                include "controller/logout_ctl.php";
+                break;          
         }
         break;
     default:
