@@ -35,9 +35,15 @@ switch ($ctl) {
                 break;
             case "logout":
                 include "controller/logout_ctl.php";
-                break;          
+                break;
         }
         break;
+    case "login";
+        switch ($act) {
+            case "form":
+                include "controller/login.php";
+                break;
+        }
     default:
         include "controller/" . $ctl . "_ctl.php";
         break;
