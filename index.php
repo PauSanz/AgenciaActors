@@ -1,11 +1,13 @@
 <?php
 
 session_start();
-if (!isset($_SESSION['login'])) {
-    $_SESSION['login'] = false;
-    $_SESSION['user'] = "";
+
+if (!isset ($_SESSION['login'])){
+    $_SESSION['login']=false;
+    $_SESSION['user']="";
 }
-$ctl = "inici";
+$ctl = "home";
+
 
 if (isset($_REQUEST['ctl'])) {
     $ctl = $_REQUEST['ctl'];
@@ -15,6 +17,7 @@ if (isset($_REQUEST['ctl'])) {
     }
 }
 switch ($ctl) {
+
     case "director";
         switch ($act) {
             case "afegir":
