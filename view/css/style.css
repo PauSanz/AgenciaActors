@@ -1,0 +1,20 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16-mar-2017, 16:04:28
+    Author     : oriol
+*/
+
+.bgfooter{
+    background-color: #101010;
+    color:#fff;
+    font-weight: bold;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.fa{
+ color:#fff !important;
+}
