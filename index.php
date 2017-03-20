@@ -1,11 +1,13 @@
 <?php
 
 session_start();
-if (!isset($_SESSION['login'])) {
-    $_SESSION['login'] = false;
-    $_SESSION['user'] = "";
+
+if (!isset ($_SESSION['login'])){
+    $_SESSION['login']=false;
+    $_SESSION['user']="";
 }
-$ctl = "inici";
+$ctl = "home";
+
 
 if (isset($_REQUEST['ctl'])) {
     $ctl = $_REQUEST['ctl'];
@@ -14,8 +16,9 @@ if (isset($_REQUEST['ctl'])) {
         $act = $_REQUEST['act'];
     }
 }
+
 switch ($ctl) {
-    case "director";
+    case "director":
         switch ($act) {
             case "afegir":
                 include "controller/afegirdirector_ctl.php";
@@ -28,7 +31,7 @@ switch ($ctl) {
                 break;
         }
         break;
-    case "session";
+    case "session":
         switch ($act) {
             case "check":
                 include "controller/sessionCheck_ctl.php";
@@ -38,9 +41,15 @@ switch ($ctl) {
                 break;
             case "destroy":
                 include "controller/logout_ctl.php";
-                break;          
+                break;
         }
         break;
+    case "login":
+        switch ($act) {
+            case "form":
+                include "controller/login.php";
+                break;
+        }
     default:
         include "controller/" . $ctl . "_ctl.php";
         break;
