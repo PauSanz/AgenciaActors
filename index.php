@@ -16,9 +16,9 @@ if (isset($_REQUEST['ctl'])) {
         $act = $_REQUEST['act'];
     }
 }
-switch ($ctl) {
 
-    case "director";
+switch ($ctl) {
+    case "director":
         switch ($act) {
             case "afegir":
                 include "controller/afegirdirector_ctl.php";
@@ -31,12 +31,11 @@ switch ($ctl) {
                 break;
         }
         break;
-    case "session";
+    case "session":
         switch ($act) {
-            case "check"{
+            case "check":
                 include "controller/sessionCheck_ctl.php";
                 break;
-            }
             case "create":
                 include "controller/login_ctl.php";
                 break;
@@ -45,7 +44,7 @@ switch ($ctl) {
                 break;
         }
         break;
-    case "login";
+    case "login":
         switch ($act) {
             case "form":
                 include "controller/login.php";

@@ -57,5 +57,6 @@
     })
 </script>
 <script src="view/js/custom-js.js"></script>
+<script src="view/js/user.js"></script>
 </body>
 </html>
