@@ -30,10 +30,9 @@ switch ($ctl) {
         break;
     case "session";
         switch ($act) {
-            case "check"{
+            case "check":
                 include "controller/sessionCheck_ctl.php";
                 break;
-            }
             case "create":
                 include "controller/login_ctl.php";
                 break;
