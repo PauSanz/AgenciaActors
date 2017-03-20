@@ -56,5 +56,6 @@
         interval: 5000 //changes the speed
     })
 </script>
+<script src="view/js/custom-js.js"></script>
 </body>
 </html>
