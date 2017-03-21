@@ -63,7 +63,11 @@
                         </li> 
                         <li class="login_action"><a id="login_action" href="?ctl=session&act=check"></a></li>
                         
+<<<<<<< HEAD
                         <li class="login_user"><a id="login_user"></a></li>                                           
+=======
+                        <li id="login_user"></li>                                           
+>>>>>>> master
                     </ul>
                 </div>               
             </div>          
