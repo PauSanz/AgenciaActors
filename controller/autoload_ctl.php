@@ -2,7 +2,7 @@
 function __autoload($name) {
 	$check = false;
 
-	$path = "../model/Business/class_".$name.".php";
+	$path = "../model/business/class_".$name.".php";
 	
     if(file_exists($path)){
       	require_once($path);
