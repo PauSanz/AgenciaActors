@@ -32,6 +32,14 @@ class directorDb{
 		$con->consulta($query);
 		$con->close();
 	} 
+        
+        public function eliminar($nif) {		
+	
+		$query="DELETE FROM director WHERE Nif='".$nif."';";				
+		$con = new db();
+		$con->consulta($query);
+		$con->close();
+	} 
 
 
 }    

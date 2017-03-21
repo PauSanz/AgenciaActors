@@ -59,8 +59,12 @@ class director{
         public function modificarDirector($old_nif){
             //UPDATE `director` SET `Nif`='47838294K',`Nom`='Steven',`Cognom`='Spielberg',`Foto`='images/director/Spielberg.jpg' WHERE nif='46573829H'
             $directorDb = new directorDb();
-            $directorDb->modificar($old_nif,$this);
-            
+            $directorDb->modificar($old_nif,$this);            
         }
+        
+        public function eliminarDirector(){		
+		$directorDb = new directorDb();
+		$directorDb->eliminar($this);		
+	}
 }    
  ?>
