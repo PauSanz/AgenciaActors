@@ -1,0 +1,4 @@
+16/03/2017
+-Creació de base de dades buida amb tots els camps i relacions necessàries
+20/03/2017
+-Creació de la classe "director" i auxiliar de persistència, falta mètode eliminar.
