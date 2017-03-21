@@ -1,14 +1,23 @@
 <?php
-function __autoload($name) {
-	$check = false;
+function __autoload($class_name){
+    $root = $_SERVER['DOCUMENT_ROOT'];
 
-	$path = "../model/business/class_".$name.".php";
-	
-    if(file_exists($path)){
-      	require_once($path);
-      	$check = true;
-    } 
 
-    return $check;
+    $curdir = getcwd();
+    
+    chdir("$root/AgenciaActors/");
+
+    $nomFile="class_".$class_name.".php";
+
+    $arxiuPersistence="model/persistence/".$nomFile;
+    $arxiuBusiness="model/business/".$nomFile;
+    if(file_exists($arxiuPersistence)){
+        require_once $arxiuPersistence;
+    }else{
+       if(file_exists($arxiuBusiness)){
+           require_once $arxiuBusiness;
+       }
+    }
+    chdir($curdir);
 }
 ?>

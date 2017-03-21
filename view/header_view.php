@@ -61,9 +61,9 @@
                                 </li>
                             </ul>
                         </li> 
-                        <li id="login_action"><a href="?ctl=session&act=check">Iniciar Sessio</a></li>
+                        <li class="login_action"><a id="login_action" href="?ctl=session&act=check"></a></li>
                         
-                        <li id="login_user"><a href="?ctl=session&act=check">Nom Usuari</a></li>                                           
+                        <li class="login_user"><a id="login_user"></a></li>                                           
                     </ul>
                 </div>               
             </div>          
