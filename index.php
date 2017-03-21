@@ -2,9 +2,9 @@
 
 session_start();
 
-if (!isset ($_SESSION['login'])){
-    $_SESSION['login']=false;
-    $_SESSION['user']="";
+if (!isset($_SESSION['login'])) {
+    $_SESSION['login'] = false;
+    $_SESSION['user'] = "";
 }
 $ctl = "home";
 
@@ -28,6 +28,19 @@ switch ($ctl) {
                 break;
             case "eliminar":
                 include "controller/eliminardirector_ctl.php";
+                break;
+        }
+        break;
+    case "pelicula":
+        switch ($act) {
+            case "afegir":
+                include "controller/afegirpelicula_ctl.php";
+                break;
+            case "modificar":
+                include "controller/modificarpelicula_ctl.php";
+                break;
+            case "eliminar":
+                include "controller/eliminarpelicula_ctl.php";
                 break;
         }
         break;
