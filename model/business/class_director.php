@@ -46,9 +46,31 @@ class director{
 		$this->foto = $value;
 	}
 	
-	public function inserirDirector(){		
-		$directorDb = new directorDb();
-		$directorDb->inserir($this);		
+	public function inserirDirector(){
+            $v = $this->validaDirector();
+            
+            if($v->ok){
+                $directorDb = new directorDb();
+		$r = $directorDb->inserir($this);
+                if($r==1){
+                   return $v;
+                }else{
+                    $v->ok = false;
+                    $v->msg = "Fallo en la base de dades";
+                }
+                
+            }else{
+                return  $v;
+            }
+            
+            //CONTROLLER
+             /*$res = $d->inserirDirector();
+             if($res->ok){
+                 echo "Inserit correctament";
+             }else{
+                 echo "Error ".$res->msg;
+             }
+             */
 	}
         
         public function cercarPerNifDirector($nif){		
@@ -59,12 +81,18 @@ class director{
         public function modificarDirector($old_nif){
             //UPDATE `director` SET `Nif`='47838294K',`Nom`='Steven',`Cognom`='Spielberg',`Foto`='images/director/Spielberg.jpg' WHERE nif='46573829H'
             $directorDb = new directorDb();
-            $directorDb->modificar($old_nif,$this);            
+            return $directorDb->modificar($old_nif,$this);            
         }
         
         public function eliminarDirector(){		
 		$directorDb = new directorDb();
-		$directorDb->eliminar($this);		
+		return $directorDb->eliminar($this);		
 	}
+        
+        public function validaDirector(){
+            //$v = new Validar();
+                        
+            //return $v;
+        }
 }    
  ?>
