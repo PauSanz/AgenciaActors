@@ -2,7 +2,6 @@
 function __autoload($class_name){
     $root = $_SERVER['DOCUMENT_ROOT'];
 
-
     $curdir = getcwd();
     
     chdir("$root/AgenciaActors/");

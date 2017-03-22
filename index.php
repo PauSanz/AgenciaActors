@@ -33,6 +33,19 @@ switch ($ctl) {
                 break;
         }
         break;
+    case "pelicula":
+        switch ($act) {
+            case "afegir":
+                include "controller/afegirpelicula_ctl.php";
+                break;
+            case "modificar":
+                include "controller/modificarpelicula_ctl.php";
+                break;
+            case "eliminar":
+                include "controller/eliminarpelicula_ctl.php";
+                break;
+        }
+        break;
     case "session":
         switch ($act) {
             case "check":
