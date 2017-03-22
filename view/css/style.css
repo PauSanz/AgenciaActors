@@ -8,6 +8,14 @@ and open the template in the editor.
     Author     : oriol
 */
 
+
+#login_user{
+    color: #9d9d9d;
+}
+.login_msg{
+    color: red;
+}
+
 #myFooter {
     background-color: #3c3d41;
     color: white;

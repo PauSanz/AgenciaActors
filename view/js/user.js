@@ -8,7 +8,7 @@ window.onload = function() {
 
 function stat(action, user = ''){
     document.getElementById('login_action').innerHTML = action;
-    document.getElementById('login_user').innerHTML = user;
+    document.getElementById('login_user').innerHTML = "<a>" + user + "</a>";
 }
 
 function fGetCookie(NameOfCookie) {
@@ -27,4 +27,8 @@ function fGetCookie(NameOfCookie) {
         }
     }
     return null;
+}
+
+function x(){
+    alert("HOLA");
 }

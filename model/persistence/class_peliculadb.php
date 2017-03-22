@@ -10,17 +10,38 @@ class peliculaDb {
 
         $query = "insert into pelicula values('', '" . $peli->getNom() . "', '" . $peli->getDescripcio() . "', '" . $peli->getTipus() . "', '" . $peli->getDataInici() . "', '" . $peli->getDataFi() . "', '" . $peli->getValoracio() . "', '" . $peli->getFoto() . "');";
         $con = new db();
-        $con->consulta($query);
+        $peliculaAux = $con->consulta($query);
         $con->close();
+        return $peliculaAux;
     }
 
-    public function esborrarPelicula($peli) {
+    public function esborrarPelicula($peliId) {
 
-        /* CONSULTA DELETE */$query = "insert into pelicula values('', '" . $peli->getNom() . "', '" . $peli->getDescripcio() . "', '" . $peli->getTipus() . "', '" . $peli->getDataInici() . "', '" . $peli->getDataFi() . "', '" . $peli->getValoracio() . "', '" . $peli->getFoto() . "');";
+        $query = "DELETE FROM pelicula WHERE idPelicula='" . $peliId . "';";
         $con = new db();
-        $con->consulta($query);
+        $peliculaAux = $con->consulta($query);
         $con->close();
+        return $peliculaAux;
+    }
+
+    public function cercarPeliPerId($id) {
+
+        $query = "SELECT * FROM pelicula WHERE idPelicula = '" . $id . "';";
+        $con = new db();
+        $peliculaAux = $con->consulta($query);
+        $con->close();
+        return $peliculaAux;
+    }
+
+    public function modificarPelicula($old_id, $peli) {
+
+        $query = "UPDATE `pelicula` SET `idPelicula`='" . $peli->getNif() . "',`Nom`='" . $peli->getNom() . "',`Cognom`='" . $peli->getCognom() . "',`Foto`='" . $peli->getFoto() . "' WHERE id='" . $old_id . "';";
+        $con = new db();
+        $peliculaAux = $con->consulta($query);
+        $con->close();
+        return $peliculaAux;
     }
 
 }
+
 ?>
