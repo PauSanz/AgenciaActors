@@ -36,7 +36,7 @@
                     <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
                     <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
                 </div>
-                <button type="button" class="btn btn-default">Contacta</button>
+                <a class="btn btn-default"href="?ctl=contact">Contacta</a>
             </div>
         </div>
     </div>
@@ -56,7 +56,9 @@
         interval: 5000 //changes the speed
     })
 </script>
+<!-- Altres Scripts -->
 <script src="view/js/custom-js.js"></script>
 <script src="view/js/user.js"></script>
+<script src="view/js/contact_me.js"></script>
 </body>
 </html>

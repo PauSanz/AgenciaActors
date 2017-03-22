@@ -12,8 +12,9 @@ class pelicula {
     private $dataFi;
     private $valoracio;
     private $foto;
+    private $idDirector;
 
-    function __construct($idPelicula, $nom, $descripcio, $tipus, $dataInici, $dataFi, $valoracio, $foto) {
+    function __construct($idPelicula, $nom, $descripcio, $tipus, $dataInici, $dataFi, $valoracio, $foto, $idDirector) {
         $this->setIdPelicula($idPelicula);
         $this->setNom($nom);
         $this->setDescripcio($descripcio);
@@ -22,6 +23,7 @@ class pelicula {
         $this->setDataFi($dataFi);
         $this->setValoracio($valoracio);
         $this->setFoto($foto);
+        $this->setIdDirector($idDirector);
     }
 
     function getIdPelicula() {
@@ -56,6 +58,10 @@ class pelicula {
         return $this->foto;
     }
 
+    function getIdDirector() {
+        return $this->idDirector;
+    }
+
     function setIdPelicula($idPelicula) {
         $this->idPelicula = $idPelicula;
     }
@@ -88,15 +94,20 @@ class pelicula {
         $this->foto = $foto;
     }
 
+    function setIdDirector($idDirector) {
+        $this->idDirector = $idDirector;
+    }
+
     public function inserirPelicula() {
         $peliculaDb = new peliculadb();
         $peliculaDb->inserirPelicula($this);
     }
-    
+
     public function esborrarPelicula() {
         $peliculaDb = new peliculadb();
         $peliculaDb->esborrarPelicula($this);
     }
+
 }
 
 ?>

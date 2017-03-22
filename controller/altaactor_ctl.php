@@ -5,6 +5,13 @@
 //require_once("../config/config.inc.php");
 //require_once("../config/db.inc.php");
 //require_once "../view/printError.php";
+
+require_once 'view/header_view.php';
+require_once 'view/afegiractor_view.php';
+require_once 'view/footer_view.php';
+
+
+
 $msg = null;
 try {
     if (isset($_POST['submit'])) {
