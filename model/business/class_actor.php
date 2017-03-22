@@ -1,4 +1,5 @@
 <?php
+require_once("controller/function_AutoLoad.php"); 
 class actor {
     private $nif;
     private $nom;
@@ -6,8 +7,8 @@ class actor {
     private $genere;
     private $foto;
     
-    public function __construct($nom, $cognom,$genere,$foto){
-		$this->setNif(null);
+    public function __construct($nif,$nom, $cognom,$genere,$foto){
+		$this->setNif($nif);
 		$this->setNom($nom);
 		$this->setCognom($cognom);
 		$this->setGenereActor($genere);
@@ -55,18 +56,23 @@ class actor {
             $this->foto = $foto;
         }
         
-        function addActor($nif,$nom,$cognom,$genere, $foto){
-         $actordb = New actorDb();  
-         $actor = New actor($nif,$nom,$cognom,$genere, $foto);
-         $actordb->inserirActor($actor);
-        }
+        public function inserirActor(){		
+		$actorDb = new actorDb();
+		$actorDb->inserir($this);		
+	}
         
-        function deleteActor($nif,$nom,$cognom,$genere,$foto){
-            
-        }
+        public function cercarPerNifActor($nif){		
+		$actorDb = new actorDb();
+		return $actorDb->cercarPerNif($nif); 		
+	}
         
-        function updateActor($nif,$nom,$cognom,$genere, $foto){
-            
+        public function modificarActor($old_nif){
+            $actorDb = new actorDb();
+            $actorDb->modificar($old_nif,$this);            
         }
+     
+        
+        
+        
 	
 } 
