@@ -16,9 +16,8 @@ try {
 //            $llibreria = New llibreria("Llibreria Vallbona");
 //            $llibreria->populateLlibreria();
 //        }
-       // $peli = new pelicula($_POST['nom']), addslashes($_POST['descripcio']), addslashes($_POST['genare']), addslashes($_POST['dataInici']), addslashes($_POST['dataFi']), addslashes($_POST['valoracio']),addslashes($_POST['foto']));
+        $peli = new pelicula(addslashes($_POST['nom']), addslashes($_POST['descripcio']), addslashes($_POST['genare']), addslashes($_POST['dataInici']), addslashes($_POST['dataFi']), addslashes($_POST['valoracio']), addslashes($_POST['foto']));
         $peli->inserirPelicula();
-        $llibreria->afegirLlibre(addslashes($_POST['titol']), addslashes($_POST['autor']), addslashes($_POST['editorial']));
         $msg = "Dades introduides correctament!!";
     } else {
         $msg = "Acces denegat";
