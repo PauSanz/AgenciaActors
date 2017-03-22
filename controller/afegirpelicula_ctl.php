@@ -1,5 +1,10 @@
 <?php
 
+require_once 'view/header_view.php';
+require_once 'view/afegirpelicula_view.php';
+require_once 'view/footer_view.php';
+
+
 //session_start();
 require_once("../controller/function_AutoLoad.php");
 require_once("../config/config.inc.php");
@@ -29,5 +34,6 @@ try {
 if ($msg != null) {
     printError($msg);
 }
+
 ?>
 

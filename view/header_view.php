@@ -27,38 +27,32 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="home_view.html">Agencia d'Actors</a>
+                    <a href="?ctl=home"><h4 class="colortitol">Agencia d'Actors</h4></a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="about.html">About</a>
+                            <a href="?ctl=home">Home</a>
                         </li>
                         <li>
-                            <a href="services.html">Services</a>
+                            <a href="?ctl=llistaactors">Llistat actors</a>
                         </li>
                         <li>
-                            <a href="contact.html">Contact</a>
+                            <a href="?ctl=contact">Contact</a>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Formularis <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="portfolio-1-col.html">1 Column Portfolio</a>
+                                    <a href="?ctl=afegirpelicula">Afegir Pel·licula</a>
                                 </li>
                                 <li>
-                                    <a href="portfolio-2-col.html">2 Column Portfolio</a>
+                                    <a href="?ctl=altaactor">Afegir Actor</a>
                                 </li>
                                 <li>
-                                    <a href="portfolio-3-col.html">3 Column Portfolio</a>
-                                </li>
-                                <li>
-                                    <a href="portfolio-4-col.html">4 Column Portfolio</a>
-                                </li>
-                                <li>
-                                    <a href="portfolio-item.html">Single Portfolio Item</a>
-                                </li>
+                                    <a href="?ctl=afegirdirector">Afegir Director</a>
+                                </li>                                
                             </ul>
                         </li> 
                         <li class="login_action"><a id="login_action" href="?ctl=session&act=check"></a></li>
