@@ -1,42 +1,33 @@
 <?php
 
-//include_once("controller/function_AutoLoad.php"); 	
-//require_once("config/config.inc.php");
-//require_once("config/db.inc.php");
+include_once("controller/function_AutoLoad.php");
+require_once("config/config.inc.php");
+require_once("config/db.inc.php");
 
 class actorDb {
 
-    public function inserirActor($actor) {
-        $query = "insert into actor values('', '" . $actor->getNif()
-                . "', '" . $actor->getNom() . "', '" . $actor->getCognom()
-                . $actor->getGenere() . "', '" . $actor->getFoto() . "');";
+    public function inserir($actor) {
+
+        $query = "insert into actor values('" . $actor->getNif() . "', '" . $actor->getNom() . "', '" . $actor->getCognom() . "', '" . $actor->getFoto() . "');";
         $con = new db();
         $con->consulta($query);
         $con->close();
     }
 
-    public function modificarActor($old_dni,$actor) {
-            
-            $sql = "UPDATE members SET nom = '$nom', cognom = '$cognom', genere = '$genere', foto = '$foto' WHERE id = {$old_dni}";
-            if ($connect->query($sql) === TRUE) {
-                echo "<p>Actualitzat Correctament</p>";             
-            } else {
-                echo "Error while updating record : " . $connect->error;
-            }
-            $connect->close();        
+    public function cercarPerNif($nif) {
+
+        $query = "SELECT * FROM actor WHERE nif = '" . $nif . "';";
+        $con = new db();
+        $actorAux = $con->consulta($query);
+        $con->close();
+        return $actorAux;
     }
 
-    public function eliminarActor($actor) {       
-           
-            $sql = "DELETE * FROM actor WHERE id = {$actor->getNif()}";
-            $result = $connect->query($sql);
-            $data = $result->fetch_assoc();
-            $connect->close();           
-        
-    }
-
-    public function mostrarActor($actor) {
-        
+    public function modificar($old_nif, $actor) {
+        $query = "UPDATE `actor` SET `nif`='" . $actor->getNif() . "',`nom`='" . $actor->getNom() . "',`cognom`='" . $actor->getCognom() . "',`foto`='" . $actor->getFoto() . "' WHERE nif='" . $old_nif . "';";
+        $con = new db();
+        $con->consulta($query);
+        $con->close();
     }
 
     public function comprobardadesActor($actor) {
