@@ -1,5 +1,8 @@
 <?php
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 require_once("controller/autoload_ctl.php"); 	
 require_once("cookie_ctl.php");
 require_once("config/config.inc.php");
@@ -21,6 +24,7 @@ if(isset($_POST['user']) && isset($_POST['password'])){
 	}
 }else{
 	header("location:  ./index.php");
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 	session_start();
@@ -72,6 +76,8 @@ if(isset($_POST['user']) && isset($_POST['password'])){
 >>>>>>> master
 }else{
 	//ERROR DE FORMULARIO
+>>>>>>> master
+=======
 >>>>>>> master
 }
 

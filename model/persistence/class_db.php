@@ -1,5 +1,8 @@
 <?php
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 require_once("interface_db.php");
 
 class db implements interface_db{
@@ -82,6 +85,7 @@ class db implements interface_db{
 	
 }	
     
+<<<<<<< HEAD
 =======
 
 require_once("interface_db.php");
@@ -159,5 +163,7 @@ class db implements interface_db {
 
 }
 
+>>>>>>> master
+=======
 >>>>>>> master
 ?>
