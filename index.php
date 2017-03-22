@@ -2,9 +2,9 @@
 
 session_start();
 
-if (!isset($_SESSION['login'])) {
-    $_SESSION['login'] = false;
-    $_SESSION['user'] = "";
+if (!isset ($_SESSION['login'])){
+    $_SESSION['login']=false;
+    $_SESSION['user']="";
 }
 $ctl = "home";
 
@@ -28,6 +28,8 @@ switch ($ctl) {
                 break;
             case "eliminar":
                 include "controller/eliminardirector_ctl.php";
+                break;
+            default:
                 break;
         }
         break;
@@ -55,12 +57,16 @@ switch ($ctl) {
             case "destroy":
                 include "controller/logout_ctl.php";
                 break;
+            default:
+                break;
         }
         break;
     case "login":
         switch ($act) {
             case "form":
                 include "controller/login.php";
+                break;
+            default:
                 break;
         }
     default:
