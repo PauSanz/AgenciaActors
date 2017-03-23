@@ -1,6 +1,7 @@
 <?php
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> master
 require_once("interface_db.php");
@@ -90,6 +91,11 @@ class db implements interface_db{
 
 require_once("interface_db.php");
 
+=======
+
+require_once("interface_db.php");
+
+>>>>>>> master
 class db implements interface_db {
 
     private $server;
@@ -157,6 +163,7 @@ class db implements interface_db {
     public function consulta($query) {
         $con = $this->connect();
         $resultat = mysqli_query($con, $query) or die('Error, query failed: ' . $this->error());
+<<<<<<< HEAD
 
         return $resultat;
     }
@@ -165,5 +172,24 @@ class db implements interface_db {
 
 >>>>>>> master
 =======
+>>>>>>> master
+=======
+        return $resultat;
+    }
+
+    public function rebreDirectors($query) {
+        $con = $this->connect();
+        $consulta = mysqli_query($con, $query) or die('Error, query failed: ' . $this->error());
+        $cont = 0;
+        while ($row = mysqli_fetch_array($consulta)) {
+            $director = new director($row["Nif"], $row["Nom"], $row["Cognom"], $row["Foto"]);
+            $arrayDirectors[$cont] = $director;
+            $cont++;
+        }
+        return $arrayDirectors;
+    }
+
+}
+
 >>>>>>> master
 ?>

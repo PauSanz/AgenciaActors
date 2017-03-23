@@ -8,7 +8,7 @@ class peliculaDb {
 
     public function inserirPelicula($peli) {
 
-        $query = "insert into pelicula values('', '" . $peli->getNom() . "', '" . $peli->getDescripcio() . "', '" . $peli->getTipus() . "', '" . $peli->getDataInici() . "', '" . $peli->getDataFi() . "', '" . $peli->getValoracio() . "', '" . $peli->getFoto() . "');";
+        $query = "insert into pelicula values('', '" . $peli->getNom() . "', '" . $peli->getDescripcio() . "', '" . $peli->getTipus() . "', '" . $peli->getDataInici() . "', '" . $peli->getDataFi() . "', '" . $peli->getValoracio() . "', 'images/pelicula/" . $peli->getFoto() . "');";
         $con = new db();
         $peliculaAux = $con->consulta($query);
         $con->close();
