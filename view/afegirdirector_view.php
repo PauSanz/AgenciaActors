@@ -48,8 +48,8 @@
                     </div>
                 </div>
 
-                <div class="form-group ">
-                    <button type="button" class="btn btn-danger btn-lg btn-block login-button">Guardar</button>
+                 <div class="form-group ">
+                    <input type="submit" name="submit" value="Guardar" class="btn btn-danger btn-lg btn-block login-button"></input>
                 </div>               
             </form>
         </div>

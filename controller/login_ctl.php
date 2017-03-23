@@ -12,23 +12,20 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
     //if($user->validate()->getOk()){
     $x = $user->checkUser();
 
-<<<<<<< Updated upstream
+
     if ($x != null) {
         createcookie('user', $x);
         header("location:  ./index.php");
     } else {
-=======
-	if($x != null){
-		createcookie('user', $x);
-		header("location:  ./index.php");
-	}else{
-		
-		header("location:  ./index.php?ctl=login&act=form&msg=Usuari inexistent o contrasenya invàlida.");
-	}
-}else{
-//	header("location:./index.php");
-}
->>>>>>> Stashed changes
+
+        if ($x != null) {
+            createcookie('user', $x);
+            header("location:  ./index.php");
+        } else {
+
+            header("location:  ./index.php?ctl=login&act=form&msg=Usuari inexistent o contrasenya invàlida.");
+        }
+
 
         header("location:  ./index.php?ctl=login&act=form&msg=Usuari inexistent o contrasenya invàlida.");
     }
