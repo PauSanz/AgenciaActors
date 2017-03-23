@@ -45,7 +45,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Formularis <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="?ctl=afegirpelicula">Afegir Pel·licula</a>
+                                    <a href="?ctl=pelicula&act=afegir">Afegir Pel·licula</a>
                                 </li>
                                 <li>
                                     <a href="?ctl=altaactor">Afegir Actor</a>

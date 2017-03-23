@@ -1,4 +1,5 @@
 <?php
+include('emmagatzemarFoto.php');
 
 require_once ('view/header_view.php');
 require_once ('view/afegirpelicula_view.php');
@@ -11,6 +12,8 @@ require_once("config/db.inc.php");
 $msg = null;
 try {
     if (isset($_POST['submit'])) {
+        
+        guardarImatge("pelicula");
 
         $peli = new pelicula("", addslashes($_POST['nom']), addslashes($_POST['descripcio']), addslashes($_POST['tipus']), addslashes($_POST['datainici']), addslashes($_POST['datafi']), addslashes($_POST['estrellas']), addslashes($_POST['file1']), addslashes($_POST['idDirector']));
         $peli->inserirPelicula();
