@@ -1,50 +1,54 @@
 <?php
-require_once("controller/autoload_ctl.php"); 	
 
-class user{
+require_once("controller/function_AutoLoad.php");
+
+class user {
+
     private $id;
     private $name;
     private $password;
-    
-    public function __construct($name, $password){
-		$this->setId(null);
-		$this->setName($name);
-		$this->setPassword($password);
-	}
-	
-	public function getId(){
-		return $this->id;
-	}
 
-	public function setId($value){
-		$this->id = $value;
-	}
-	
-	public function getName(){
-		return $this->name;
-	}
+    public function __construct($name, $password) {
+        $this->setId(null);
+        $this->setName($name);
+        $this->setPassword($password);
+    }
 
-	public function setName($value){
-		$this->name = $value;
-	}
-	
-	public function getPassword(){
-		return $this->password;
-	}
+    public function getId() {
+        return $this->id;
+    }
 
-	public function setPassword($value){
-		$this->password = $value;
-	}
+    public function setId($value) {
+        $this->id = $value;
+    }
 
-	public function addUser(){		
-		$userDb = new userdb();
-		$userDb->add($this);		
-	}
+    public function getName() {
+        return $this->name;
+    }
 
-	 public function checkUser(){
-	 	$userDb = new userdb();
-	 	$result = $userDb->checkUser($this);
-	 	return $result; 
-	 }	
-}    
- ?>
+    public function setName($value) {
+        $this->name = $value;
+    }
+
+    public function getPassword() {
+        return $this->password;
+    }
+
+    public function setPassword($value) {
+        $this->password = $value;
+    }
+
+    public function addUser() {
+        $userDb = new userdb();
+        $userDb->add($this);
+    }
+
+    public function checkUser() {
+        $userDb = new userdb();
+        $result = $userDb->checkUser($this);
+        return $result;
+    }
+
+}
+
+?>

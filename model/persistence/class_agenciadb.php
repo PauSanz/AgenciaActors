@@ -4,12 +4,12 @@ include_once("controller/function_AutoLoad.php");
 require_once("config/config.inc.php");
 require_once("config/db.inc.php");
 
-class agenciaDb {
+class agenciadb {
 
     public function obtenirTotsDirectors() {
         $query = "SELECT * FROM director;";
         $con = new db();
-        $arrayDeDirectors = $con->consulta($query); //Consultar PDO
+        $arrayDeDirectors = $con->rebreDirectors($query); //Consultar PDO
         $con->close();
         return $arrayDeDirectors;
     }
@@ -17,7 +17,7 @@ class agenciaDb {
     public function obtenirTotsActors() {
         $query = "SELECT * FROM actor;";
         $con = new db();
-        $arrayDeActors = $con->consulta($query); //Consultar PDO
+        $arrayDeActors = $con->consulta($query); //rebreActors
         $con->close();
         return $arrayDeActors;
     }
