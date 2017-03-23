@@ -11,7 +11,7 @@ include('mostrar_selects.php');
             </div>
         </div> 
         <div class="main-login main-center">
-            <form class="form-horizontal" method="post" action="?ctl=afegirpelicula">
+            <form class="form-horizontal" method="post" action="?ctl=pelicula&act=afegir">
 
                 <div class="form-group">
                     <label for="nom" class="cols-sm-2 control-label">Nom</label>
@@ -72,9 +72,19 @@ include('mostrar_selects.php');
                         </div>
                     </div>
                 </div>
-                <?php
-                mostrarDirectors();
-                ?>
+                <!--                Select-->
+
+                <div class="form-group ">
+                    <label for="descripcio" class="cols-sm-2 control-label">Director</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group select">
+                            <span class="input-group-addon"><i class="fa fa-bullhorn fa-lg" aria-hidden="true"></i></span>
+                            <?php mostrarDirectors(); ?>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--                Select-->
                 <div class="form-group">
                     <label>Valoració</label>
                     <p class="clasificacion">                        

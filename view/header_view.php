@@ -45,19 +45,19 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Formularis <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="?ctl=afegirpelicula">Afegir Pel·licula</a>
+                                    <a href="?ctl=pelicula&act=afegir">Afegir Pel·licula</a>
                                 </li>
                                 <li>
-                                    <a href="?ctl=altaactor">Afegir Actor</a>
+                                    <a href="?ctl=afegir&act=actor">Afegir Actor</a>
                                 </li>
                                 <li>
-                                    <a href="?ctl=afegirdirector">Afegir Director</a>
+                                    <a href="?ctl=afegir&act=director">Afegir Director</a>
                                 </li>                                
                             </ul>
                         </li> 
                         <li class="login_action"><a id="login_action" href="?ctl=session&act=check"></a></li>
                         
-                        <li class="login_user"><a id="login_user"></a></li>                                           
+                        <li class="login_user colorlink"><a id="login_user"></a></li>                                           
                     </ul>
                 </div>               
             </div>          

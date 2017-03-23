@@ -7,13 +7,13 @@
     </div> 
     <div class="row main">
         <div class="main-login main-center">
-            <form class="form-horizontal" method="post" action="#">
+            <form class="form-horizontal" method="post" action="?ctl=actor&act=afegir">
                 <div class="form-group">
                     <label for="nif" class="cols-sm-2 control-label">Nif</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-id-card fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="nif" id="name"  placeholder="Nif"/>
+                            <input type="text" class="form-control" name="nif" id="nif"  placeholder="Nif"/>
                         </div>
                     </div>
                 </div>
@@ -23,7 +23,7 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="nom" id="email"  placeholder="Nom"/>
+                            <input type="text" class="form-control" name="nom" id="nom"  placeholder="Nom"/>
                         </div>
                     </div>
                 </div>
@@ -33,17 +33,21 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="cognom" id="username"  placeholder="Cognom"/>
+                            <input type="text" class="form-control" name="cognom" id="cognom"  placeholder="Cognom"/>
                         </div>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label for="genere" class="cols-sm-2 control-label">Genere</label>
+<!--                Select-->
+               <div class="form-group ">
+                    <label for="descripcio" class="cols-sm-2 control-label">Genere</label>
                     <div class="cols-sm-10">
-                        <div class="input-group">
+                        <div class="input-group select">
                             <span class="input-group-addon"><i class="fa fa-venus-mars fa-lg" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="genere" id="password"  placeholder="Sexe"/>
+                            <select name="genere">
+                                <option value="home">Home</option>
+                                <option value="dona">Dona</option>
+                                <option value="altres">Altres</option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -58,8 +62,8 @@
                 </div>
 
                 <div class="form-group ">
-                    <button type="button" class="btn btn-danger btn-lg btn-block login-button">Guardar</button>
-                </div>               
+                    <input type="submit" name="submit" value="Guardar" class="btn btn-danger btn-lg btn-block login-button"></input>
+                </div>                     
             </form>
         </div>
     </div>

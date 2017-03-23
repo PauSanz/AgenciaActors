@@ -46,6 +46,32 @@ switch ($ctl) {
                 break;
         }
         break;
+     case "actor":
+        switch ($act) {
+            case "afegir":
+                include "controller/afegiractor_ctl.php";
+                break;
+            case "modificar":
+                include "controller/modificaractor_ctl.php";
+                break;
+            case "eliminar":
+                include "controller/eliminaractor_ctl.php";
+                break;
+        }
+        break;
+    case "paper":
+        switch ($act) {
+            case "afegir":
+                include "controller/afegirpaper_ctl.php";
+                break;
+            case "modificar":
+                include "controller/modificarpaper_ctl.php";
+                break;
+            case "eliminar":
+                include "controller/eliminarpaper_ctl.php";
+                break;
+        }
+        break;
     case "session":
         switch ($act) {
             case "check":

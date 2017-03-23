@@ -47,7 +47,7 @@ class director{
 	}
 	
 	public function inserirDirector(){		
-		$directorDb = new directorDb();
+		$directorDb = new directordb();
 		$directorDb->inserir($this);		
 	}
         

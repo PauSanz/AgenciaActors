@@ -30,6 +30,6 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
         header("location:  ./index.php?ctl=login&act=form&msg=Usuari inexistent o contrasenya invàlida.");
     }
 } else {
-    header("location:  ./index.php");
+//    header("location:  ./index.php");
 }
 ?>
