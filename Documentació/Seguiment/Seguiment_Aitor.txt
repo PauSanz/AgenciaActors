@@ -1,0 +1,14 @@
+16/03/2017
+-Creació de base de dades buida amb tots els camps i relacions necessàries
+20/03/2017
+-Creació de la classe "director" i auxiliar de persistència, falta mètode eliminar.
+21/03/2017
+-Pensat i mig implementat la manera per validar els objecte i capturar qualsevol tipus de error, ja sigui de validació o de base de dades.
+-Creada la classe rol i implementats els mètodes principals.
+22/03/2017
+-Ajudant al pau amb problemilles del controller i a afegir una pelicula.
+-Investigat que retorna quan una sql va bé o va malament.
+-Implementat captura d'errors en les transaccions sql de totes les classes.
+23/03/2017
+
+

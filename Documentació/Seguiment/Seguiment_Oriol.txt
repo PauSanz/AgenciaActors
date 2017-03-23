@@ -1,0 +1,6 @@
+16/03/2017
+-Creació plantilla base (Bootstrap)
+20/03/2017
+-Creació de la classe "actor", controlador i classe db.
+20/03/2017
+-Modificacions classe actor, creació vistes contacte i llista actors i formularis actor i peli.
