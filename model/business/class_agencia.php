@@ -18,7 +18,12 @@ class agencia {
         $this->nomAgencia = $nomAgencia;
     }
 
-    //METODO PDO DEL FETCH
+    public function rebreDirectors() {
+
+        $agenciadb = new agenciadb();
+        return $agenciadb->obtenirTotsDirectors();
+    }
+
 }
 
 ?>

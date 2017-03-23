@@ -1,3 +1,7 @@
+<?php
+include('mostrar_selects.php');
+?>
+
 <div class="container marginb">
     <div class="row main">
         <div class="panel-heading">
@@ -7,7 +11,7 @@
             </div>
         </div> 
         <div class="main-login main-center">
-            <form class="form-horizontal" method="post" action="#">
+            <form class="form-horizontal" method="post" action="./controller/afegirpelicula_ctl.php">
 
                 <div class="form-group">
                     <label for="nom" class="cols-sm-2 control-label">Nom</label>
@@ -53,7 +57,7 @@
                     <label for="foto" class="cols-sm-2 control-label">Foto</label>
                     <div class="inputWrapper">
                         <span class="input-group-addon"><i class="fa fa-image fa" aria-hidden="true"></i>
-                        <input class="fileInput" type="file" name="file1"/>
+                            <input class="fileInput" type="file" name="file1"/>
                         </span>
                     </div>
                 </div>
@@ -64,11 +68,13 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-file-text-o fa-lg" aria-hidden="true"></i></span>
-                            <textarea rows="5" cols="30" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                            <textarea name="descripcio" rows="5" cols="30" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
                         </div>
                     </div>
                 </div>
-
+                <?php
+                mostrarDirectors();
+                ?>
                 <div class="form-group">
                     <label>Valoració</label>
                     <p class="clasificacion">                        
@@ -84,9 +90,8 @@
                         <label class="star" for="radio5">★</label>
                     </p>
                 </div>
-
                 <div class="form-group ">
-                    <button type="button" class="btn btn-danger btn-lg btn-block login-button">Guardar</button>
+                    <input type="submit" name="submit" value="Guardar" class="btn btn-danger btn-lg btn-block login-button"></input>
                 </div>               
             </form>
         </div>
