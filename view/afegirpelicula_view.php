@@ -11,7 +11,7 @@ include('mostrar_selects.php');
             </div>
         </div> 
         <div class="main-login main-center">
-            <form class="form-horizontal" method="post" action="./controller/afegirpelicula_ctl.php">
+            <form class="form-horizontal" method="post" action="?ctl=afegirpelicula">
 
                 <div class="form-group">
                     <label for="nom" class="cols-sm-2 control-label">Nom</label>
