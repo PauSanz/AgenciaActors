@@ -84,6 +84,42 @@ class db implements interface_db {
         return $arrayDirectors;
     }
 
+    public function rebreActors($query) {
+        $con = $this->connect();
+        $consulta = mysqli_query($con, $query) or die('Error, query failed: ' . $this->error());
+        $cont = 0;
+        while ($row = mysqli_fetch_array($consulta)) {
+            $actor = new actor($row["Nif"], $row["Nom"], $row["Cognom"], $row["Genere"], $row["Foto"]);
+            $arrayActors[$cont] = $actor;
+            $cont++;
+        }
+        return $arrayActors;
+    }
+
+    public function rebrePelicules($query) {
+        $con = $this->connect();
+        $consulta = mysqli_query($con, $query) or die('Error, query failed: ' . $this->error());
+        $cont = 0;
+        while ($row = mysqli_fetch_array($consulta)) {
+            $peli = new pelicula($row["idPelicula"], $row["nom"], $row["descripcio"], $row["tipus"], $row["dataInici"], $row["dataFi"], $row["valoracio"], $row["foto"]);
+            $arrayPelicules[$cont] = $peli;
+            $cont++;
+        }
+        return $arrayPelicules;
+    }
+
+    public function rebrePapers($query) {
+        $con = $this->connect();
+        $consulta = mysqli_query($con, $query) or die('Error, query failed: ' . $this->error());
+        $cont = 0;
+        while ($row = mysqli_fetch_array($consulta)) {
+            $paper = new rol($row["idPaper"], $row["nom"], $row["idActor"], $row["idPelicula"]);
+            $arrayPapers[$cont] = $paper;
+            $cont++;
+        }
+        return $arrayPapers;
+    }
+
 }
 
 ?>
