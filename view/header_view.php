@@ -6,14 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-
+        <?php require_once "controller/draw_addMenu.php" ?>
         <title>Agencia Actors</title>
         <!-- Bootstrap Core CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="view/css/modern-business.css"/>
-        <link rel="stylesheet" type="text/css" href="view/css/style.css"/>
         <!-- Custom Fonts -->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="view/css/style.css"/>
     </head>
     <body>
         <!-- Navigation -->
@@ -41,20 +41,7 @@
                         <li>
                             <a href="?ctl=contact">Contact</a>
                         </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Formularis <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="?ctl=afegirpelicula">Afegir Pel·licula</a>
-                                </li>
-                                <li>
-                                    <a href="?ctl=altaactor">Afegir Actor</a>
-                                </li>
-                                <li>
-                                    <a href="?ctl=afegirdirector">Afegir Director</a>
-                                </li>                                
-                            </ul>
-                        </li> 
+                        <?php drawAddMenu()?> 
                         <li class="login_action"><a id="login_action" href="?ctl=session&act=check"></a></li>
                         
 <<<<<<< HEAD
@@ -71,3 +58,4 @@
             </div>          
         </nav>        
         
+Contact GitHub API Training Shop Blog About
