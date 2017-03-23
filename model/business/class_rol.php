@@ -54,24 +54,13 @@ class rol {
         if ($v->ok) {
             $paperDb = new paperDb();
             $r = $paperDb->inserir($this);
-            if ($r == 1) {
-                return $v;
-            } else {
+            if ($r != 1) {
+
                 $v->ok = false;
                 $v->msg = "S'ha produit un error a la base de dades";
             }
-        } else {
-            return $v;
         }
-
-        //CONTROLLER
-        /* $res = $d->inserirDirector();
-          if($res->ok){
-          echo "Inserit correctament";
-          }else{
-          echo "Error ".$res->msg;
-          }
-         */
+        return $v;
     }
 
     public function cercarPerIdPaper($nif) {
@@ -80,13 +69,33 @@ class rol {
     }
 
     public function modificarPaper($old_id) {
-        $paperDb = new paperDb();
-        return $paperDb->modificar($old_id, $this);
+
+        $v = $this->validaPaper();
+
+        if ($v->ok) {
+            $paperDb = new paperDb();
+            $r = $paperDb->modificar($old_id, $this);
+            if ($r != 1) {
+
+                $v->ok = false;
+                $v->msg = "S'ha produit un error a la base de dades";
+            }
+        }
+        return $v;
     }
 
     public function eliminarPaper() {
+        
+        $v = new Validar();
         $paperDb = new paperDb();
-        return $paperDb->eliminar($this);
+        $r = $paperDb->eliminar($this);
+
+        if ($r != 1) {
+
+            $v->ok = false;
+            $v->msg = "Fallo al eliminar el paper en la base de dades.";
+        }
+        return $v;
     }
 
     public function validaPaper() {
