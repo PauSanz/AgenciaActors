@@ -41,7 +41,7 @@
                         <li>
                             <a href="?ctl=contact">Contact</a>
                         </li>
-                        <?php drawAddMenu()?>
+                        <?php drawAddMenu()?> 
                         <li class="login_action"><a id="login_action" href="?ctl=session&act=check"></a></li>
                         
                         <li class="login_user"><a id="login_user"></a></li>                                           

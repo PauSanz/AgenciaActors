@@ -1,4 +1,5 @@
 <?php
+
 require_once("interface_db.php");
 class db implements interface_db {
     private $server;
@@ -99,5 +100,4 @@ class db implements interface_db {
         return $arrayPapers;
     }
 }
-
 ?>

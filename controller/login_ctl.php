@@ -3,6 +3,7 @@ require_once("controller/function_AutoLoad.php");
 require_once("cookie_ctl.php");
 require_once("config/config.inc.php");
 require_once("config/db.inc.php");
+
 if(isset($_POST['user']) && isset($_POST['password'])){
 	$name = $_POST['user'];
 	$password = $_POST['password'];
@@ -20,4 +21,4 @@ if(isset($_POST['user']) && isset($_POST['password'])){
 }else{
 	header("location:  ./index.php");
 }
-?>
+

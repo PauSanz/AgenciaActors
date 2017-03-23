@@ -59,5 +59,6 @@
 <!-- Altres Scripts -->
 <script src="view/js/custom-js.js"></script>
 <script src="view/js/script.js"></script>
+
 </body>
 </html>
