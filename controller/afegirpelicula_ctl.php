@@ -4,9 +4,18 @@ require_once ('view/header_view.php');
 require_once ('view/afegirpelicula_view.php');
 require_once ('view/footer_view.php');
 
+<<<<<<< Updated upstream
 require_once("./function_AutoLoad.php");
 require_once("../config/config.inc.php");
 require_once("../config/db.inc.php");
+=======
+require_once("controller/autoload_ctl.php");
+require_once("config/config.inc.php");
+require_once("config/db.inc.php");
+//require_once "../view/printError.php";
+
+
+>>>>>>> Stashed changes
 
 $msg = null;
 try {
@@ -21,5 +30,13 @@ try {
 } catch (Exception $e) {
     $msg = "Error en introduir les dades.";
 }
+<<<<<<< Updated upstream
+=======
+
+//if ($msg != null) {
+//   // printError($msg);
+//}
+
+>>>>>>> Stashed changes
 ?>
 
