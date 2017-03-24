@@ -9,6 +9,8 @@ require_once("controller/function_AutoLoad.php");
 require_once("config/config.inc.php");
 require_once("config/db.inc.php");
 
+
+
 $msg = null;
 try {
     if (isset($_POST['submit'])) {
@@ -24,5 +26,8 @@ try {
 } catch (Exception $e) {
     $msg = "Error en introduir les dades.";
 }
+
+
+
 ?>
 
