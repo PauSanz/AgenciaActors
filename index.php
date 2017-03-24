@@ -44,6 +44,8 @@ switch ($ctl) {
             case "eliminar":
                 include "controller/eliminarpelicula_ctl.php";
                 break;
+            default:
+                break;
         }
         break;
      case "actor":
@@ -95,6 +97,7 @@ switch ($ctl) {
             default:
                 break;
         }
+        break;
     default:
         include "controller/" . $ctl . "_ctl.php";
         break;
