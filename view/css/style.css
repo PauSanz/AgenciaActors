@@ -393,3 +393,28 @@ input[type="radio"]:checked ~ label {
 .colorlink a{
     color:#b63926 !important;
 }
+/*Fons afegir Pelicula*/
+.fonspeli{
+    background-image: url("../images/lord.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/*Fons afegir Actor*/
+.fonsactor{
+    background-image: url("../images/star.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/*Fons afegir Actor*/
+.fonsdirector{
+    background-image: url("../images/lord2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/*Espai bot al form*/
+.espaibot{
+    margin-bottom: 80px;
+}

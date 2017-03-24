@@ -48,10 +48,11 @@
                                     <a href="?ctl=pelicula&act=afegir">Afegir Pel·licula</a>
                                 </li>
                                 <li>
-                                    <a href="?ctl=afegir&act=actor">Afegir Actor</a>
+                                    <a href="?ctl=afegiractor">Afegir Actor</a>
                                 </li>
                                 <li>
-                                    <a href="?ctl=afegir&act=director">Afegir Director</a>
+<!--                                    <a href="?ctl=afegir&act=director">Afegir Director</a>-->
+                                <a href="?ctl=afegirdirector">Afegir Director</a>
                                 </li>                                
                             </ul>
                         </li> 

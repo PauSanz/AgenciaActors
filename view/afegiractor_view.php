@@ -1,13 +1,12 @@
-<div class="container marginb">
+<div class="container fonsactor">
     <div class="panel-heading">
         <div class="panel-title text-center">
-            <h1 class="title">Actor</h1>
-            <hr/>
+            <h1 class="title">Actor</h1>           
         </div>
     </div> 
     <div class="row main">
         <div class="main-login main-center">
-            <form class="form-horizontal" method="post" action="?ctl=actor&act=afegir">
+            <form class="form-horizontal" method="post" action="?ctl=afegiractor">
                 <div class="form-group">
                     <label for="nif" class="cols-sm-2 control-label">Nif</label>
                     <div class="cols-sm-10">
@@ -66,6 +65,7 @@
                 </div>                     
             </form>
         </div>
+        <div class="espaibot"></div>
     </div>
 </div>
 
