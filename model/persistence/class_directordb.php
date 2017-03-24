@@ -12,8 +12,10 @@ class directorDb{
 	
 		$query="insert into director values('".$director->getNif()."', '".$director->getNom()."', '".$director->getCognom()."', '".$director->getFoto() ."');";				
 		$con = new db();
-		$con->consulta($query);
+		$directorAux = $con->consulta($query);
 		$con->close();
+                
+                return $directorAux;
 	} 
         
         public function cercarPerNif($nif) {		
@@ -29,10 +31,21 @@ class directorDb{
 	
 		$query="UPDATE `director` SET `Nif`='".$director->getNif()."',`Nom`='".$director->getNom()."',`Cognom`='".$director->getCognom()."',`Foto`='".$director->getFoto()."' WHERE nif='".$old_nif."';";				
 		$con = new db();
-		$con->consulta($query);
+		$directorAux = $con->consulta($query);
 		$con->close();
+                
+                return $directorAux;
 	} 
-
+        
+        public function eliminar($nif) {		
+	
+		$query="DELETE FROM director WHERE Nif='".$nif."';";				
+		$con = new db();
+		$directorAux = $con->consulta($query);
+		$con->close();
+                
+                return $directorAux;
+	} 
 
 }    
  ?>
