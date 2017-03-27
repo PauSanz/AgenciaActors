@@ -6,6 +6,7 @@ function guardarImatge($subcarpeta) {
     //Metoda de netejar
     $imgNeta = str_replace(" ", "_", $fotoAGuardar);
 
+    
     $validextensions = array("jpeg", "jpg", "png");
 
     $temporary = explode(".", $_FILES["file1"]["name"]);
