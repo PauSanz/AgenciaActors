@@ -2,12 +2,12 @@
 include('mostrar_selects.php');
 ?>
 
-<div class="container marginb">
+<div class="container fonspeli ">
     <div class="row main">
         <div class="panel-heading">
             <div class="panel-title text-center">
                 <h1 class="title">Pel·lícula</h1>
-                <hr/>
+                
             </div>
         </div> 
         <div class="main-login main-center">
@@ -72,9 +72,19 @@ include('mostrar_selects.php');
                         </div>
                     </div>
                 </div>
-                <?php
-                mostrarDirectors();
-                ?>
+                <!--                Select-->
+
+                <div class="form-group ">
+                    <label for="descripcio" class="cols-sm-2 control-label">Director</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group select">
+                            <span class="input-group-addon"><i class="fa fa-bullhorn fa-lg" aria-hidden="true"></i></span>
+                            <?php mostrarDirectors(); ?>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--                Select-->
                 <div class="form-group">
                     <label>Valoració</label>
                     <p class="clasificacion">                        
@@ -92,9 +102,11 @@ include('mostrar_selects.php');
                 </div>
                 <div class="form-group ">
                     <input type="submit" name="submit" value="Guardar" class="btn btn-danger btn-lg btn-block login-button"></input>
-                </div>               
+                </div> 
+                
             </form>
         </div>
+        <div class="espaibot"></div>
     </div>
 </div>
 

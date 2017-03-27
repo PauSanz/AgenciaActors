@@ -1,13 +1,12 @@
-<div class="container marginb">
+<div class="container fonsdirector">
     <div class="row main">
         <div class="panel-heading">
             <div class="panel-title text-center">
-                <h1 class="title">Director</h1>
-                <hr/>
+                <h1 class="title">Director</h1>               
             </div>
         </div> 
         <div class="main-login main-center">
-            <form class="form-horizontal" method="post" action="#">
+            <form class="form-horizontal" method="post" action="?ctl=director&act=afegir">
 
                 <div class="form-group">
                     <label for="nif" class="cols-sm-2 control-label">Nif</label>
@@ -48,11 +47,12 @@
                     </div>
                 </div>
 
-                <div class="form-group ">
-                    <button type="button" class="btn btn-danger btn-lg btn-block login-button">Guardar</button>
+                 <div class="form-group ">
+                    <input type="submit" name="submit" value="Guardar" class="btn btn-danger btn-lg btn-block login-button"></input>
                 </div>               
             </form>
         </div>
+        <div class="espaibot"></div>
     </div>
 </div>
 

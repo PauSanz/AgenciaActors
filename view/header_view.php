@@ -43,8 +43,8 @@
                         </li>
                         <?php drawAddMenu() ?>
                         <li class="login_action"><a id="login_action" href="?ctl=session&act=check"></a></li>
-
-                        <li class="login_user"><a id="login_user"></a></li>                                           
+                        
+                        <li class="login_user colorlink"><a id="login_user"></a></li>                                           
                     </ul>
                 </div>               
             </div>          
