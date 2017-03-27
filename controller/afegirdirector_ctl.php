@@ -14,10 +14,17 @@ require_once("config/db.inc.php");
 $msg = null;
 try {
     if (isset($_POST['submit'])) {
-
-        $director = new director(addslashes($_POST['nif']), addslashes($_POST['nom']), addslashes($_POST['cognom']), addslashes($_POST['genere']), addslashes($_POST['file1']));
-        $director->inserirDirector();
-        $msg = "Dades introduides correctament!!";
+        $director = new director(addslashes($_POST['nif']), addslashes($_POST['nom']), addslashes($_POST['cognom']), addslashes($_POST['file1']));
+        //$director->inserirDirector();
+        
+        $res = $director->inserirDirector();
+          if($res->getOk()){
+          $msg = "Dades introduides correctament!!";
+          }else{
+          $msg = "Error ".$res->getMsg();
+          }
+          
+        
     } else {
         $msg = "Acces denegat";
     }

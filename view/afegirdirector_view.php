@@ -13,7 +13,7 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-id-card fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="nif" id="name"  placeholder="Nif"/>
+                            <input type="text" class="form-control" name="nif" id="nif"  placeholder="Nif"/>
                         </div>
                     </div>
                 </div>
@@ -23,7 +23,7 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="nom" id="email"  placeholder="Nom"/>
+                            <input type="text" class="form-control" name="nom" id="nom"  placeholder="Nom"/>
                         </div>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="cognom" id="username"  placeholder="Cognom"/>
+                            <input type="text" class="form-control" name="cognom" id="cognom"  placeholder="Cognom"/>
                         </div>
                     </div>
                 </div>            
