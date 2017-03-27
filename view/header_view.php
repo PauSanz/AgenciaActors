@@ -35,13 +35,13 @@
                         <li>
                             <a href="?ctl=home">Home</a>
                         </li>
-                         <li>
+                        <li>
                             <a href="?ctl=pelicula&act=llista">Pel·licules</a>
                         </li>
                         <li>
                             <a href="?ctl=actor&act=llista">Actors</a>
                         </li>
-                         <li>
+                        <li>
                             <a href="?ctl=director&act=llista">Directors</a>
                         </li>
                         <li>
@@ -49,25 +49,10 @@
                         </li>
                         <?php drawAddMenu() ?>
                         <li class="login_action"><a id="login_action" href="?ctl=session&act=check"></a></li>
-                        
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        <li class="login_user"><a id="login_user"></a></li>                                           
-=======
-                        <li id="login_user"></li>                                           
->>>>>>> master
-=======
-                        <li class="login_user"><a id="login_user"></a></li>                                           
->>>>>>> master
-=======
+
                         <li class="login_user colorlink"><a id="login_user"></a></li>                                           
->>>>>>> master
+
                     </ul>
                 </div>               
-            </div>          
-<<<<<<< HEAD
+            </div> 
         </nav>
-=======
-        </nav>
->>>>>>> master
