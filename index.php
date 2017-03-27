@@ -29,6 +29,9 @@ switch ($ctl) {
             case "eliminar":
                 include "controller/eliminardirector_ctl.php";
                 break;
+            case "llista":
+                include "controller/llistadirectors_ctl.php";
+                break;
             default:
                 break;
         }
@@ -44,6 +47,9 @@ switch ($ctl) {
             case "eliminar":
                 include "controller/eliminarpelicula_ctl.php";
                 break;
+            case "llista":
+                include "controller/llistapeliculas_ctl.php";
+                break;
             default:
                 break;
         }
@@ -56,8 +62,12 @@ switch ($ctl) {
             case "modificar":
                 include "controller/modificaractor_ctl.php";
                 break;
+            
             case "eliminar":
                 include "controller/eliminaractor_ctl.php";
+                break;
+            case "llista":
+                include "controller/llistaactors_ctl.php";
                 break;
         }
         break;
@@ -71,6 +81,9 @@ switch ($ctl) {
                 break;
             case "eliminar":
                 include "controller/eliminarpaper_ctl.php";
+                break;
+            case "llista":
+                include "controller/llistapapers_ctl.php";
                 break;
         }
         break;

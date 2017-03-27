@@ -68,6 +68,8 @@ class db implements interface_db {
     public function consulta($query) {
         $con = $this->connect();
         $resultat = mysqli_query($con, $query) or die('Error, query failed: ' . $this->error());
+
+
         return $resultat;
     }
 
@@ -88,7 +90,7 @@ class db implements interface_db {
         $consulta = mysqli_query($con, $query) or die('Error, query failed: ' . $this->error());
         $cont = 0;
         while ($row = mysqli_fetch_array($consulta)) {
-            $actor = new actor($row["Nif"], $row["Nom"], $row["Cognom"], $row["Genere"], $row["Foto"]);
+            $actor = new actor($row["nif"], $row["nom"], $row["cognom"], $row["genere"], $row["foto"]);
             $arrayActors[$cont] = $actor;
             $cont++;
         }

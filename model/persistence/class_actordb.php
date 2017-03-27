@@ -7,7 +7,7 @@ require_once("config/db.inc.php");
 class actordb {
 
     public function inserir($actor) {       
-        $query = "insert into actor values('" . $actor->getNif() . "', '" . $actor->getNom() . "', '" . $actor->getCognom() . "', '" . $actor->getGenere().  "', 'images/actor/" . $actor->getFoto() . "');";        
+        $query = "insert into actor values('" . $actor->getNif() . "', '" . $actor->getNom() . "', '" . $actor->getCognom() . "', '" . $actor->getGenere().  "', '/images/actor/" . $actor->getFoto() . "');";        
         $con = new db();
         $con->consulta($query);
         $con->close();
@@ -32,5 +32,13 @@ class actordb {
     public function comprobardadesActor($actor) {
         
     }
+    
+//    public function mostrar() {
+//        $query="SELECT * FROM actor;";				
+//		$con = new db();
+//		$arraydeActors = $con->rebreActors($query);
+//		$con->close();
+//		return $arraydeActors;		
+//    }
 
 }

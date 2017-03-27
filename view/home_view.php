@@ -9,14 +9,14 @@
 
     <div class="carousel-inner">
         <div class="item active">
-            <a href="#"><img src="view/images/imatgecarousel.jpg" /></a>            
+            <a href="#"><img src="view/images/home/carousel1.jpg" class="img-responsive"/></a>            
         </div>       
         <div class="item">
-            <a href="#"><img src="view/images/imatgecarousel.jpg" /></a>
+            <a href="#"><img src="view/images/home/carousel1.jpg" class="img-responsive"/></a>
           
         </div>
         <div class="item">
-            <a href="#"><img src="view/images/imatgecarousel.jpg" /></a>            
+            <a href="#"><img src="view/images/home/carousel1.jpg" class="img-responsive"/></a>            
         </div>
     </div>
 
@@ -34,39 +34,44 @@
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">
-                Welcome to Modern Business
+                Benvingut a l'Agencia d'Actors
             </h1>
         </div>
         <div class="col-md-4">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4><i class="fa fa-fw fa-check"></i> Bootstrap v3.3.7</h4>
+                <div class="panel-heading1">
+                    <h4><i class="fa fa-fw fa-play-circle"></i> Noticies i Actualitat</h4>
                 </div>
                 <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                    <a href="#" class="btn btn-default">Learn More</a>
+                    <p>Tota l'actualitat del mon del cinema al teu avast.Informat de totes les novetats
+                    i estigues al dia de les noves estrenes.Si vols estar al dia de les noves estrenes i totes les noticies referents al mon del cinema, aquesta es la teva web.
+                    </p>
+                  
                 </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4><i class="fa fa-fw fa-gift"></i> Free &amp; Open Source</h4>
+                <div class="panel-heading1">
+                    <h4><i class="fa fa-fw fa-stop-circle"></i>Llistat de Pel·licules</h4>
                 </div>
                 <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                    <a href="#" class="btn btn-default">Learn More</a>
+                    <p>Vols coneixer alguna pel·licula en concret? Ets un indecis i no saps quina escollir?
+                    No et preocupis, aqui podras consultar tota la informacio que necessitis per gaudir d'una bona pel·licula amb els teus.
+                    </p>
+                   
                 </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4><i class="fa fa-fw fa-compass"></i> Easy to Use</h4>
+                <div class="panel-heading1">
+                    <h4><i class="fa fa-fw fa-pause-circle"></i>Llistat Actors i Directors</h4>
                 </div>
                 <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                    <a href="#" class="btn btn-default">Learn More</a>
+                    <p>T'ha impresionat el director d'aquesta pel·licula que has descobert avui ? Et pasa el mateix amb aquell actor?
+                    Vols descobrir mes dels seus treballs ? Deixa de buscar,aqui trobaras tota la informacio que necessites.
+                    </p>                   
                 </div>
             </div>
         </div>
@@ -78,33 +83,33 @@
             <h2 class="page-header">Properes estrenes</h2>
         </div>
         <div class="col-md-4 col-sm-6">
-            <a href="portfolio-item.html">
-                <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+            <a href="#">
+                <img class="img-responsive img-portfolio img-hover" src="view/images/home/peli1.png" alt="">
             </a>
         </div>
         <div class="col-md-4 col-sm-6">
-            <a href="portfolio-item.html">
-                <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+            <a href="#">
+                <img class="img-responsive img-portfolio img-hover" src="view/images/home/peli2.png" alt="">
             </a>
         </div>
         <div class="col-md-4 col-sm-6">
-            <a href="portfolio-item.html">
-                <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+            <a href="#">
+                <img class="img-responsive img-portfolio img-hover" src="view/images/home/peli3.png" alt="">
             </a>
         </div>
         <div class="col-md-4 col-sm-6">
-            <a href="portfolio-item.html">
-                <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+            <a href="#">
+                <img class="img-responsive img-portfolio img-hover" src="view/images/home/peli4.png" alt="">
             </a>
         </div>
         <div class="col-md-4 col-sm-6">
-            <a href="portfolio-item.html">
-                <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+            <a href="#">
+                <img class="img-responsive img-portfolio img-hover" src="view/images/home/peli5.png" alt="">
             </a>
         </div>
         <div class="col-md-4 col-sm-6">
-            <a href="portfolio-item.html">
-                <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+            <a href="#">
+                <img class="img-responsive img-portfolio img-hover" src="view/images/home/peli6.png" alt="">
             </a>
         </div>
     </div>
@@ -113,38 +118,27 @@
     <!-- Features Section -->
     <div class="row">
         <div class="col-lg-12">
-            <h2 class="page-header">Modern Business Features</h2>
+            <h2 class="page-header">Cinema Festival</h2>
         </div>
         <div class="col-md-6">
-            <p>The Modern Business template by Start Bootstrap includes:</p>
+            <p>Primera edicio del Festival de Cinema:</p>
             <ul>
-                <li><strong>Bootstrap v3.3.7</strong>
+                <li><strong>Projeccions amb nova tecnologia 7D</strong>
                 </li>
-                <li>jQuery v1.11.1</li>
-                <li>Font Awesome v4.2.0</li>
-                <li>Working PHP contact form with validation</li>
-                <li>Unstyled page elements for easy customization</li>
-                <li>17 HTML pages</li>
+                <li>Premieres exclusives</li>              
+                <li>Fan meeting academia d'actors EU</li>
+                <li>Projeccions cinema llengua extrangera</li>
+                <li>Entrega Premis 2017</li>
+                <li>Festa CF 2017</li>
             </ul>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
+            <p>Durant el festival,rebrem la visita de diversos actors i actrius del mon del cinema, tan a nivell nacional com internacional.</p>
         </div>
         <div class="col-md-6">
-            <img class="img-responsive" src="http://placehold.it/700x450" alt="">
+            <img class="img-responsive" src="view/images/home/festivalcinema.png" alt="">
         </div>
     </div>
     <!-- /.row -->
     <hr>
 
-    <!-- Call to Action Section -->
-    <div class="well">
-        <div class="row">
-            <div class="col-md-8">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
-            </div>
-            <div class="col-md-4">
-                <a class="btn btn-lg btn-default btn-block" href="#">Call to Action</a>
-            </div>
-        </div>
-    </div>
-    <hr>        
+          
 </div>

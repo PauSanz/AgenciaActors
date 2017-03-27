@@ -70,7 +70,7 @@ class director {
           }
          */
     }
-
+    
     public function cercarPerNifDirector($nif) {
         $directorDb = new directorDb();
         return $directorDb->cercarPerNif($nif);

@@ -72,5 +72,7 @@ class actor {
         $actorDb = new actordb();
         $actorDb->modificar($old_nif, $this);
     }
+    
+
 
 }

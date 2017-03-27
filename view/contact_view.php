@@ -71,7 +71,6 @@
                     <a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
                 </li>
             </ul>
-            
         </div> 
     </div>
 </div>

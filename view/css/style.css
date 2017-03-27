@@ -8,9 +8,6 @@ and open the template in the editor.
     Author     : oriol
 */
 
-#containerLogin{
-    margin-top: 100px;
-}
 
 #login_user a{
     color: #9d9d9d;
@@ -117,6 +114,7 @@ and open the template in the editor.
 #myFooter .btn {
     color: white;
     background-color: #b63926;
+    font-weight: bold;
     border-radius: 20px;
     border: none;
     width: 150px;
@@ -160,7 +158,15 @@ body{
 }
 
 .carousel .item {
-    height: 300px;
+    height: 300px;  
+
+}
+
+
+@media (max-width: 768px){
+    .carousel .item {
+        max-height: 150px;
+    }
 }
 
 .item img {
@@ -410,6 +416,7 @@ input[type="radio"]:checked ~ label {
     background-image: url("../images/lord.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    width:100%;
 }
 
 /*Fons afegir Actor*/
@@ -417,6 +424,7 @@ input[type="radio"]:checked ~ label {
     background-image: url("../images/star.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    width:100%;
 }
 
 /*Fons afegir Actor*/
@@ -424,9 +432,40 @@ input[type="radio"]:checked ~ label {
     background-image: url("../images/lord2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    width:100%;
 }
 
 /*Espai bot al form*/
 .espaibot{
     margin-bottom: 80px;
+}
+
+/*Logo Footer*/
+.logo{
+    width:150px;
+    height: 150px;
+}
+/*Color box home*/
+
+
+.panel-heading1{
+    background-color: #b63926 !important;
+    color:#fff !important;
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+
+
+/*Fons contactform*/
+.fonscontact{
+    background-image: url("../images/contacte/Film.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;  
+
+}
+.fonscontact img {
+    width: 100%;     
 }
