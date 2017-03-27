@@ -10,8 +10,7 @@ function mostrarDirectors() {
     //ARRAY
     
     $agencia = new agencia("ASDF");
-    $arrayDirectors = $agencia->rebreDirectors();
-    
+    $arrayDirectors = $agencia->rebreDirectors();   
     echo "<select name='idDirector'>";
     foreach ($arrayDirectors as $director) {
         echo "<option value='" . $director->getNif() . "'>" . $director->getNom() . " " . $director->getCognom() . "</option>";

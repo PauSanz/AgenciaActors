@@ -34,12 +34,18 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a href="?ctl=home">Home</a>
+                        </li>                        
+                        <li>
+                            <a href="?ctl=llistaactors">Pel·licules</a>
                         </li>
                         <li>
-                            <a href="?ctl=llistaactors">Llistat actors</a>
+                            <a href="?ctl=llistaactors">Actors</a>
                         </li>
                         <li>
-                            <a href="?ctl=contact">Contact</a>
+                            <a href="?ctl=llistaactors">Directors</a>
+                        </li>
+                        <li>
+                            <a href="?ctl=contact">Contacte</a>
                         </li>
                         <?php drawAddMenu()?> 
                         <li class="login_action"><a id="login_action" href="?ctl=session&act=check"></a></li>
@@ -50,4 +56,4 @@
             </div>          
         </nav>        
         
-Contact GitHub API Training Shop Blog About
+

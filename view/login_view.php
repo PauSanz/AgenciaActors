@@ -1,9 +1,9 @@
-<div id="containerLogin" class="login-page">
+<div id="containerLogin" class="login-page fonslogin">
     <div class="form">
         <form class="register-form" >
-            <input type="text" placeholder="nom " name="user"/>
-            <input id="password1" type="password" placeholder="contrasenya" name="password1"/>
-            <input id="password2" type="password" placeholder="confirma contrasenya" name="password2"/>
+            <input type="text" placeholder="Nom " name="user"/>
+            <input id="password1" type="password" placeholder="Contrasenya" name="password1"/>
+            <input id="password2" type="password" placeholder="Confirma contrasenya" name="password2"/>
              <div id="message"></div>
             <input type="submit" class="button" value="Crear usuari"></input> <!--  input submit-->
             <p class="message">Ja estàs registrat? <a href="#">Cancelar</a></p>

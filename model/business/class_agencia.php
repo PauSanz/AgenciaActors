@@ -23,7 +23,11 @@ class agencia {
         $agenciadb = new agenciadb();
         return $agenciadb->obtenirTotsDirectors();
     }
-
+    
+    public function rebreActors() {
+        $agenciadb = new agenciadb();
+        return $agenciadb->obtenirTotsActors();
+    }    
 }
 
 ?>
