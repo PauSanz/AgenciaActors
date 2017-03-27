@@ -49,14 +49,14 @@ class director {
     }
 
     public function inserirDirector() {
-        $v = $this->validaDirector();
+        $v = $this->validaDirector(false);
 
-        if ($v->ok) {
+        if ($v->getOk()) {
             $directorDb = new directorDb();
             $r = $directorDb->inserir($this);
-            if ($r != 1) {
-                $v->ok = false;
-                $v->msg = "Fallo al inserir el director en la base de dades.";
+            if ($r == false) {
+                $v->setOk(false);
+                $v->setMsg("Fallo al inserir el director en la base de dades.");
             }
         }
 
@@ -79,15 +79,15 @@ class director {
     public function modificarDirector($old_nif) {
         //UPDATE `director` SET `Nif`='47838294K',`Nom`='Steven',`Cognom`='Spielberg',`Foto`='images/director/Spielberg.jpg' WHERE nif='46573829H'
 
-        $v = $this->validaDirector();
+        $v = $this->validaDirector(true);
 
-        if ($v->ok) {
+        if ($v->getOk()) {
             $directorDb = new directorDb();
             $r = $directorDb->modificar($old_nif, $this);
             if ($r != 1) {
 
-                $v->ok = false;
-                $v->msg = "Fallo al modificar el director en la base de dades.";
+                $v->setOk(false);
+                $v->setMsg("Fallo al modificar el director en la base de dades.");
             }
         }
 
@@ -102,17 +102,26 @@ class director {
 
         if ($r != 1) {
 
-            $v->ok = false;
-            $v->msg = "Fallo al eliminar el director en la base de dades.";
+            $v->setOk(false);
+            $v->setMsg("Fallo al eliminar el director en la base de dades.");
         }
 
         return $v;
     }
 
-    public function validaDirector() {
-        //$v = new Validar();
-        //$v->validar
-        //return $v;
+    public function validaDirector($modificant) {
+        $v = new Validar();
+        $v->validarCampBuit($this->getNif());
+        $v->validarCampBuit($this->getNom()); 
+        $v->validarCampBuit($this->getCognom());
+        $v->validarDNI($this->getNif());
+        $v->stringSenseNumeros($this->getNom()); 
+        $v->stringSenseNumeros($this->getCognom());
+        if(!$modificant){
+            $v->directorDuplicat($this->getNif());
+        }
+        
+        return $v;
     }
 
 }
