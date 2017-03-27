@@ -10,7 +10,7 @@ function drawAddMenu(){
 			        <a href="?ctl=afegirpelicula">Afegir Pel·licula</a>
 			    </li>
 			    <li>
-			        <a href="?ctl=altaactor">Afegir Actor</a>
+			        <a href="?ctl=afegiractor">Afegir Actor</a>
 			    </li>
 			    <li>
 			        <a href="?ctl=afegirdirector">Afegir Director</a>

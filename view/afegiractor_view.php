@@ -6,7 +6,7 @@
     </div> 
     <div class="row main">
         <div class="main-login main-center">
-            <form class="form-horizontal" method="post" action="?ctl=afegiractor">
+            <form class="form-horizontal" method="post" action="?ctl=actor&act=afegir" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="nif" class="cols-sm-2 control-label">Nif</label>
                     <div class="cols-sm-10">

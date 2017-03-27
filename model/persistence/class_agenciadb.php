@@ -17,7 +17,7 @@ class agenciadb {
     public function obtenirTotsActors() {
         $query = "SELECT * FROM actor;";
         $con = new db();
-        $arrayDeActors = $con->consulta($query); //rebreActors
+        $arrayDeActors = $con->rebreActors($query); //Consultar PDO
         $con->close();
         return $arrayDeActors;
     }
