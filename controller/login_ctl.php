@@ -8,7 +8,7 @@ require_once("config/db.inc.php");
 if (isset($_POST['user']) && isset($_POST['password'])) {
     $name = $_POST['user'];
     $password = $_POST['password'];
-    $user = new user($name, $password);
+    $user = new user(null, $name, $password);
     //if($user->validate()->getOk()){
     $x = $user->checkUser();
     if ($x != null) {
