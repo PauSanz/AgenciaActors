@@ -50,8 +50,24 @@
                         <?php drawAddMenu() ?>
                         <li class="login_action"><a id="login_action" href="?ctl=session&act=check"></a></li>
                         
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                        <li class="login_user"><a id="login_user"></a></li>                                           
+=======
+                        <li id="login_user"></li>                                           
+>>>>>>> master
+=======
+                        <li class="login_user"><a id="login_user"></a></li>                                           
+>>>>>>> master
+=======
                         <li class="login_user colorlink"><a id="login_user"></a></li>                                           
+>>>>>>> master
                     </ul>
                 </div>               
             </div>          
+<<<<<<< HEAD
         </nav>
+=======
+        </nav>
+>>>>>>> master

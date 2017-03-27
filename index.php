@@ -2,9 +2,9 @@
 
 session_start();
 
-if (!isset ($_SESSION['login'])){
-    $_SESSION['login']=false;
-    $_SESSION['user']="";
+if (!isset($_SESSION['login'])) {
+    $_SESSION['login'] = false;
+    $_SESSION['user'] = "";
 }
 $ctl = "home";
 
@@ -102,6 +102,14 @@ switch ($ctl) {
                 break;
         }
         break;
+    case "user":
+        switch ($act) {
+            case 'add':
+                include 'controller/addUser_ctl.php';
+                break;
+            default:
+                break;
+        }
     case "login":
         switch ($act) {
             case "form":
