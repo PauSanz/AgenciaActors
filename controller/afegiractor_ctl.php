@@ -1,5 +1,5 @@
 <?php
-
+include 'emmagatzemarFoto.php';
 require_once ('view/header_view.php');
 require_once ('view/afegiractor_view.php');
 require_once ('view/footer_view.php');
@@ -15,7 +15,8 @@ $msg = null;
 try {
     
     if (isset($_POST['submit'])) {
-        $actor = new actor(addslashes($_POST['nif']), addslashes($_POST['nom']), addslashes($_POST['cognom']), addslashes($_POST['genere']), addslashes($_POST['file1']));        
+        guardarImatge("actor");
+        $actor = new actor(addslashes($_POST['nif']), addslashes($_POST['nom']), addslashes($_POST['cognom']), addslashes($_POST['genere']), addslashes($_FILES['file1']['name']));        
         $actor->inserirActor();
         $msg = "Dades introduides correctament!!";
     } else {

@@ -8,8 +8,8 @@ class user {
     private $name;
     private $password;
 
-    public function __construct($name, $password) {
-        $this->setId(null);
+    public function __construct($id, $name, $password) {
+        $this->setId($id);
         $this->setName($name);
         $this->setPassword($password);
     }
@@ -40,7 +40,7 @@ class user {
 
     public function addUser() {
         $userDb = new userdb();
-        $userDb->add($this);
+        $userDb->adduser($this);
     }
 
     public function checkUser() {
