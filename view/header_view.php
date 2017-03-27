@@ -34,26 +34,24 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a href="?ctl=home">Home</a>
-                        </li>                        
-                        <li>
-                            <a href="?ctl=llistaactors">Pel·licules</a>
+                        </li>
+                         <li>
+                            <a href="?ctl=pelicula&act=llista">Pel·licules</a>
                         </li>
                         <li>
-                            <a href="?ctl=llistaactors">Actors</a>
+                            <a href="?ctl=actor&act=llista">Actors</a>
+                        </li>
+                         <li>
+                            <a href="?ctl=director&act=llista">Directors</a>
                         </li>
                         <li>
-                            <a href="?ctl=llistaactors">Directors</a>
+                            <a href="?ctl=contact">Contact</a>
                         </li>
-                        <li>
-                            <a href="?ctl=contact">Contacte</a>
-                        </li>
-                        <?php drawAddMenu()?> 
+                        <?php drawAddMenu() ?>
                         <li class="login_action"><a id="login_action" href="?ctl=session&act=check"></a></li>
                         
                         <li class="login_user colorlink"><a id="login_user"></a></li>                                           
                     </ul>
                 </div>               
             </div>          
-        </nav>        
-        
-
+        </nav>
