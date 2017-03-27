@@ -41,9 +41,10 @@
                         <li>
                             <a href="?ctl=contact">Contact</a>
                         </li>
-                        <?php drawAddMenu()?> 
+                        <?php drawAddMenu() ?>
                         <li class="login_action"><a id="login_action" href="?ctl=session&act=check"></a></li>
                         
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                         <li class="login_user"><a id="login_user"></a></li>                                           
@@ -53,9 +54,10 @@
 =======
                         <li class="login_user"><a id="login_user"></a></li>                                           
 >>>>>>> master
+=======
+                        <li class="login_user colorlink"><a id="login_user"></a></li>                                           
+>>>>>>> master
                     </ul>
                 </div>               
             </div>          
-        </nav>        
-        
-Contact GitHub API Training Shop Blog About
+        </nav>

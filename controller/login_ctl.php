@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> master
 require_once("controller/autoload_ctl.php"); 	
@@ -13,17 +14,25 @@ require_once("controller/function_AutoLoad.php");
 =======
 require_once("controller/function_AutoLoad.php"); 	
 >>>>>>> master
+=======
+
+require_once("controller/function_AutoLoad.php");
+>>>>>>> master
 require_once("cookie_ctl.php");
 require_once("config/config.inc.php");
 require_once("config/db.inc.php");
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 if (isset($_POST['user']) && isset($_POST['password'])) {
     $name = $_POST['user'];
     $password = $_POST['password'];
     $user = new user($name, $password);
     //if($user->validate()->getOk()){
     $x = $user->checkUser();
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 	if($x != null){
@@ -92,10 +101,13 @@ if(isset($_POST['user']) && isset($_POST['password'])){
 >>>>>>> master
 }
 =======
+=======
+>>>>>>> master
     if ($x != null) {
         createcookie('user', $x);
         header("location:  ./index.php");
     } else {
+<<<<<<< HEAD
 >>>>>>> master
 =======
 if(isset($_POST['user']) && isset($_POST['password'])){
@@ -105,15 +117,13 @@ if(isset($_POST['user']) && isset($_POST['password'])){
 	//if($user->validate()->getOk()){
 	$x=$user->checkUser();
 >>>>>>> master
+=======
+>>>>>>> master
 
-	if($x != null){
-		createcookie('user', $x);
-		header("location:  ./index.php");
-	}else{
-		
-		header("location:  ./index.php?ctl=login&act=form&msg=Usuari inexistent o contrasenya invàlida.");
-	}
-}else{
-	header("location:  ./index.php");
+        header("location:  ./index.php?ctl=login&act=form&msg=Usuari inexistent o contrasenya invàlida.");
+    }
+} else {
+    header("location:  ./index.php");
 }
+?>
 
