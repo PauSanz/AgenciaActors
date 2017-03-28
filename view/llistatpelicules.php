@@ -2,18 +2,17 @@
 //session_start();
 require_once("controller/function_AutoLoad.php");
 
-function mostrarActors() {
+function mostrarPelis() {
     $agencia = new agencia("agen");
-    $arrayDeActors = $agencia->rebreActors();
-    
+    $arrayDePelis = $agencia->rebrePelis();
+   
     echo "<div>";
-    foreach ($arrayDeActors as $data) {
+    foreach ($arrayDePelis as $data) {
         echo"<div class='col-md-3 col-sm-6'>";
         echo"<div class='panel panel-default text-center'>";
         echo"<div class='panel-heading2'>";
         echo"<span class='fa-stack fa-5x'>";
-        $imatge ="<img class='rodona'heigh ='150px' width='150px' src='view";
-//        $idact= $data->getNif();
+        $imatge ="<img class='rodona'heigh ='150px' width='150px' src='view/";
         $foto = $data->getFoto();
         $pathphoto = $imatge . $foto . "'>";
         echo $pathphoto;
@@ -24,7 +23,7 @@ function mostrarActors() {
         echo $data->getNom();
         echo"</h4>";
         echo"<p class='lletrablanca'>";
-        echo $data->getCognom();
+        echo $data->getTipus();
         echo"</p>";
         echo"<div class='row'>";
         echo"<div class='col-lg-4'>";

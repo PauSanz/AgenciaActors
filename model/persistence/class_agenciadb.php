@@ -33,7 +33,7 @@ class agenciadb {
     public function obtenirTotesPelicules() {
         $query = "SELECT * FROM pelicula;";
         $con = new db();
-        $arrayDePelis = $con->consulta($query); //Consultar PDO
+        $arrayDePelis = $con->rebrePelicules($query);
         $con->close();
         return $arrayDePelis;
     }
