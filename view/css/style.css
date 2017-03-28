@@ -8,7 +8,6 @@ and open the template in the editor.
     Author     : oriol
 */
 
-
 #login_user a{
     color: #9d9d9d;
 }
@@ -468,4 +467,43 @@ input[type="radio"]:checked ~ label {
 }
 .fonscontact img {
     width: 100%;     
+}
+
+/*Estil imatges*/
+.rodona { 
+ width: 150px; height: 150px; border-radius: 150px;
+ -webkit-border-radius: 150px; -moz-border-radius: 150px; 
+ background: url(http://www.tublog.com/tuimagen.jpg) no-repeat; 
+}
+
+.panel-heading2{
+    background-color: #f6ddcc ;
+    color:#fff !important;
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+/*Estils llista actor divs + buttons*/
+.panel-danger{
+    background-color: #b63926;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    padding-bottom: 20px;
+}
+
+.btn-actor{
+    background-color: white;
+    color:black;
+    font-weight: bold;
+}
+
+.lletrablanca{
+    color:#fff;
+    font-weight: bold;
+}
+
+a .colorwhite {
+    color:white;
 }

@@ -48,7 +48,7 @@ switch ($ctl) {
                 include "controller/eliminarpelicula_ctl.php";
                 break;
             case "llista":
-                include "controller/llistapeliculas_ctl.php";
+                include "controller/llistapelicules_ctl.php";
                 break;
             default:
                 break;
