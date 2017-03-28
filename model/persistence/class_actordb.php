@@ -9,8 +9,10 @@ class actordb {
     public function inserir($actor) {       
         $query = "insert into actor values('" . $actor->getNif() . "', '" . $actor->getNom() . "', '" . $actor->getCognom() . "', '" . $actor->getGenere().  "', '/images/actor/" . $actor->getFoto() . "');";        
         $con = new db();
-        $con->consulta($query);
+        $actorAux = $con->consulta($query);
         $con->close();
+        
+        return $actorAux;
     }
 
     public function cercarPerNif($nif) {
@@ -25,8 +27,10 @@ class actordb {
     public function modificar($old_nif, $actor) {
         $query = "UPDATE `actor` SET `nif`='" . $actor->getNif() . "',`nom`='" . $actor->getNom() . "',`cognom`='" . $actor->getCognom() . "',`foto`='" . $actor->getFoto() . "' WHERE nif='" . $old_nif . "';";
         $con = new db();
-        $con->consulta($query);
+        $actorAux = $con->consulta($query);
         $con->close();
+        
+        return $actorAux;
     }
 
     public function comprobardadesActor($actor) {
