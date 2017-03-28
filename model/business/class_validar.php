@@ -60,8 +60,17 @@ class validar {
     public function validarData($date) {
 
         if ($this->ok) {
-            $this->ok = checkdate($date->format("d"), $date->format("m"), $date->format("Y"));
-            $this->msg = "La data introduïda no és correcte.";
+            try {
+                $auxDate = explode("/", $date);
+                if (!checkdate($auxDate[0], $auxDate[1], $auxDate[2])) { //month,day,year
+                    $this->msg = "La data introduïda no és correcte.";
+                }
+            } catch (Exception $exc) {
+                $this->msg = "La data introduïda no és correcte.";
+            }
+
+            /* $this->ok = checkdate($date->format("d"), $date->format("m"), $date->format("Y"));
+              $this->msg = "La data introduïda no és correcte."; */
         }
         //checkDate(30, 02, 2000);
     }
@@ -103,12 +112,12 @@ class validar {
             $split = str_split($str);
 
             for ($i = 0; $i < count($split); ++$i) {
-                if(is_numeric($split[$i])){
+                if (is_numeric($split[$i])) {
                     $valid = false;
                 }
             }
 
-            if ($valid==false) {
+            if ($valid == false) {
                 $this->ok = false;
                 $this->msg = "El camp no pot contenir números.";
             }
