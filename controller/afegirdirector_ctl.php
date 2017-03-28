@@ -17,14 +17,19 @@ $msg = null;
 try {
     if (isset($_POST['submit'])) {
         $imgNeta = guardarImatge("director");
-        $director = new director(addslashes($_POST['nif']), addslashes($_POST['nom']), addslashes($_POST['cognom']), addslashes($imgNeta));
-        $res = $director->inserirDirector();
+        if (strlen($imgNeta) > 0) {
+            $director = new director(addslashes($_POST['nif']), addslashes($_POST['nom']), addslashes($_POST['cognom']), addslashes($imgNeta));
+            $res = $director->inserirDirector();
 
-        if ($res->getOk()) {
-            $msg = "Dades introduides correctament!!";
-            echo "<script type='text/javascript'>alert('$msg');</script>";
+            if ($res->getOk()) {
+                $msg = "Dades introduides correctament!!";
+                echo "<script type='text/javascript'>alert('$msg');</script>";
+            } else {
+                $msg = "Error: " . $res->getMsg();
+                echo "<script type='text/javascript'>alert('$msg');</script>";
+            }
         } else {
-            $msg = "Error: " . $res->getMsg();
+            $msg = "Error: " . "La imatge seleccionada no es valida.";
             echo "<script type='text/javascript'>alert('$msg');</script>";
         }
     } else {

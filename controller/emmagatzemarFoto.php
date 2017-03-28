@@ -12,11 +12,11 @@ function guardarImatge($subcarpeta) {
     $temporary = explode(".", $_FILES["file1"]["name"]);
     $file_extension = end($temporary);
 
-    $nomImatgeSenseExtensio = $temporary[0];
+    //$nomImatgeSenseExtensio = $temporary[0];
 
-    $imgNeta = limpiarStringDeCaracters($nomImatgeSenseExtensio);
+    $imgNeta = limpiarStringDeCaracters($imgSenseBlancs);
 
-    $imgDefinitivamentNet = $imgNeta . '.' . $file_extension;
+    $imgDefinitivamentNet = $imgNeta;
 
     $rutaDesti = $_SERVER['DOCUMENT_ROOT'] . "/AgenciaActors/view/images/" . $subcarpeta . "/" . $imgDefinitivamentNet;
 
@@ -27,8 +27,9 @@ function guardarImatge($subcarpeta) {
 
         if (!file_exists($rutaDesti)) {
             move_uploaded_file($_FILES["file1"]["tmp_name"], $rutaDesti);
-            return $imgDefinitivamentNet;
+            
         }
+        return $imgDefinitivamentNet;
     }
     
 }
