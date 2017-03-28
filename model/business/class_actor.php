@@ -64,12 +64,12 @@ class actor {
         
         $v = $this->validaActor(false);
 
-        if ($v->ok) {
+        if ($v->getOk()) {
             $actorDb = new actordb();
             $r = $actorDb->inserir($this);
             if ($r != 1) {
-                $v->ok = false;
-                $v->msg = "Fallo al inserir el actor en la base de dades.";
+                $v->getOk() = false;
+                $v->getMsg() = "Fallo al inserir el actor en la base de dades.";
             }
         }
 
@@ -82,40 +82,40 @@ class actor {
     }
 
     public function modificarActor($old_nif) {
-        $actorDb = new actordb();
-        $actorDb->modificar($old_nif, $this);
+        //$actorDb = new actordb();
+        //$actorDb->modificar($old_nif, $this);
         
         $v = $this->validaActor(true);
 
-        if ($v->ok) {
+        if ($v->getOk()) {
             $actorDb = new actorDb();
             $r = $actorDb->modificar($old_nif, $this);
             if ($r != 1) {
-                $v->ok = false;
-                $v->msg = "Fallo al modificar el actor en la base de dades.";
+                $v->getOk() = false;
+                $v->getMsg() = "Fallo al modificar el actor en la base de dades.";
             }
         }
 
         return $v;
     }
     
-    public function eliminarDirector() {
+    public function eliminarActor() {
 
-        $v = new Validar();
-        $directorDb = new directorDb();
-        $r = $directorDb->eliminar($this);
+        $v = new validar();
+        $actorDb = new actorDb();
+        $r = $actorDb->eliminar($this);
 
         if ($r != 1) {
 
-            $v->ok = false;
-            $v->msg = "Fallo al eliminar el actor en la base de dades.";
+            $v->getOk() = false;
+            $v->getMsg() = "Fallo al eliminar el actor en la base de dades.";
         }
 
         return $v;
     }
 
     public function validaActor($modificant) {
-        $v = new Validar();
+        $v = new validar();
         
         $v->validarCampBuit($this->getNif());
         $v->validarCampBuit($this->getNom()); 
@@ -124,7 +124,7 @@ class actor {
         $v->stringSenseNumeros($this->getNom()); 
         $v->stringSenseNumeros($this->getCognom());
         if(!$modificant){
-            $v->directorDuplicat($this->getNif());
+            $v->actorDuplicat($this->getNif());
         }
         
         return $v;
