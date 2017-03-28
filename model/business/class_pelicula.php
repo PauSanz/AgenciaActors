@@ -99,13 +99,72 @@ class pelicula {
 //    }
 
     public function inserirPelicula() {
-        $peliculaDb = new peliculadb();
-        $peliculaDb->inserirPelicula($this);
+        //$peliculaDb = new peliculadb();
+        //$peliculaDb->inserirPelicula($this);
+        
+        $v = $this->validaPelicula();
+
+        if ($v->ok) {
+            $peliculaDb = new peliculaDb();
+            $r = $peliculaDb->inserirPelicula($this);
+            if ($r != 1) {
+                $v->ok = false;
+                $v->msg = "Fallo al inserir la pelicula en la base de dades.";
+            }
+        }
+
+        return $v;
     }
 
     public function esborrarPelicula() {
+        //$peliculaDb = new peliculadb();
+        //$peliculaDb->esborrarPelicula($this);
+        
+        $v = new Validar();
         $peliculaDb = new peliculadb();
-        $peliculaDb->esborrarPelicula($this);
+        $r = $peliculaDb->esborrarPelicula($this);
+
+        if ($r != 1) {
+
+            $v->ok = false;
+            $v->msg = "Fallo al eliminar la pelicula en la base de dades.";
+        }
+
+        return $v;
+        
+    }
+    
+    public function modificarPelicula($old_id){
+        $v = $this->validaPelicula();
+
+        if ($v->ok) {
+            $peliculaDb = new peliculaDb();
+            $r = $peliculaDb->modificarPelicula($old_id, $this);
+            if ($r != 1) {
+
+                $v->ok = false;
+                $v->msg = "Fallo al modificar la pelicula en la base de dades.";
+            }
+        }
+
+        return $v;
+    }
+    
+    public function cercarPerIdPelicula($id) {
+        $peliculaDb = new peliculaDb();
+        return $peliculaDb->cercarPeliPerId($id);
+    }
+    
+    public function validaPelicula(){
+        
+        $v = new Validar();
+        $v->validarCampBuit($this->getNom()); 
+        $v->validarCampBuit($this->getDescripcio());
+        $v->validarCampBuit($this->getTipus());
+        $v->validarDataIniciFinal($this->getDataInici(),$this->getDataFi());
+            
+        return $v;
+        
     }
 
 }

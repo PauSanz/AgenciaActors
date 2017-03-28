@@ -4,7 +4,9 @@ function guardarImatge($subcarpeta) {
     $fotoAGuardar = $_FILES["file1"]["name"];
     
     //Metoda de netejar
+    $imgNeta = str_replace(" ", "_", $fotoAGuardar);
 
+    
     $validextensions = array("jpeg", "jpg", "png");
 
     $temporary = explode(".", $_FILES["file1"]["name"]);
@@ -14,7 +16,7 @@ function guardarImatge($subcarpeta) {
 
 
     if ((($_FILES["file1"]["type"] == "image/png") || ($_FILES["file1"]["type"] == "image/jpg") || ($_FILES["file1"]["type"] == "image/jpeg")
-            ) && ($_FILES["file1"]["size"] < 20000000)//Approx. 100kb files can be uploaded.
+            ) && ($_FILES["file1"]["size"] < 20000000)//Approx. 20MB files can be uploaded.
             && in_array($file_extension, $validextensions)) {
 
         if (!file_exists($rutaDesti)) {
