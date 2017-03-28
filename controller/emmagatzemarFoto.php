@@ -1,6 +1,7 @@
 <?php
 
 function guardarImatge($subcarpeta) {
+   // $fotoAGuardar = $_FILES["file1"]["error"];
     $fotoAGuardar = $_FILES["file1"]["name"];
 
     //Metoda de netejar
@@ -28,7 +29,10 @@ function guardarImatge($subcarpeta) {
         if (!file_exists($rutaDesti)) {
             move_uploaded_file($_FILES["file1"]["tmp_name"], $rutaDesti);
             
-        }
+//        }else{
+//            $msg = "Error: " . "PEPE";
+//            echo "<script type='text/javascript'>alert('$msg');</script>";
+//        }
         return $imgDefinitivamentNet;
     }
     
