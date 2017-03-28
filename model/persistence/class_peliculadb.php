@@ -4,11 +4,11 @@ include_once("controller/function_AutoLoad.php");
 require_once("config/config.inc.php");
 require_once("config/db.inc.php");
 
-class peliculaDb {
+class peliculadb {
 
     public function inserirPelicula($peli) {
 
-        $query = "insert into pelicula values('', '" . $peli->getNom() . "', '" . $peli->getDescripcio() . "', '" . $peli->getTipus() . "', '" . $peli->getDataInici() . "', '" . $peli->getDataFi() . "', '" . $peli->getValoracio() . "', 'images/pelicula/" . $peli->getFoto() . "');";
+        $query = "insert into pelicula values('', '" . $peli->getNom() . "', '" . $peli->getDescripcio() . "', '" . $peli->getTipus() . "', '" . $peli->getDataInici() . "', '" . $peli->getDataFi() . "', '" . $peli->getValoracio() . "', 'images/pelicula/" . $peli->getFoto() . "','".$peli->getIdDirector()."');";
         $con = new db();
         $peliculaAux = $con->consulta($query);
         $con->close();

@@ -96,7 +96,7 @@ class director {
 
     public function eliminarDirector() {
 
-        $v = new Validar();
+        $v = new validar();
         $directorDb = new directorDb();
         $r = $directorDb->eliminar($this);
 
@@ -110,7 +110,7 @@ class director {
     }
 
     public function validaDirector($modificant) {
-        $v = new Validar();
+        $v = new validar();
         $v->validarCampBuit($this->getNif());
         $v->validarCampBuit($this->getNom()); 
         $v->validarCampBuit($this->getCognom());

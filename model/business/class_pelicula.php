@@ -101,15 +101,15 @@ class pelicula {
     public function inserirPelicula() {
         //$peliculaDb = new peliculadb();
         //$peliculaDb->inserirPelicula($this);
-        
+
         $v = $this->validaPelicula();
 
-        if ($v->ok) {
-            $peliculaDb = new peliculaDb();
+        if ($v->getOk()) {
+            $peliculaDb = new peliculadb();
             $r = $peliculaDb->inserirPelicula($this);
             if ($r != 1) {
-                $v->ok = false;
-                $v->msg = "Fallo al inserir la pelicula en la base de dades.";
+                $v->setOk(false);
+                $v->setMsg("Fallo al inserir la pelicula en la base de dades.");
             }
         }
 
@@ -119,52 +119,50 @@ class pelicula {
     public function esborrarPelicula() {
         //$peliculaDb = new peliculadb();
         //$peliculaDb->esborrarPelicula($this);
-        
-        $v = new Validar();
+
+        $v = new validar();
         $peliculaDb = new peliculadb();
         $r = $peliculaDb->esborrarPelicula($this);
 
         if ($r != 1) {
 
-            $v->ok = false;
-            $v->msg = "Fallo al eliminar la pelicula en la base de dades.";
+            $v->setOk(false);
+            $v->setMsg("Fallo al eliminar la pelicula en la base de dades.");
         }
 
         return $v;
-        
     }
-    
-    public function modificarPelicula($old_id){
+
+    public function modificarPelicula($old_id) {
         $v = $this->validaPelicula();
 
-        if ($v->ok) {
-            $peliculaDb = new peliculaDb();
+        if ($v->getOk()) {
+            $peliculaDb = new peliculadb();
             $r = $peliculaDb->modificarPelicula($old_id, $this);
             if ($r != 1) {
 
-                $v->ok = false;
-                $v->msg = "Fallo al modificar la pelicula en la base de dades.";
+                $v->setOk(false);
+                $v->setMsg("Fallo al modificar la pelicula en la base de dades.");
             }
         }
 
         return $v;
     }
-    
+
     public function cercarPerIdPelicula($id) {
-        $peliculaDb = new peliculaDb();
+        $peliculaDb = new peliculadb();
         return $peliculaDb->cercarPeliPerId($id);
     }
-    
-    public function validaPelicula(){
-        
-        $v = new Validar();
-        $v->validarCampBuit($this->getNom()); 
+
+    public function validaPelicula() {
+
+        $v = new validar();
+        $v->validarCampBuit($this->getNom());
         $v->validarCampBuit($this->getDescripcio());
         $v->validarCampBuit($this->getTipus());
-        $v->validarDataIniciFinal($this->getDataInici(),$this->getDataFi());
-            
+        $v->validarDataIniciFinal($this->getDataInici(), $this->getDataFi());
+
         return $v;
-        
     }
 
 }
