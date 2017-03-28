@@ -2,17 +2,23 @@
 
 function guardarImatge($subcarpeta) {
     $fotoAGuardar = $_FILES["file1"]["name"];
-    
-    //Metoda de netejar
-    $imgNeta = str_replace(" ", "_", $fotoAGuardar);
 
-    
+    //Metoda de netejar
+    $imgSenseBlancs = str_replace(" ", "_", $fotoAGuardar);
+
+
     $validextensions = array("jpeg", "jpg", "png");
 
     $temporary = explode(".", $_FILES["file1"]["name"]);
     $file_extension = end($temporary);
 
-    $rutaDesti = $_SERVER['DOCUMENT_ROOT'] . "/AgenciaActors/view/images/" . $subcarpeta . "/" . $fotoAGuardar;
+    $nomImatgeSenseExtensio = $temporary[0];
+
+    $imgNeta = limpiarStringDeCaracters($nomImatgeSenseExtensio);
+
+    $imgDefinitivamentNet = $imgNeta . '.' . $file_extension;
+
+    $rutaDesti = $_SERVER['DOCUMENT_ROOT'] . "/AgenciaActors/view/images/" . $subcarpeta . "/" . $imgDefinitivamentNet;
 
 
     if ((($_FILES["file1"]["type"] == "image/png") || ($_FILES["file1"]["type"] == "image/jpg") || ($_FILES["file1"]["type"] == "image/jpeg")
@@ -21,7 +27,14 @@ function guardarImatge($subcarpeta) {
 
         if (!file_exists($rutaDesti)) {
             move_uploaded_file($_FILES["file1"]["tmp_name"], $rutaDesti);
+            return $imgDefinitivamentNet;
         }
     }
     
+}
+
+function limpiarStringDeCaracters($texto) {
+    $stringSenseHTML = htmlentities($texto);
+    $string = preg_replace('/\&(.)[^;]*;/', '\\1', $stringSenseHTML);
+    return $string;
 }
