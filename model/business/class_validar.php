@@ -29,15 +29,32 @@ class validar {
     }
 
     public function directorDuplicat($nif) {
-        $d = new Director('','','','');
-        $exist = $d->cercarPerNifDirector($nif);
-        
+
+        if ($this->ok) {
+
+            $d = new Director('', '', '', '');
+            $exist = $d->cercarPerNifDirector($nif);
+            if ($exist->num_rows > 0) {
+                $this->ok = false;
+                $this->msg = "Ja existeix un director a la base de dades amb aquest dni";
+            }
+        }
     }
 
-    public function actorDuplicat() {
+    public function actorDuplicat($nif) {
         //$v = new Validar();
         //$v->validar
         //return $v;
+
+        if ($this->ok) {
+
+            $d = new Actor('', '', '', '', '');
+            $exist = $d->cercarPerNifActor($nif);
+            if ($exist->num_rows > 0) {
+                $this->ok = false;
+                $this->msg = "Ja existeix un actor a la base de dades amb aquest dni";
+            }
+        }
     }
 
     public function validarData($date) {
@@ -81,7 +98,17 @@ class validar {
               $this->ok = false;
               $this->msg = "El camp no pot contenir números o caràcters especials.";
               } */
-            if (!is_numeric($str)) {
+
+            $valid = true;
+            $split = str_split($str);
+
+            for ($i = 0; $i < count($split); ++$i) {
+                if(is_numeric($split[$i])){
+                    $valid = false;
+                }
+            }
+
+            if ($valid==false) {
                 $this->ok = false;
                 $this->msg = "El camp no pot contenir números.";
             }
@@ -90,7 +117,8 @@ class validar {
 
     public function validarCampBuit($str) {
         if ($this->ok) {
-            if (trim($str, " ") < 1) {
+
+            if (strlen(trim($str, " ")) < 1) {
                 $this->ok = false;
                 $this->msg = "El camp no pot estar buit.";
             }

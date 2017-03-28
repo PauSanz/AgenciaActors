@@ -59,8 +59,21 @@ class actor {
     }
 
     public function inserirActor() {
-        $actorDb = new actordb();        
-        $actorDb->inserir($this);
+        //$actorDb = new actordb();        
+        //$actorDb->inserir($this);
+        
+        $v = $this->validaActor(false);
+
+        if ($v->ok) {
+            $actorDb = new actordb();
+            $r = $actorDb->inserir($this);
+            if ($r != 1) {
+                $v->ok = false;
+                $v->msg = "Fallo al inserir el actor en la base de dades.";
+            }
+        }
+
+        return $v;
     }
 
     public function cercarPerNifActor($nif) {
@@ -71,6 +84,50 @@ class actor {
     public function modificarActor($old_nif) {
         $actorDb = new actordb();
         $actorDb->modificar($old_nif, $this);
+        
+        $v = $this->validaActor(true);
+
+        if ($v->ok) {
+            $actorDb = new actorDb();
+            $r = $actorDb->modificar($old_nif, $this);
+            if ($r != 1) {
+                $v->ok = false;
+                $v->msg = "Fallo al modificar el actor en la base de dades.";
+            }
+        }
+
+        return $v;
+    }
+    
+    public function eliminarDirector() {
+
+        $v = new Validar();
+        $directorDb = new directorDb();
+        $r = $directorDb->eliminar($this);
+
+        if ($r != 1) {
+
+            $v->ok = false;
+            $v->msg = "Fallo al eliminar el actor en la base de dades.";
+        }
+
+        return $v;
+    }
+
+    public function validaActor($modificant) {
+        $v = new Validar();
+        
+        $v->validarCampBuit($this->getNif());
+        $v->validarCampBuit($this->getNom()); 
+        $v->validarCampBuit($this->getCognom());
+        $v->validarDNI($this->getNif());
+        $v->stringSenseNumeros($this->getNom()); 
+        $v->stringSenseNumeros($this->getCognom());
+        if(!$modificant){
+            $v->directorDuplicat($this->getNif());
+        }
+        
+        return $v;
     }
     
 
