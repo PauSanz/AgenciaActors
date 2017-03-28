@@ -105,7 +105,7 @@ class pelicula {
         $v = $this->validaPelicula();
 
         if ($v->getOk()) {
-            $peliculaDb = new peliculaDb();
+            $peliculaDb = new peliculadb();
             $r = $peliculaDb->inserirPelicula($this);
             if ($r != 1) {
                 $v->setOk(false);
@@ -137,7 +137,7 @@ class pelicula {
         $v = $this->validaPelicula();
 
         if ($v->getOk()) {
-            $peliculaDb = new peliculaDb();
+            $peliculaDb = new peliculadb();
             $r = $peliculaDb->modificarPelicula($old_id, $this);
             if ($r != 1) {
 
@@ -150,7 +150,7 @@ class pelicula {
     }
 
     public function cercarPerIdPelicula($id) {
-        $peliculaDb = new peliculaDb();
+        $peliculaDb = new peliculadb();
         return $peliculaDb->cercarPeliPerId($id);
     }
 
