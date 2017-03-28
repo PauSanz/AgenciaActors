@@ -68,8 +68,8 @@ class actor {
             $actorDb = new actordb();
             $r = $actorDb->inserir($this);
             if ($r != 1) {
-                $v->getOk() = false;
-                $v->getMsg() = "Fallo al inserir el actor en la base de dades.";
+                $v->setOk(false);
+                $v->setMsg("Fallo al inserir el actor en la base de dades.");
             }
         }
 
@@ -91,8 +91,8 @@ class actor {
             $actorDb = new actorDb();
             $r = $actorDb->modificar($old_nif, $this);
             if ($r != 1) {
-                $v->getOk() = false;
-                $v->getMsg() = "Fallo al modificar el actor en la base de dades.";
+                $v->setOk(false);
+                $v->setMsg("Fallo al modificar el actor en la base de dades.");
             }
         }
 
@@ -107,8 +107,8 @@ class actor {
 
         if ($r != 1) {
 
-            $v->getOk() = false;
-            $v->getMsg() = "Fallo al eliminar el actor en la base de dades.";
+            $v->setOk(false);
+            $v->setMsg("Fallo al eliminar el actor en la base de dades.");
         }
 
         return $v;
