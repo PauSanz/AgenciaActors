@@ -17,15 +17,19 @@ try {
     if (isset($_POST['submit'])) {
 
         $imgDefinitivamentNet = guardarImatge("pelicula");
+        if (strlen($imgNeta) > 0) {
+            $peli = new pelicula("", addslashes($_POST['nom']), addslashes($_POST['descripcio']), addslashes($_POST['tipus']), addslashes($_POST['datainici']), addslashes($_POST['datafi']), addslashes($_POST['estrellas']), addslashes($imgDefinitivamentNet), addslashes($_POST['idDirector']));
+            $res = $peli->inserirPelicula();
 
-        $peli = new pelicula("", addslashes($_POST['nom']), addslashes($_POST['descripcio']), addslashes($_POST['tipus']), addslashes($_POST['datainici']), addslashes($_POST['datafi']), addslashes($_POST['estrellas']), addslashes($imgDefinitivamentNet), addslashes($_POST['idDirector']));
-        $res = $peli->inserirPelicula();
-
-        if ($res->getOk()) {
-            $msg = "Dades introduides correctament!!";
-            echo "<script type='text/javascript'>alert('$msg');</script>";
+            if ($res->getOk()) {
+                $msg = "Dades introduides correctament!!";
+                echo "<script type='text/javascript'>alert('$msg');</script>";
+            } else {
+                $msg = "Error: " . $res->getMsg();
+                echo "<script type='text/javascript'>alert('$msg');</script>";
+            }
         } else {
-            $msg = "Error: " . $res->getMsg();
+            $msg = "Error: " . "La imatge seleccionada no es valida.";
             echo "<script type='text/javascript'>alert('$msg');</script>";
         }
     } else {
