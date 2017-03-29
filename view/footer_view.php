@@ -58,5 +58,6 @@
 <!-- Altres Scripts -->
 <script src="view/js/custom-js.js"></script>
 <script src="view/js/script.js"></script>
+<script src="view/js/validacionsPelicula.js"></script>
 </body>
 </html>
