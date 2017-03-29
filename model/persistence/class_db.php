@@ -102,7 +102,7 @@ class db implements interface_db {
         $consulta = mysqli_query($con, $query) or die('Error, query failed: ' . $this->error());
         $cont = 0;
         while ($row = mysqli_fetch_array($consulta)) {
-            $peli = new pelicula($row["idPelicula"], $row["nom"], $row["descripcio"], $row["tipus"], $row["dataInici"], $row["dataFi"], $row["valoracio"], $row["foto"]);
+            $peli = new pelicula($row["idPelicula"], $row["nom"], $row["descripcio"], $row["tipus"], $row["dataInici"], $row["dataFi"], $row["valoracio"], $row["foto"], $row["valoracio"], $row["idDirector"]);
             $arrayPelicules[$cont] = $peli;
             $cont++;
         }
