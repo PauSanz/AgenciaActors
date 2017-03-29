@@ -45,7 +45,7 @@
                             <a href="?ctl=director&act=llista">Directors</a>
                         </li>
                         <li>
-                            <a href="?ctl=contact">Contact</a>
+                            <a href="?ctl=contact">Contacte</a>
                         </li>
                         <?php drawAddMenu() ?>
                         <li class="login_action"><a id="login_action" href="?ctl=session&act=check"></a></li>
