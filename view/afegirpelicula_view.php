@@ -29,7 +29,7 @@ include('mostrar_selects.php');
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-film fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="tipus" id="email"  placeholder="Tipus"/>
+                            <input type="text" class="form-control" name="tipus" id="tipus"  placeholder="Tipus"/>
                         </div>
                         <span id="errorTipus"></span>
                     </div>
@@ -40,7 +40,7 @@ include('mostrar_selects.php');
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-calendar fa" aria-hidden="true"></i></span>
-                            <input type="date" class="form-control" name="datainici" id="username"  placeholder="DD/MM/YYYY"/>
+                            <input type="date" class="form-control" name="datainici" id="datainici"  placeholder="DD/MM/YYYY"/>
                         </div>
                         <span id="errorDataInici"></span>
                     </div>
@@ -51,7 +51,7 @@ include('mostrar_selects.php');
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-calendar fa" aria-hidden="true"></i></span>
-                            <input type="date" class="form-control" name="datafi" id="username"  placeholder="DD/MM/YYYY"/>
+                            <input type="date" class="form-control" name="datafi" id="datafi"  placeholder="DD/MM/YYYY"/>
                         </div>
                         <span id="errorDataFi"></span>
                     </div>
