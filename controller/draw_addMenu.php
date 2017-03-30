@@ -1,5 +1,4 @@
 <?php
-
 function addMenu() {
     if (isset($_COOKIE['user'])) {
         ?>
