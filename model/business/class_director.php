@@ -75,6 +75,11 @@ class director {
         $directorDb = new directordb();
         return $directorDb->cercarPerNif($nif);
     }
+    
+    public function obtenirDirector($nif) {
+        $directorDb = new directordb();
+        $this = $directorDb->obtenirDirector($nif);
+    }
 
     public function modificarDirector($old_nif) {
         //UPDATE `director` SET `Nif`='47838294K',`Nom`='Steven',`Cognom`='Spielberg',`Foto`='images/director/Spielberg.jpg' WHERE nif='46573829H'

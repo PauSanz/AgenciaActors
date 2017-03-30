@@ -6,12 +6,12 @@ require_once("config/db.inc.php");
 
 class actordb {
 
-    public function inserir($actor) {       
-        $query = "insert into actor values('" . $actor->getNif() . "', '" . $actor->getNom() . "', '" . $actor->getCognom() . "', '" . $actor->getGenere().  "', '/images/actor/" . $actor->getFoto() . "');";        
+    public function inserir($actor) {
+        $query = "insert into actor values('" . $actor->getNif() . "', '" . $actor->getNom() . "', '" . $actor->getCognom() . "', '" . $actor->getGenere() . "', '/images/actor/" . $actor->getFoto() . "');";
         $con = new db();
         $actorAux = $con->consulta($query);
         $con->close();
-        
+
         return $actorAux;
     }
 
@@ -29,14 +29,28 @@ class actordb {
         $con = new db();
         $actorAux = $con->consulta($query);
         $con->close();
-        
+
         return $actorAux;
     }
 
     public function comprobardadesActor($actor) {
         
     }
-    
+
+    public function obtenirActor($nif) {
+        $query = "SELECT * FROM actor WHERE nif = '" . $nif . "';";
+        $con = new db();
+        $arrayDeActors = $con->rebreActors($query); //Consultar PDO
+        $con->close();
+        if (count($arrayDeActors) > 0) {
+            $actorAux = $arrayDeActors[0];
+            return $actorAux;
+        }else{
+            $actorAux = new actor('','','','','');
+            return $actorAux;
+        }
+    }
+
 //    public function mostrar() {
 //        $query="SELECT * FROM actor;";				
 //		$con = new db();
@@ -44,5 +58,4 @@ class actordb {
 //		$con->close();
 //		return $arraydeActors;		
 //    }
-
 }

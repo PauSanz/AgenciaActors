@@ -102,6 +102,11 @@ class rol {
         //$v = new Validar();
         //return $v;
     }
+    
+    public function obtenirRol($id) {
+        $rolDb = new roldb();
+        $this = $rolDb->obtenirPaper($id);
+    }
 
 }
 
