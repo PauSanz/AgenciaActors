@@ -72,8 +72,8 @@ class director {
     }
     
     public function cercarPerNifDirector($nif) {
-        $directorDb = new directorDb();
-        return $directorDb->cercarPerNif($nif);
+        $directordb = new directordb();
+        return $directordb->cercarPerNif($nif);
     }
 
     public function modificarDirector($old_nif) {

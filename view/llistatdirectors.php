@@ -34,7 +34,7 @@ function mostrarDirectors() {
         echo"<a href='#'><i class='fa fa-search fa-2x colorwhite'></i></a>";
         echo"</div>";
         echo"<div class='col-lg-4'>";
-        echo"<a href='#'><i class='fa fa-trash-o fa-2x colorwhite'></i></a>";
+        echo"<a href='?ctl=director&act=eliminar&dni=".$data->getNif()."'><i class='fa fa-trash-o fa-2x colorwhite'></i></a>";        
         echo"</div>";
         echo"</div>";
         echo"</div>";
