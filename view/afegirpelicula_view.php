@@ -57,12 +57,10 @@ include('mostrar_selects.php');
                     <label for="foto" class="cols-sm-2 control-label">Foto</label>
                     <div class="inputWrapper">
                         <span class="input-group-addon"><i class="fa fa-image fa" aria-hidden="true"></i>
-                            <input class="fileInput" type="file" name="file1" src="<?php echo (isset($x) ? $x->foto : '') ?>"/>
+                            <input class="fileInput" type="file" name="fotoPujada" src="<?php echo (isset($x) ? $x->foto : '') ?>"/>
                         </span>
                     </div>
                 </div>
-
-
                 <div class="form-group">
                     <label for="descripcio" class="cols-sm-2 control-label">Descripció</label>
                     <div class="cols-sm-10">
@@ -72,7 +70,9 @@ include('mostrar_selects.php');
                                 <?php echo (isset($x) ? $x->nom : '') ?>
                             </textarea>
                         </div>
-                    </div>
+                    </div>  if(isset($_COOKIE['user'])){
++            echo"<a href='#'><i class='fa fa-trash-o fa-2x colorwhite'></i></a>";
++        }
                 </div>
                 <!--                Select-->
 
