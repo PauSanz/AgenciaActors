@@ -6,7 +6,7 @@
             </div>
         </div> 
         <div class="main-login main-center">
-            <form class="form-horizontal" method="post" action="?ctl=director&act=afegir">
+            <form class="form-horizontal" method="post" action="?ctl=director&act=afegir" enctype="multipart/form-data">
 
                 <div class="form-group">
                     <label for="nif" class="cols-sm-2 control-label">Nif</label>
@@ -42,7 +42,7 @@
                     <label for="foto" class="cols-sm-2 control-label">Foto</label>
                     <div class="inputWrapper">
                         <span class="input-group-addon"><i class="fa fa-image fa" aria-hidden="true"></i>
-                        <input class="fileInput" type="file" name="file1"/>
+                        <input class="fileInput" type="file" name="fotoPujada"/>
                         </span>
                     </div>
                 </div>
