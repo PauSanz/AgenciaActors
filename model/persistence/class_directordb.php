@@ -46,6 +46,20 @@ class directordb{
                 
                 return $directorAux;
 	} 
+        
+        public function obtenirDirector($nif) {
+        $query = "SELECT * FROM director WHERE nif = '".$nif."';";
+        $con = new db();
+        $arrayDeDirectors = $con->rebreDirectors($query); //Consultar PDO
+        $con->close();
+        if (count($arrayDeDirectors) > 0) {
+            $directorAux = $arrayDeDirectors[0];
+            return $directorAux;
+        }else{
+            $directorAux = new director('','','','');
+            return $directorAux;
+        }
+    }
 
 }    
  ?>

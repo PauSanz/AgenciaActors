@@ -7,7 +7,7 @@ include('mostrar_selects.php');
         <div class="panel-heading">
             <div class="panel-title text-center">
                 <h1 class="title">Pel·lícula</h1>
-                
+
             </div>
         </div> 
         <div class="main-login main-center">
@@ -18,8 +18,9 @@ include('mostrar_selects.php');
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-id-card fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="nom" id="name"  placeholder="Nom"/>
+                            <input type="text" class="form-control" name="nom" id="name"  placeholder="Nom" value="<?php echo (isset($x) ? $x->nom : '') ?>"/>
                         </div>
+                        <span id="errorNom"></span>
                     </div>
                 </div>
 
@@ -28,8 +29,9 @@ include('mostrar_selects.php');
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-film fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="tipus" id="email"  placeholder="Tipus"/>
+                            <input type="text" class="form-control" name="tipus" id="tipus"  placeholder="Tipus" value="<?php echo (isset($x) ? $x->tipus : '') ?>"/>
                         </div>
+                        <span id="errorTipus"></span>
                     </div>
                 </div>
 
@@ -38,8 +40,9 @@ include('mostrar_selects.php');
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-calendar fa" aria-hidden="true"></i></span>
-                            <input type="date" class="form-control" name="datainici" id="username"  placeholder="DD/MM/YYYY"/>
+                            <input type="date" class="form-control" name="datainici" id="datainici"  placeholder="DD/MM/YYYY" value="<?php echo (isset($x) ? $x->dataInici : '') ?>"/>
                         </div>
+                        <span id="errorDataInici"></span>
                     </div>
                 </div>
 
@@ -48,8 +51,9 @@ include('mostrar_selects.php');
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-calendar fa" aria-hidden="true"></i></span>
-                            <input type="date" class="form-control" name="datafi" id="username"  placeholder="DD/MM/YYYY"/>
+                            <input type="date" class="form-control" name="datafi" id="datafi"  placeholder="DD/MM/YYYY" value="<?php echo (isset($x) ? $x->dataFi : '') ?>"/>
                         </div>
+                        <span id="errorDataFi"></span>
                     </div>
                 </div>
 
@@ -57,25 +61,26 @@ include('mostrar_selects.php');
                     <label for="foto" class="cols-sm-2 control-label">Foto</label>
                     <div class="inputWrapper">
                         <span class="input-group-addon"><i class="fa fa-image fa" aria-hidden="true"></i>
-                            <input class="fileInput" type="file" name="file1"/>
+                            <input class="fileInput" type="file" name="fotoPujada" src="<?php echo (isset($x) ? $x->foto : '') ?>"/>
                         </span>
                     </div>
                 </div>
-
-
                 <div class="form-group">
                     <label for="descripcio" class="cols-sm-2 control-label">Descripció</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-file-text-o fa-lg" aria-hidden="true"></i></span>
-                            <textarea name="descripcio" rows="5" cols="30" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                            <textarea name="descripcio" rows="5" cols="30" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none">
+                                <?php echo (isset($x) ? $x->nom : '') ?>
+                            </textarea>
                         </div>
+                        <span id="errorDescripcio"></span>
                     </div>
                 </div>
                 <!--                Select-->
 
                 <div class="form-group ">
-                    <label for="descripcio" class="cols-sm-2 control-label">Director</label>
+                    <label for="director" class="cols-sm-2 control-label">Director</label>
                     <div class="cols-sm-10">
                         <div class="input-group select">
                             <span class="input-group-addon"><i class="fa fa-bullhorn fa-lg" aria-hidden="true"></i></span>
@@ -83,7 +88,7 @@ include('mostrar_selects.php');
                         </div>
                     </div>
                 </div>
-                
+
                 <!--                Select-->
                 
                 
@@ -110,7 +115,7 @@ include('mostrar_selects.php');
                 <div class="form-group ">
                     <input type="submit" name="submit" value="Guardar" class="btn btn-danger btn-lg btn-block login-button"></input>
                 </div> 
-                
+
             </form>
         </div>
         <div class="espaibot"></div>
