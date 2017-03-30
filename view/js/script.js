@@ -13,7 +13,7 @@ window.onload = function () {
 
 function stat(action, user) {
     if (!user) {
-        user == "";
+        user = "";
     }
     document.getElementById('login_action').innerHTML = action;
     document.getElementById('login_user').innerHTML = "<a>" + user + "</a>";
@@ -23,7 +23,7 @@ function fGetCookie(NameOfCookie) {
 
     if (document.cookie.length > 0) {
 
-        begin = document.cookie.indexOf(NameOfCookie + "=");
+        var begin = document.cookie.indexOf(NameOfCookie + "=");
         if (begin != -1) {
 
             begin += NameOfCookie.length + 1;

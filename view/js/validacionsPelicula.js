@@ -3,8 +3,10 @@ $(document).ready(function () {
     $('#tipus').focusout(validarNoBuitIAlfaTipus);
     $('#datainici').focusout(validarDataInici);
     $('#datafi').focusout(validarDataFi);
-
+    validarIntervalDates();
 });
+var formatDataInici = true;
+var formatDataFi = true;
 
 function validarNoBuitIAlfaNom() {
     var val = $('#name').val();
@@ -37,8 +39,7 @@ function validarDataInici() {
     var val = $('#datainici').val();
     alert(val);
     if (!validarFormatData(val)) {
-        var res = validarFormatData(val);
-        //alert(res);
+        formatDataInici = false;
         $('#errorDataInici').html("Format de la data incorrecte.");
     } else {
         $('#errorDataInici').html("");
@@ -49,6 +50,7 @@ function validarDataInici() {
 function validarDataFi() {
     var val = $('#datafi').val();
     if (!validarFormatData(val)) {
+        formatDataFi = false;
         $('#errorDataFi').html("Format de la data incorrecte.");
     } else {
         $('#errorDataFi').html("");
@@ -92,4 +94,15 @@ function validarFormatData(dateString) {
 
     // Revisar el rango del dia
     return day > 0 && day <= monthLength[month - 1];
+}
+
+function validarIntervalDates() {
+    var dataInici = $('#datainici').val();
+    var dataFi = $('#datafi').val();
+    if (formatDataInici == true && formatDataFi == true) {
+        if (dataInici < dataFi) {
+            $('#errorIntervalDates').html("La data fi no pot ser antarior a la inicial.");
+        }
+    }
+
 }
