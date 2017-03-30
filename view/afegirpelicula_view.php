@@ -7,7 +7,7 @@ include('mostrar_selects.php');
         <div class="panel-heading">
             <div class="panel-title text-center">
                 <h1 class="title">Pel·lícula</h1>
-                
+
             </div>
         </div> 
         <div class="main-login main-center">
@@ -20,6 +20,7 @@ include('mostrar_selects.php');
                             <span class="input-group-addon"><i class="fa fa-id-card fa" aria-hidden="true"></i></span>
                             <input type="text" class="form-control" name="nom" id="name"  placeholder="Nom" value="<?php echo (isset($x) ? $x->nom : '') ?>"/>
                         </div>
+                        <span id="errorNom"></span>
                     </div>
                 </div>
 
@@ -28,8 +29,9 @@ include('mostrar_selects.php');
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-film fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="tipus" id="email"  placeholder="Tipus" value="<?php echo (isset($x) ? $x->tipus : '') ?>"/>
+                            <input type="text" class="form-control" name="tipus" id="tipus"  placeholder="Tipus" value="<?php echo (isset($x) ? $x->tipus : '') ?>"/>
                         </div>
+                        <span id="errorTipus"></span>
                     </div>
                 </div>
 
@@ -38,8 +40,9 @@ include('mostrar_selects.php');
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-calendar fa" aria-hidden="true"></i></span>
-                            <input type="date" class="form-control" name="datainici" id="username"  placeholder="DD/MM/YYYY" value="<?php echo (isset($x) ? $x->dataInici : '') ?>"/>
+                            <input type="date" class="form-control" name="datainici" id="datainici"  placeholder="DD/MM/YYYY" value="<?php echo (isset($x) ? $x->dataInici : '') ?>"/>
                         </div>
+                        <span id="errorDataInici"></span>
                     </div>
                 </div>
 
@@ -48,8 +51,9 @@ include('mostrar_selects.php');
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-calendar fa" aria-hidden="true"></i></span>
-                            <input type="date" class="form-control" name="datafi" id="username"  placeholder="DD/MM/YYYY" value="<?php echo (isset($x) ? $x->dataFi : '') ?>"/>
+                            <input type="date" class="form-control" name="datafi" id="datafi"  placeholder="DD/MM/YYYY" value="<?php echo (isset($x) ? $x->dataFi : '') ?>"/>
                         </div>
+                        <span id="errorDataFi"></span>
                     </div>
                 </div>
 
@@ -70,14 +74,13 @@ include('mostrar_selects.php');
                                 <?php echo (isset($x) ? $x->nom : '') ?>
                             </textarea>
                         </div>
-                    </div>  if(isset($_COOKIE['user'])){
-+            echo"<a href='#'><i class='fa fa-trash-o fa-2x colorwhite'></i></a>";
-+        }
+                        <span id="errorDescripcio"></span>
+                    </div>
                 </div>
                 <!--                Select-->
 
                 <div class="form-group ">
-                    <label for="descripcio" class="cols-sm-2 control-label">Director</label>
+                    <label for="director" class="cols-sm-2 control-label">Director</label>
                     <div class="cols-sm-10">
                         <div class="input-group select">
                             <span class="input-group-addon"><i class="fa fa-bullhorn fa-lg" aria-hidden="true"></i></span>
@@ -85,7 +88,7 @@ include('mostrar_selects.php');
                         </div>
                     </div>
                 </div>
-                
+
                 <!--                Select-->
                 <div class="form-group">
                     <label>Valoració</label>
@@ -105,7 +108,7 @@ include('mostrar_selects.php');
                 <div class="form-group ">
                     <input type="submit" name="submit" value="Guardar" class="btn btn-danger btn-lg btn-block login-button"></input>
                 </div> 
-                
+
             </form>
         </div>
         <div class="espaibot"></div>

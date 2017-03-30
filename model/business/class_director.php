@@ -78,7 +78,7 @@ class director {
     
     public function obtenirDirector($nif) {
         $directorDb = new directordb();
-        $this = $directorDb->obtenirDirector($nif);
+        return $directorDb->obtenirDirector($nif);
     }
 
     public function modificarDirector($old_nif) {
