@@ -80,6 +80,11 @@ class actor {
         $actorDb = new actordb();
         return $actorDb->cercarPerNif($nif);
     }
+    
+    public function obtenirActor($nif) {
+        $actorDb = new actordb();
+        $this = $actorDb->obtenirActor($nif);
+    }
 
     public function modificarActor($old_nif) {
         //$actorDb = new actordb();

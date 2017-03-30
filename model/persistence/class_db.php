@@ -77,6 +77,7 @@ class db implements interface_db {
         $con = $this->connect();
         $consulta = mysqli_query($con, $query) or die('Error, query failed: ' . $this->error());
         $cont = 0;
+        $arrayDirectors = array();
         while ($row = mysqli_fetch_array($consulta)) {
             $director = new director($row["Nif"], $row["Nom"], $row["Cognom"], $row["Foto"]);
             $arrayDirectors[$cont] = $director;
