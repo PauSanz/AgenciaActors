@@ -1,7 +1,8 @@
 <?php
 
 function guardarImatge($subcarpeta) {
-    $fotoAGuardar = $_FILES["file1"]["name"];
+    // $fotoAGuardar = $_FILES["file1"]["error"];
+    $fotoAGuardar = $_FILES["fotoPujada"]["name"];
 
     //Metoda de netejar
     $imgSenseBlancs = str_replace(" ", "_", $fotoAGuardar);
@@ -9,7 +10,7 @@ function guardarImatge($subcarpeta) {
 
     $validextensions = array("jpeg", "jpg", "png");
 
-    $temporary = explode(".", $_FILES["file1"]["name"]);
+    $temporary = explode(".", $_FILES["fotoPujada"]["name"]);
     $file_extension = end($temporary);
 
     //$nomImatgeSenseExtensio = $temporary[0];
@@ -21,17 +22,15 @@ function guardarImatge($subcarpeta) {
     $rutaDesti = $_SERVER['DOCUMENT_ROOT'] . "/AgenciaActors/view/images/" . $subcarpeta . "/" . $imgDefinitivamentNet;
 
 
-    if ((($_FILES["file1"]["type"] == "image/png") || ($_FILES["file1"]["type"] == "image/jpg") || ($_FILES["file1"]["type"] == "image/jpeg")
-            ) && ($_FILES["file1"]["size"] < 20000000)//Approx. 20MB files can be uploaded.
+    if ((($_FILES["fotoPujada"]["type"] == "image/png") || ($_FILES["fotoPujada"]["type"] == "image/jpg") || ($_FILES["fotoPujada"]["type"] == "image/jpeg")
+            ) && ($_FILES["fotoPujada"]["size"] < 20000000)//Approx. 20MB files can be uploaded.
             && in_array($file_extension, $validextensions)) {
 
         if (!file_exists($rutaDesti)) {
-            move_uploaded_file($_FILES["file1"]["tmp_name"], $rutaDesti);
-            
+            move_uploaded_file($_FILES["fotoPujada"]["tmp_name"], $rutaDesti);
         }
         return $imgDefinitivamentNet;
     }
-    
 }
 
 function limpiarStringDeCaracters($texto) {

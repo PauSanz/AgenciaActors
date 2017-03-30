@@ -51,13 +51,13 @@ class rol {
     public function inserirPaper() {
         $v = $this->validaPaper();
 
-        if ($v->ok) {
+        if ($v->getOk()) {
             $paperDb = new paperDb();
             $r = $paperDb->inserir($this);
             if ($r != 1) {
 
-                $v->ok = false;
-                $v->msg = "S'ha produit un error a la base de dades";
+                $v->getOk() = false;
+                $v->getMsg() = "S'ha produit un error a la base de dades";
             }
         }
         return $v;
@@ -101,6 +101,11 @@ class rol {
     public function validaPaper() {
         //$v = new Validar();
         //return $v;
+    }
+    
+    public function obtenirRol($id) {
+        $rolDb = new roldb();
+        $this = $rolDb->obtenirPaper($id);
     }
 
 }

@@ -52,7 +52,7 @@ class director {
         $v = $this->validaDirector(false);
 
         if ($v->getOk()) {
-            $directorDb = new directorDb();
+            $directorDb = new directordb();
             $r = $directorDb->inserir($this);
             if ($r == false) {
                 $v->setOk(false);
@@ -70,10 +70,15 @@ class director {
           }
          */
     }
-    
+
     public function cercarPerNifDirector($nif) {
-        $directordb = new directordb();
-        return $directordb->cercarPerNif($nif);
+        $directorDb = new directordb();
+        return $directorDb->cercarPerNif($nif);
+    }
+    
+    public function obtenirDirector($nif) {
+        $directorDb = new directordb();
+        return $directorDb->obtenirDirector($nif);
     }
 
     public function modificarDirector($old_nif) {
@@ -82,7 +87,7 @@ class director {
         $v = $this->validaDirector(true);
 
         if ($v->getOk()) {
-            $directorDb = new directorDb();
+            $directorDb = new directordb();
             $r = $directorDb->modificar($old_nif, $this);
             if ($r != 1) {
 
@@ -97,7 +102,7 @@ class director {
     public function eliminarDirector() {
 
         $v = new validar();
-        $directorDb = new directorDb();
+        $directorDb = new directordb();
         $r = $directorDb->eliminar($this);
 
         if ($r != 1) {
@@ -112,15 +117,15 @@ class director {
     public function validaDirector($modificant) {
         $v = new validar();
         $v->validarCampBuit($this->getNif());
-        $v->validarCampBuit($this->getNom()); 
+        $v->validarCampBuit($this->getNom());
         $v->validarCampBuit($this->getCognom());
         $v->validarDNI($this->getNif());
-        $v->stringSenseNumeros($this->getNom()); 
+        $v->stringSenseNumeros($this->getNom());
         $v->stringSenseNumeros($this->getCognom());
-        if(!$modificant){
+        if (!$modificant) {
             $v->directorDuplicat($this->getNif());
         }
-        
+
         return $v;
     }
 

@@ -28,13 +28,17 @@ function mostrarDirectors() {
         echo"</p>";
         echo"<div class='row'>";
         echo"<div class='col-lg-4'>";
-        echo"<a href='#'><i class='fa fa-pencil-square-o fa-2x colorwhite'></i></a>";
+        if(isset($_COOKIE['user'])){
+            echo"<a href='?ctl=director&act=modificar&id=" . $data->getId() . "'><i class='fa fa-pencil-square-o fa-2x colorwhite'></i></a>";
+        }
         echo"</div>";
         echo"<div class='col-lg-4'>";        
         echo"<a href='#'><i class='fa fa-search fa-2x colorwhite'></i></a>";
         echo"</div>";
         echo"<div class='col-lg-4'>";
-        echo"<a href='?ctl=director&act=eliminar&dni=".$data->getNif()."'><i class='fa fa-trash-o fa-2x colorwhite'></i></a>";        
+        if(isset($_COOKIE['user'])){
+            echo"<a href='?ctl=director&act=eliminar&dni=".$data->getNif()."'><i class='fa fa-trash-o fa-2x colorwhite'></i></a>";
+        }
         echo"</div>";
         echo"</div>";
         echo"</div>";
