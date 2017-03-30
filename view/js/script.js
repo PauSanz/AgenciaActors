@@ -11,7 +11,10 @@ window.onload = function () {
     document.getElementById('password2').onchange = message;
 }
 
-function stat(action, user = ""){
+function stat(action, user) {
+    if (!user) {
+        user == "";
+    }
     document.getElementById('login_action').innerHTML = action;
     document.getElementById('login_user').innerHTML = "<a>" + user + "</a>";
 }

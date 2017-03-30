@@ -35,9 +35,10 @@ function validarNoBuitIAlfaTipus() {
 
 function validarDataInici() {
     var val = $('#datainici').val();
+    alert(val);
     if (!validarFormatData(val)) {
         var res = validarFormatData(val);
-        alert(res);
+        //alert(res);
         $('#errorDataInici').html("Format de la data incorrecte.");
     } else {
         $('#errorDataInici').html("");
@@ -56,7 +57,7 @@ function validarDataFi() {
 }
 
 function Alfabetic(elemValor) {
-    var alphaExp = /^[a-zA-Z]\s+$/;
+    var alphaExp = /^[a-zA-Z\s]+$/;
     if (elemValor.match(alphaExp)) {
         return true;
     } else {
