@@ -7,13 +7,19 @@ if (!isset($_SESSION['login'])) {
     $_SESSION['user'] = "";
 }
 $ctl = "home";
-
+$act = null;
 
 if (isset($_REQUEST['ctl'])) {
     $ctl = $_REQUEST['ctl'];
-    $act = null;
     if (isset($_REQUEST['act'])) {
         $act = $_REQUEST['act'];
+    }
+}
+
+if(!isset($_COOKIE['user'])){
+    if($act == "afegir" OR $act == "modificar" OR $act == "eliminar" OR $act == "add"){
+        $ctl = "home";
+        $act = null;
     }
 }
 
@@ -42,7 +48,8 @@ switch ($ctl) {
                 include "controller/afegirpelicula_ctl.php";
                 break;
             case "modificar":
-                include "controller/modificarpelicula_ctl.php";
+                include "controller/afegirpelicula_ctl.php";
+                //include "controller/modificarpelicula_ctl.php";
                 break;
             case "eliminar":
                 include "controller/eliminarpelicula_ctl.php";

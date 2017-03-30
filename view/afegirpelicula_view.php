@@ -18,7 +18,7 @@ include('mostrar_selects.php');
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-id-card fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="nom" id="name"  placeholder="Nom"/>
+                            <input type="text" class="form-control" name="nom" id="name"  placeholder="Nom" value="<?php echo (isset($x) ? $x->nom : '') ?>"/>
                         </div>
                     </div>
                 </div>
@@ -28,7 +28,7 @@ include('mostrar_selects.php');
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-film fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="tipus" id="email"  placeholder="Tipus"/>
+                            <input type="text" class="form-control" name="tipus" id="email"  placeholder="Tipus" value="<?php echo (isset($x) ? $x->tipus : '') ?>"/>
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@ include('mostrar_selects.php');
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-calendar fa" aria-hidden="true"></i></span>
-                            <input type="date" class="form-control" name="datainici" id="username"  placeholder="DD/MM/YYYY"/>
+                            <input type="date" class="form-control" name="datainici" id="username"  placeholder="DD/MM/YYYY" value="<?php echo (isset($x) ? $x->dataInici : '') ?>"/>
                         </div>
                     </div>
                 </div>
@@ -48,7 +48,7 @@ include('mostrar_selects.php');
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-calendar fa" aria-hidden="true"></i></span>
-                            <input type="date" class="form-control" name="datafi" id="username"  placeholder="DD/MM/YYYY"/>
+                            <input type="date" class="form-control" name="datafi" id="username"  placeholder="DD/MM/YYYY" value="<?php echo (isset($x) ? $x->dataFi : '') ?>"/>
                         </div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@ include('mostrar_selects.php');
                     <label for="foto" class="cols-sm-2 control-label">Foto</label>
                     <div class="inputWrapper">
                         <span class="input-group-addon"><i class="fa fa-image fa" aria-hidden="true"></i>
-                            <input class="fileInput" type="file" name="file1"/>
+                            <input class="fileInput" type="file" name="file1" src="<?php echo (isset($x) ? $x->foto : '') ?>"/>
                         </span>
                     </div>
                 </div>
@@ -68,7 +68,9 @@ include('mostrar_selects.php');
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-file-text-o fa-lg" aria-hidden="true"></i></span>
-                            <textarea name="descripcio" rows="5" cols="30" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                            <textarea name="descripcio" rows="5" cols="30" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none">
+                                <?php echo (isset($x) ? $x->nom : '') ?>
+                            </textarea>
                         </div>
                     </div>
                 </div>
