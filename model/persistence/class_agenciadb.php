@@ -25,7 +25,7 @@ class agenciadb {
     public function obtenirTotsPapers() {
         $query = "SELECT * FROM paper;";
         $con = new db();
-        $arrayDePapers = $con->consulta($query); //Consultar PDO
+        $arrayDePapers = $con->rebrePapers($query); //Consultar PDO
         $con->close();
         return $arrayDePapers;
     }

@@ -46,6 +46,22 @@ class rolDb{
                 
                 return $paperAux;
 	} 
+        
+        public function obtenirPaper($id) {
+        $query = "SELECT * FROM paper WHERE id = '".$id."';";
+        $con = new db();
+        $arrayDePapers = $con->rebrePapers($query); //Consultar PDO
+        $con->close();
+        
+        if (count($arrayDePapers) > 0) {
+            $paperAux = $arrayDePapers[0];
+            return $paperAux;
+        }else{
+            $paperAux = new rol('','','','');
+            return $paperAux;
+        }
+        
+    }
 
 }    
  ?>
