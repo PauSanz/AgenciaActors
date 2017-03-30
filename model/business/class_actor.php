@@ -83,7 +83,7 @@ class actor {
     
     public function obtenirActor($nif) {
         $actorDb = new actordb();
-        $this = $actorDb->obtenirActor($nif);
+        return $actorDb->obtenirActor($nif);
     }
 
     public function modificarActor($old_nif) {

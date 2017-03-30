@@ -156,7 +156,7 @@ class pelicula {
     
     public function obtenirPelicula($id) {
         $peliculaDb = new peliculadb();
-        $this = $peliculaDb->obtenirPelicula($id);
+        return $peliculaDb->obtenirPelicula($id);
     }
 
     public function validaPelicula() {

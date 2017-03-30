@@ -10,4 +10,9 @@
 -Creacio afegiractor director ctl , vistes afegir amb estils + edicio imatges
 24/03/2017
 -Estils home, creacio contingut home, imatges i logos + edicio imatges.
-
+27/03/2017
+-Vistes llistat actor + estils + icones.
+28/03/2017
+-Vistes llistat director + pelis+ estils + icones.
+29/03/2017
+-Creacio controlador + vista eliminar.
