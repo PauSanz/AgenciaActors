@@ -6,11 +6,11 @@ include_once("controller/function_AutoLoad.php");
 require_once("config/config.inc.php");
 require_once("config/db.inc.php");
 
-class directorDb{
+class directordb{
 
 	public function inserir($director) {		
 	
-		$query="insert into director values('".$director->getNif()."', '".$director->getNom()."', '".$director->getCognom()."', '".$director->getFoto() ."');";				
+		$query="insert into director values('".$director->getNif()."', '".$director->getNom()."', '".$director->getCognom()."', 'images/director/".$director->getFoto() ."');";				
 		$con = new db();
 		$directorAux = $con->consulta($query);
 		$con->close();
@@ -46,6 +46,20 @@ class directorDb{
                 
                 return $directorAux;
 	} 
+        
+        public function obtenirDirector($nif) {
+        $query = "SELECT * FROM director WHERE nif = '".$nif."';";
+        $con = new db();
+        $arrayDeDirectors = $con->rebreDirectors($query); //Consultar PDO
+        $con->close();
+        if (count($arrayDeDirectors) > 0) {
+            $directorAux = $arrayDeDirectors[0];
+            return $directorAux;
+        }else{
+            $directorAux = new director('','','','');
+            return $directorAux;
+        }
+    }
 
 }    
  ?>

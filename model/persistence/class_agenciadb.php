@@ -17,7 +17,7 @@ class agenciadb {
     public function obtenirTotsActors() {
         $query = "SELECT * FROM actor;";
         $con = new db();
-        $arrayDeActors = $con->consulta($query); //rebreActors
+        $arrayDeActors = $con->rebreActors($query); //Consultar PDO
         $con->close();
         return $arrayDeActors;
     }
@@ -25,7 +25,7 @@ class agenciadb {
     public function obtenirTotsPapers() {
         $query = "SELECT * FROM paper;";
         $con = new db();
-        $arrayDePapers = $con->consulta($query); //Consultar PDO
+        $arrayDePapers = $con->rebrePapers($query); //Consultar PDO
         $con->close();
         return $arrayDePapers;
     }
@@ -33,7 +33,7 @@ class agenciadb {
     public function obtenirTotesPelicules() {
         $query = "SELECT * FROM pelicula;";
         $con = new db();
-        $arrayDePelis = $con->consulta($query); //Consultar PDO
+        $arrayDePelis = $con->rebrePelicules($query);
         $con->close();
         return $arrayDePelis;
     }

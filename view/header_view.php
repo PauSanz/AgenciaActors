@@ -36,18 +36,23 @@
                             <a href="?ctl=home">Home</a>
                         </li>
                         <li>
-                            <a href="?ctl=llistaactors">Llistat actors</a>
+                            <a href="?ctl=pelicula&act=llista">Pel·licules</a>
                         </li>
                         <li>
-                            <a href="?ctl=contact">Contact</a>
+                            <a href="?ctl=actor&act=llista">Actors</a>
                         </li>
-                        <?php drawAddMenu()?> 
+                        <li>
+                            <a href="?ctl=director&act=llista">Directors</a>
+                        </li>
+                        <li>
+                            <a href="?ctl=contact">Contacte</a>
+                        </li>
+                        <?php addMenu() ?>
                         <li class="login_action"><a id="login_action" href="?ctl=session&act=check"></a></li>
-                        
-                        <li class="login_user"><a id="login_user"></a></li>                                           
+
+                        <li class="login_user colorlink"><a id="login_user"></a></li>                                           
+
                     </ul>
                 </div>               
-            </div>          
-        </nav>        
-        
-Contact GitHub API Training Shop Blog About
+            </div> 
+        </nav>

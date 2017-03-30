@@ -8,8 +8,7 @@ and open the template in the editor.
     Author     : oriol
 */
 
-
-#login_user{
+#login_user a{
     color: #9d9d9d;
 }
 
@@ -114,6 +113,7 @@ and open the template in the editor.
 #myFooter .btn {
     color: white;
     background-color: #b63926;
+    font-weight: bold;
     border-radius: 20px;
     border: none;
     width: 150px;
@@ -157,7 +157,15 @@ body{
 }
 
 .carousel .item {
-    height: 300px;
+    height: 300px;  
+
+}
+
+
+@media (max-width: 768px){
+    .carousel .item {
+        max-height: 150px;
+    }
 }
 
 .item img {
@@ -181,7 +189,7 @@ body{
     z-index: 1;
     background: #FFFFFF;
     max-width: 360px;
-    margin: 0 auto 100px;
+    margin: 100px auto 100px;
     padding: 45px;
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -201,7 +209,7 @@ body{
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
-    background: #4CAF50;
+    background: #b63926;
     width: 100%;
     border: 0;
     padding: 15px;
@@ -212,7 +220,7 @@ body{
     cursor: pointer;
 }
 #containerLogin .form .button:hover,.form .button:active,.form .button:focus {
-    background: #43A047;
+    background: #b63926;
 }
 #containerLogin .form .message {
     margin: 15px 0 0;
@@ -220,7 +228,7 @@ body{
     font-size: 12px;
 }
 #containerLogin .form .message a {
-    color: #4CAF50;
+    color: #b63926;
     text-decoration: none;
 }
 #containerLogin .form .register-form {
@@ -271,17 +279,17 @@ body{
 }*/
 /*classe per titol header*/
 .colortitol{
- color:#fff;
- font-weight: bold;
+    color:#fff;
+    font-weight: bold;
 }
 
 /*classes forms afegir*/
 .form-group{
-	margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 label{
-	margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 input,
@@ -291,7 +299,7 @@ input::-webkit-input-placeholder {
 }
 
 .main-login{
- 	background-color: #fff;
+    background-color: #fff;
     /* shadows and rounded borders */
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
@@ -303,16 +311,16 @@ input::-webkit-input-placeholder {
 }
 
 .main-center{
- 	margin-top: 30px;
- 	margin: 0 auto;
- 	max-width: 400px;
-        padding: 40px 40px;
-        background-color: #E6E6E6;
+    margin-top: 30px;
+    margin: 0 auto;
+    max-width: 400px;
+    padding: 40px 40px;
+    background-color: #E6E6E6;
 
 }
 
 .login-button{
-	margin-top: 5px;
+    margin-top: 5px;
 }
 
 /*margin bot*/
@@ -322,34 +330,34 @@ input::-webkit-input-placeholder {
 /*estil estrelles*/
 
 input[type="radio"] {
-  display: none;
+    display: none;
 }
 
 label {
-  color: grey;
+    color: grey;
 }
 
 .clasificacion {
-  direction: rtl;
-  unicode-bidi: bidi-override;
-  text-align: left;
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    text-align: left;
 }
 
 label:hover,
 label:hover ~ label {
-  color: orange;
+    color: orange;
 }
 
 input[type="radio"]:checked ~ label {
-  color: orange;
+    color: orange;
 }
 .star{
     font-size: 25px;    
 }
 /*titol*/
 .title{
-  font-weight: bold;
-  font-size: 45px;
+    font-weight: bold;
+    font-size: 45px;
 }
 /*ocultar boto examinar imatge*/
 .inputWrapper {
@@ -374,4 +382,159 @@ input[type="radio"]:checked ~ label {
     opacity: 0;
     -moz-opacity: 0;
     filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0)
+}
+
+/*Estils Select*/
+.select {
+    border: 1px solid #ccc;
+    width: 140px;
+    overflow: hidden;  
+}
+.select select {
+    padding: 5px 8px;
+    width: 130%;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    appearance: none;
+}
+/*Fons login*/
+.fonslogin{
+    background-image: url("../images/collage.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/*Links color*/
+
+.colorlink a{
+    color:#b63926 !important;
+}
+/*Fons afegir Pelicula*/
+.fonspeli{
+    background-image: url("../images/lord.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100%;
+}
+
+/*Fons afegir Actor*/
+.fonsactor{
+    background-image: url("../images/star.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100%;
+}
+
+/*Fons afegir Actor*/
+.fonsdirector{
+    background-image: url("../images/lord2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100%;
+}
+
+/*Espai bot al form*/
+.espaibot{
+    margin-bottom: 80px;
+}
+
+/*Logo Footer*/
+.logo{
+    width:150px;
+    height: 150px;
+}
+/*Color box home*/
+
+
+.panel-heading1{
+    background-color: #b63926 !important;
+    color:#fff !important;
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+
+
+/*Fons contactform*/
+.fonscontact{
+    background-image: url("../images/contacte/Film.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;  
+
+}
+.fonscontact img {
+    width: 100%;     
+}
+
+/*Estil imatges*/
+.rodona { 
+    width: 150px; height: 150px; border-radius: 150px;
+    -webkit-border-radius: 150px; -moz-border-radius: 150px; 
+    background: url(http://www.tublog.com/tuimagen.jpg) no-repeat; 
+}
+
+.panel-heading2{
+    background-color: #f6ddcc ;
+    color:#fff !important;
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+/*Estils llista actor divs + buttons*/
+.panel-danger{
+    background-color: #b63926;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    padding-bottom: 20px;
+}
+
+.btn-actor{
+    background-color: white;
+    color:black;
+    font-weight: bold;
+}
+
+.lletrablanca{
+    color:#fff;
+    font-weight: bold;
+}
+
+a .colorwhite {
+    color:white;
+}
+/*Vista detallada*/
+
+.colorhr{
+    color: grey;
+    background-color: grey;
+    height: 1px;
+}
+
+.espaidir{
+    margin-bottom:10px;
+    margin-top:10px;
+    margin-left:10px;
+}
+.labelbord{
+    border: 2px solid #C0C0C0;
+    border-radius: 5px;
+}
+.fa1{
+   color: #b63926;
+}
+.colorlabel{
+   color: #000 !important;
+}
+/*Margin entre iputs de actors a vista general*/
+.margin1{
+    margin-bottom: 4px;
+}
+/*Textarea estils*/
+textarea{
+text-align: justify;    
 }

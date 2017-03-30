@@ -1,6 +1,18 @@
 16/03/2017
--Creació plantilla base (Bootstrap)
+-Creacio plantilla base (Bootstrap)
 20/03/2017
--Creació de la classe "actor", controlador i classe db.
-20/03/2017
--Modificacions classe actor, creació vistes contacte i llista actors i formularis actor i peli.
+-Creacio de la classe "actor", controlador i classe db.
+21/03/2017
+-Modificacio estil login, correcions de vistes + edicio imatges. Creacio estils radiobuttons(estrelles) i selects.
+22/03/2017
+-Modificacions classe actor, creacio vistes contacte i llista actors i formularis actor i peli.
+23/03/2017
+-Creacio afegiractor director ctl , vistes afegir amb estils + edicio imatges
+24/03/2017
+-Estils home, creacio contingut home, imatges i logos + edicio imatges.
+27/03/2017
+-Vistes llistat actor + estils + icones.
+28/03/2017
+-Vistes llistat director + pelis+ estils + icones.
+29/03/2017
+-Creacio controlador + vista eliminar.

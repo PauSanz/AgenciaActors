@@ -49,14 +49,14 @@ class director {
     }
 
     public function inserirDirector() {
-        $v = $this->validaDirector();
+        $v = $this->validaDirector(false);
 
-        if ($v->ok) {
-            $directorDb = new directorDb();
+        if ($v->getOk()) {
+            $directorDb = new directordb();
             $r = $directorDb->inserir($this);
-            if ($r != 1) {
-                $v->ok = false;
-                $v->msg = "Fallo al inserir el director en la base de dades.";
+            if ($r == false) {
+                $v->setOk(false);
+                $v->setMsg("Fallo al inserir el director en la base de dades.");
             }
         }
 
@@ -72,22 +72,27 @@ class director {
     }
 
     public function cercarPerNifDirector($nif) {
-        $directorDb = new directorDb();
+        $directorDb = new directordb();
         return $directorDb->cercarPerNif($nif);
+    }
+    
+    public function obtenirDirector($nif) {
+        $directorDb = new directordb();
+        return $directorDb->obtenirDirector($nif);
     }
 
     public function modificarDirector($old_nif) {
         //UPDATE `director` SET `Nif`='47838294K',`Nom`='Steven',`Cognom`='Spielberg',`Foto`='images/director/Spielberg.jpg' WHERE nif='46573829H'
 
-        $v = $this->validaDirector();
+        $v = $this->validaDirector(true);
 
-        if ($v->ok) {
-            $directorDb = new directorDb();
+        if ($v->getOk()) {
+            $directorDb = new directordb();
             $r = $directorDb->modificar($old_nif, $this);
             if ($r != 1) {
 
-                $v->ok = false;
-                $v->msg = "Fallo al modificar el director en la base de dades.";
+                $v->setOk(false);
+                $v->setMsg("Fallo al modificar el director en la base de dades.");
             }
         }
 
@@ -96,23 +101,32 @@ class director {
 
     public function eliminarDirector() {
 
-        $v = new Validar();
-        $directorDb = new directorDb();
+        $v = new validar();
+        $directorDb = new directordb();
         $r = $directorDb->eliminar($this);
 
         if ($r != 1) {
 
-            $v->ok = false;
-            $v->msg = "Fallo al eliminar el director en la base de dades.";
+            $v->setOk(false);
+            $v->setMsg("Fallo al eliminar el director en la base de dades.");
         }
 
         return $v;
     }
 
-    public function validaDirector() {
-        //$v = new Validar();
-        //$v->validar
-        //return $v;
+    public function validaDirector($modificant) {
+        $v = new validar();
+        $v->validarCampBuit($this->getNif());
+        $v->validarCampBuit($this->getNom());
+        $v->validarCampBuit($this->getCognom());
+        $v->validarDNI($this->getNif());
+        $v->stringSenseNumeros($this->getNom());
+        $v->stringSenseNumeros($this->getCognom());
+        if (!$modificant) {
+            $v->directorDuplicat($this->getNif());
+        }
+
+        return $v;
     }
 
 }

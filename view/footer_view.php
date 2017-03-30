@@ -1,33 +1,32 @@
-<!DOCTYPE html>
 <!-- Footer -->
 <footer id="myFooter">
     <div class="container">
         <div class="row">
             <div class="col-sm-3">
-                <h2 class="logo"><img src="view/images/logobo.png"></h2>
+                <h2><img class="logo" src="view/images/logo.png"></h2>
             </div>
             <div class="col-sm-2">
-                <h5>Get started</h5>
+                <h5>Comença</h5>
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Sign up</a></li>
-                    <li><a href="#">Downloads</a></li>
+                    <li><a href="#">Registra't</a></li>
+                    <li><a href="#">Noticies</a></li>
                 </ul>
             </div>
             <div class="col-sm-2">
-                <h5>About us</h5>
+                <h5>Sobre nosaltres</h5>
                 <ul>
-                    <li><a href="#">Company Information</a></li>
-                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Informacio de l'empresa</a></li>
+                    <li><a href="#">Contacta</a></li>
                     <li><a href="#">Reviews</a></li>
                 </ul>
             </div>
             <div class="col-sm-2">
-                <h5>Support</h5>
+                <h5>Suport</h5>
                 <ul>
                     <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Help desk</a></li>
-                    <li><a href="#">Forums</a></li>
+                    <li><a href="#">Politica de privadesa</a></li>
+                    <li><a href="#">Forum</a></li>
                 </ul>
             </div>
             <div class="col-sm-3">
@@ -36,7 +35,7 @@
                     <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
                     <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
                 </div>
-                <a class="btn btn-default"href="?ctl=contact">Contacta</a>
+                <a class="btn btn-default" href="?ctl=contact">Contacta</a>
             </div>
         </div>
     </div>
@@ -57,8 +56,7 @@
     })
 </script>
 <!-- Altres Scripts -->
-<script src="view/js/custom-js.js"></script>
 <script src="view/js/script.js"></script>
-
+<script src="view/js/validacionsPelicula.js"></script>
 </body>
 </html>
