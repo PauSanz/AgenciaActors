@@ -105,7 +105,7 @@ class rol {
     
     public function obtenirRol($id) {
         $rolDb = new roldb();
-        $this = $rolDb->obtenirPaper($id);
+        return $rolDb->obtenirPaper($id);
     }
 
 }
