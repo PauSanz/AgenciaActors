@@ -153,6 +153,11 @@ class pelicula {
         $peliculaDb = new peliculadb();
         return $peliculaDb->cercarPeliPerId($id);
     }
+    
+    public function obtenirPelicula($id) {
+        $peliculaDb = new peliculadb();
+        $this = $peliculaDb->obtenirPelicula($id);
+    }
 
     public function validaPelicula() {
 
