@@ -57,6 +57,8 @@ include('mostrar_selects.php');
                     </div>
                 </div>
 
+                <span id="errorIntervalDates"></span>
+
                 <div class="form-group">
                     <label for="foto" class="cols-sm-2 control-label">Foto</label>
                     <div class="inputWrapper">
@@ -90,13 +92,13 @@ include('mostrar_selects.php');
                 </div>
 
                 <!--                Select-->
-                
-                
-                
-                
-                
-                
-                
+
+
+
+
+
+
+
                 <div class="form-group">
                     <label>Valoració</label>
                     <p class="clasificacion">                        

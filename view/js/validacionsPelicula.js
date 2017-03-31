@@ -3,8 +3,9 @@ $(document).ready(function () {
     $('#tipus').focusout(validarNoBuitIAlfaTipus);
     $('#datainici').focusout(validarDataInici);
     $('#datafi').focusout(validarDataFi);
-
 });
+var formatDataInici = true;
+var formatDataFi = true;
 
 function validarNoBuitIAlfaNom() {
     var val = $('#name').val();
@@ -22,8 +23,7 @@ function validarNoBuitIAlfaNom() {
 function validarNoBuitIAlfaTipus() {
     var val = $('#tipus').val();
     var valor = val.trim();
-
-    if (valor === '' || !Alfabetic(valor)) {
+    if (valor == '' || !Alfabetic(valor)) {
         $('#tipus').focus();
         $('#errorTipus').html("El tipus ha de ser alfabètic i no pot estar buit.");
     } else {
@@ -35,13 +35,12 @@ function validarNoBuitIAlfaTipus() {
 
 function validarDataInici() {
     var val = $('#datainici').val();
-    alert(val);
     if (!validarFormatData(val)) {
-        var res = validarFormatData(val);
-        //alert(res);
+        formatDataInici = false;
         $('#errorDataInici').html("Format de la data incorrecte.");
     } else {
         $('#errorDataInici').html("");
+        validarIntervalDates();
     }
 
 }
@@ -49,9 +48,11 @@ function validarDataInici() {
 function validarDataFi() {
     var val = $('#datafi').val();
     if (!validarFormatData(val)) {
+        formatDataFi = false;
         $('#errorDataFi').html("Format de la data incorrecte.");
     } else {
         $('#errorDataFi').html("");
+        validarIntervalDates();
     }
 
 }
@@ -92,4 +93,70 @@ function validarFormatData(dateString) {
 
     // Revisar el rango del dia
     return day > 0 && day <= monthLength[month - 1];
+}
+
+function validarIntervalDates() {
+    var interval;
+    var dataInici = $('#datainici').val();
+    var dataFi = $('#datafi').val();
+
+    var inici = new Date(dataInici);
+    var diaInici = inici.getDate();
+    var mesInici = inici.getMonth();
+    mesInici += 1;
+    var anyInici = inici.getFullYear();
+
+    var dataInicial = anyInici + "/" + mesInici + "/" + diaInici;
+
+    var final = new Date(dataFi);
+    var diaFi = final.getDate();
+    var mesFi = final.getMonth();
+    mesFi += 1;
+    var anyFi = final.getFullYear();
+
+    var dataFinal = anyFi + "/" + mesFi + "/" + diaFi;
+
+
+    if (formatDataInici == true && formatDataFi == true) {
+        if (!comparararDates(dataInicial, dataFinal)) {
+            $('#errorIntervalDates').html("La data fi no pot ser antarior ni igual que la d'inici.");
+            interval = false;
+        } else if (interval == false || comparararDates(dataInicial, dataFinal)) {
+            $('#errorIntervalDates').html("");
+        }
+
+
+    }
+
+}
+
+function comparararDates(dataInici, dataFi) {
+
+    var mesInicial = dataInici.substring(5, 6);
+    var diaInicial = dataInici.substring(7, 10);
+    var anyInicial = dataInici.substring(0, 4);
+    var mesFinal = dataFi.substring(5, 6);
+    var diaFinal = dataFi.substring(7, 10);
+    var anyFInal = dataFi.substring(0, 4);
+    if (anyInicial < anyFInal) {
+        return(true);
+    } else {
+        if (anyInicial == anyFInal) {
+            if (mesInicial < mesFinal) {
+                return(true);
+            } else {
+                if (mesInicial == mesFinal) {
+                    if (diaInicial < diaFinal) {
+                        return(true);
+                    } else {
+                        return(false);
+                    }
+                } else {
+                    return(false);
+                }
+            }
+        } else {
+            return(false);
+        }
+    }
 }
