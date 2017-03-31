@@ -3,9 +3,14 @@ $(document).ready(function () {
     $('#tipus').focusout(validarNoBuitIAlfaTipus);
     $('#datainici').focusout(validarDataInici);
     $('#datafi').focusout(validarDataFi);
+    validarImatge();
+    $('#imatge').change(validarImatge);
+    $('#message').change(validarDescripcio);
+    $("#formulariPeli").click(validarFormulari);
 });
 var formatDataInici = true;
 var formatDataFi = true;
+var totOkFormulari = true;
 
 function validarNoBuitIAlfaNom() {
     var val = $('#name').val();
@@ -14,6 +19,7 @@ function validarNoBuitIAlfaNom() {
     if (valor == '' || !Alfabetic(valor)) {
         $('#name').focus();
         $('#errorNom').html("El nom ha de ser alfabètic i no pot estar buit.");
+        totOkFormulari = false;
     } else {
         $('#errorNom').html("");
     }
@@ -26,6 +32,7 @@ function validarNoBuitIAlfaTipus() {
     if (valor == '' || !Alfabetic(valor)) {
         $('#tipus').focus();
         $('#errorTipus').html("El tipus ha de ser alfabètic i no pot estar buit.");
+        totOkFormulari = false;
     } else {
         $('#errorTipus').html("");
     }
@@ -38,6 +45,7 @@ function validarDataInici() {
     if (!validarFormatData(val)) {
         formatDataInici = false;
         $('#errorDataInici').html("Format de la data incorrecte.");
+        totOkFormulari = false;
     } else {
         $('#errorDataInici').html("");
         validarIntervalDates();
@@ -50,6 +58,7 @@ function validarDataFi() {
     if (!validarFormatData(val)) {
         formatDataFi = false;
         $('#errorDataFi').html("Format de la data incorrecte.");
+        totOkFormulari = false;
     } else {
         $('#errorDataFi').html("");
         validarIntervalDates();
@@ -121,6 +130,7 @@ function validarIntervalDates() {
         if (!comparararDates(dataInicial, dataFinal)) {
             $('#errorIntervalDates').html("La data fi no pot ser antarior ni igual que la d'inici.");
             interval = false;
+            totOkFormulari = false;
         } else if (interval == false || comparararDates(dataInicial, dataFinal)) {
             $('#errorIntervalDates').html("");
         }
@@ -159,4 +169,56 @@ function comparararDates(dataInici, dataFi) {
             return(false);
         }
     }
+}
+
+function validarImatge() {
+    var archivo = $('#imatge').val();
+    //var archi2 = $('#imatge');
+    var extensiones_permitidas = new Array(".png", ".jpg", ".jpeg");
+    var mierror = "";
+    if (!archivo) {
+
+        mierror = "No has seleccionat cap imatge encara.";
+        $('#errorImg').html(mierror);
+        totOkFormulari = false;
+    } else {
+
+        var extension = (archivo.substring(archivo.lastIndexOf("."))).toLowerCase();
+
+        var permitida = false;
+
+        for (var i = 0; i < extensiones_permitidas.length; i++) {
+            if (extensiones_permitidas[i] == extension) {
+                permitida = true;
+                break;
+            }
+        }
+        if (!permitida) {
+            mierror = "Comprova la extensió dels fitxers a pujar. \nNomés és pot pujar els fitxers amb extensió: " + extensiones_permitidas.join();
+            $('#errorImg').html(mierror);
+            totOkFormulari = false;
+        } else {
+            $('#errorImg').html("Imatge correcte!");
+        }
+    }
+}
+
+function validarDescripcio() {
+
+    if ($('#message').val() == "") {
+        $('#errorDescripcio').html("Si us plau, escriu una breu descripció de la pel·lícula.");
+        totOkFormulari = false;
+    }
+
+}
+
+function validarFormulari() {
+
+    if (totOkFormulari) {
+        return true;
+    } else {
+        return false;
+        alert("HOLA NO HAS VALIDAT");
+    }
+
 }

@@ -1,7 +1,7 @@
-window.onload = function() {
-    if(fGetCookie('user') != null){
+window.onload = function () {
+    if (fGetCookie('user') != null) {
         stat('Logout', fGetCookie('user'));
-    }else{
+    } else {
         stat('Login');
     }
     document.getElementById("password1").addEventListener("change", message);
@@ -26,17 +26,17 @@ function fGetCookie(NameOfCookie) {
             if (end == -1) {
                 end = document.cookie.length;
             }
-            return unescape(document.cookie.substring(begin, end));    
+            return unescape(document.cookie.substring(begin, end));
         }
     }
     return null;
 }
 
-function message(){
+function message() {
     var message = "La contrasenya no es la mateixa en el dos camps."
     var p1 = getElementById("password1").value;
     var p2 = getElementById("password2").value;
-    if(p1 != p2){
+    if (p1 != p2) {
         getElementById("message").value = message;
     }
 }

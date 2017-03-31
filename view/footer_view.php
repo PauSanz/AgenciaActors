@@ -57,6 +57,7 @@
 </script>
 <!-- Altres Scripts -->
 <script src="view/js/script.js"></script>
+<script src="view/js/user.js"></script>
 <script src="view/js/validacionsPelicula.js"></script>
 </body>
 </html>
