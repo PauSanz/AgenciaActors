@@ -19,7 +19,7 @@ function guardarImatge($subcarpeta) {
 
     $imgDefinitivamentNet = $imgNeta;
 
-    $rutaDesti = $_SERVER['DOCUMENT_ROOT'] . "/AgenciaActors/view/images/" . $subcarpeta . "/" . $imgDefinitivamentNet;
+    $rutaDesti = $_SERVER['DOCUMENT_ROOT'] . "/M14/AgenciaActors/view/images/" . $subcarpeta . "/" . $imgDefinitivamentNet;
 
 
     if ((($_FILES["fotoPujada"]["type"] == "image/png") || ($_FILES["fotoPujada"]["type"] == "image/jpg") || ($_FILES["fotoPujada"]["type"] == "image/jpeg")

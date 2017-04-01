@@ -33,6 +33,11 @@ class agencia {
         $agenciadb = new agenciadb();
         return $agenciadb->obtenirTotesPelicules();
     }
+    
+    public function rebrePapers() {
+        $agenciadb = new agenciadb();
+        return $agenciadb->obtenirTotsPapers();
+    }
 
 }
 
