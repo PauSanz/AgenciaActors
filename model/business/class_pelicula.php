@@ -122,7 +122,7 @@ class pelicula {
 
         $v = new validar();
         $peliculaDb = new peliculadb();
-        $r = $peliculaDb->esborrarPelicula($this);
+        $r = $peliculaDb->esborrarPelicula($this->getIdPelicula());
 
         if ($r != 1) {
 

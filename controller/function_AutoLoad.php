@@ -4,7 +4,7 @@ function __autoload($class_name){
 
     $curdir = getcwd();
     
-    chdir("$root/AgenciaActors/");
+    chdir("$root/M14/AgenciaActors/");
 
     $nomFile="class_".$class_name.".php";
 

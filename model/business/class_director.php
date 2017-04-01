@@ -103,7 +103,7 @@ class director {
 
         $v = new validar();
         $directorDb = new directordb();
-        $r = $directorDb->eliminar($this);
+        $r = $directorDb->eliminar($this->getNif());
 
         if ($r != 1) {
 

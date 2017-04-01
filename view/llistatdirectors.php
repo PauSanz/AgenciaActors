@@ -5,14 +5,14 @@ require_once("controller/function_AutoLoad.php");
 function mostrarDirectors() {
     $agencia = new agencia("agencia");
     $arrayDeDirectors = $agencia->rebreDirectors();
-    
+    if(count($arrayDeDirectors) > 0){
     echo "<div>";
     foreach ($arrayDeDirectors as $data) {
         echo"<div class='col-md-3 col-sm-6'>";
         echo"<div class='panel panel-default text-center'>";
         echo"<div class='panel-heading2'>";
         echo"<span class='fa-stack fa-5x'>";
-        $imatge ="<img class='rodona'heigh ='150px' width='150px' src='view";
+        $imatge ="<img class='rodona'heigh ='150px' width='150px' src='view/";
 //        $idact= $data->getNif();
         $foto = $data->getFoto();
         $pathphoto = $imatge . $foto . "'>";
@@ -29,7 +29,7 @@ function mostrarDirectors() {
         echo"<div class='row'>";
         echo"<div class='col-lg-4'>";
         if(isset($_COOKIE['user'])){
-            echo"<a href='?ctl=director&act=modificar&id=" . $data->getId() . "'><i class='fa fa-pencil-square-o fa-2x colorwhite'></i></a>";
+            echo"<a href='?ctl=director&act=modificar&id=" . $data->getNif() . "'><i class='fa fa-pencil-square-o fa-2x colorwhite'></i></a>";
         }
         echo"</div>";
         echo"<div class='col-lg-4'>";        
@@ -46,6 +46,7 @@ function mostrarDirectors() {
         echo"</div>";
     }
     echo"</div>";
+    }
 }
 
 ?>  

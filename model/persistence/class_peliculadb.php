@@ -42,7 +42,7 @@ class peliculadb {
         return $peliculaAux;
     }
     public function obtenirPelicula($id) {
-        $query = "SELECT * FROM pelicula WHERE id = '".$id."';";
+        $query = "SELECT * FROM pelicula WHERE idPelicula = '".$id."';";
         $con = new db();
         $arrayDePelicules = $con->rebrePelicules($query); //Consultar PDO
         $con->close();
