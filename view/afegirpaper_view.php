@@ -18,13 +18,13 @@ include('mostrar_selects.php');
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-id-card fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="nom" id="name"  placeholder="Nom" value="<?php echo (isset($x) ? $x->nom : '') ?>"/>
+                            <input type="text" class="form-control" name="nom" id="nomPaper"  placeholder="Nom" value="<?php echo (isset($x) ? $x->nom : '') ?>"/>
                         </div>
-                        <span id="errorNom"></span>
                     </div>
                 </div>
 
-                
+                <span id="errorNom"></span>
+
                 <!--                Select-->
 
                 <div class="form-group ">
@@ -36,7 +36,7 @@ include('mostrar_selects.php');
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="form-group ">
                     <label for="pelicula" class="cols-sm-2 control-label">Pel·licula</label>
                     <div class="cols-sm-10">
@@ -48,8 +48,10 @@ include('mostrar_selects.php');
                 </div>
 
                 <div class="form-group ">
-                    <input type="submit" name="submit" value="Guardar" class="btn btn-danger btn-lg btn-block login-button"></input>
+                    <input type="submit" id="botoGuardarPaper" name="submit" value="Guardar" class="btn btn-danger btn-lg btn-block login-button"></input>
                 </div> 
+
+                <span id="errorFormulari"></span>
 
             </form>
         </div>

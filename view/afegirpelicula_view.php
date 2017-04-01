@@ -116,8 +116,9 @@ include('mostrar_selects.php');
                     </p>
                 </div>
                 <div class="form-group ">
-                    <input type="submit" name="submit" value="Guardar" class="btn btn-danger btn-lg btn-block login-button"></input>
-                </div> 
+                    <input id="botoGuardar" type="submit" name="submit" value="Guardar" class="btn btn-danger btn-lg btn-block login-button"></input>
+                </div>
+                <span id="errorFormulari"></span>
 
             </form>
         </div>
