@@ -180,14 +180,14 @@ function comparararDates(dataInici, dataFi) {
     var mesFinal = dataFi.substring(5, 6);
     var diaFinal = dataFi.substring(7, 10);
     var anyFInal = dataFi.substring(0, 4);
-
+  
     var f1 = new Date(anyInicial, mesInicial, diaInicial);
     var f2 = new Date(anyFInal, mesFinal, diaFinal);
 
     if (f1 < f2) {
         return(true);
     }
-
+  
     return(false);
 }
 
