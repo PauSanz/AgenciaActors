@@ -50,6 +50,16 @@ class actordb {
             return $actorAux;
         }
     }
+    
+    public function eliminar($nif) {		
+	
+		$query="DELETE FROM actor WHERE Nif='".$nif."';";				
+		$con = new db();
+		$actorAux = $con->consulta($query);
+		$con->close();
+                
+                return $actorAux;
+	} 
 
 //    public function mostrar() {
 //        $query="SELECT * FROM actor;";				

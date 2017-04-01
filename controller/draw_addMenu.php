@@ -13,7 +13,10 @@ function addMenu() {
                 </li>
                 <li>
                     <a href="?ctl=director&act=afegir">Afegir Director</a>
-                </li>                                
+                </li>
+                <li>
+                    <a href="?ctl=paper&act=afegir">Afegir Paper</a>
+                </li> 
             </ul>
         </li> 
         <?php

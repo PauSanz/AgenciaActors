@@ -108,7 +108,7 @@ class actor {
 
         $v = new validar();
         $actorDb = new actorDb();
-        $r = $actorDb->eliminar($this);
+        $r = $actorDb->eliminar($this->getNif());
 
         if ($r != 1) {
 

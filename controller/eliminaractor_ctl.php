@@ -5,13 +5,13 @@ require_once("config/db.inc.php");
 
 $msg = null;
 try {    
-            $director = new director('','','','');
-            $nifdir = $_REQUEST['dni'];
-            $director = $director->obtenirDirector($nifdir);            
-            $res = $director->eliminarDirector();
+            $actor = new actor('','','','','');
+            $nifact = $_REQUEST['dni'];
+            $actor = $actor->obtenirActor($nifact);            
+            $res = $actor->eliminarActor();
             
             if ($res->getOk()) {
-             $msg = "Director eliminat";
+             $msg = "Actor eliminat";
              echo "<script type='text/javascript'>alert('$msg');</script>";
              
             }else{
@@ -19,7 +19,7 @@ try {
              echo "<script type='text/javascript'>alert('$msg');</script>";
             }
             
-            include "llistadirectors_ctl.php";;
+            include "llistaactors_ctl.php";
           
 } catch (Exception $e) {
     $msg = "Error al eliminar.";
