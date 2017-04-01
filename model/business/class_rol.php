@@ -85,8 +85,8 @@ class rol {
     }
 
     public function eliminarPaper() {
-        
-        $v = new Validar();
+
+        $v = new validar();
         $paperDb = new roldb();
         $r = $paperDb->eliminar($this);
 
@@ -99,14 +99,14 @@ class rol {
     }
 
     public function validaPaper() {
-        $v = new Validar();
-        
+        $v = new validar();
+
         $v->validarCampBuit($this->getNom());
         $v->stringSenseNumeros($this->getNom());
 
         return $v;
     }
-    
+
     public function obtenirRol($id) {
         $rolDb = new roldb();
         return $rolDb->obtenirPaper($id);

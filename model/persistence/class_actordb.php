@@ -45,27 +45,20 @@ class actordb {
         if (count($arrayDeActors) > 0) {
             $actorAux = $arrayDeActors[0];
             return $actorAux;
-        }else{
-            $actorAux = new actor('','','','','');
+        } else {
+            $actorAux = new actor('', '', '', '', '');
             return $actorAux;
         }
     }
-    
-    public function eliminar($nif) {		
-	
-		$query="DELETE FROM actor WHERE Nif='".$nif."';";				
-		$con = new db();
-		$actorAux = $con->consulta($query);
-		$con->close();
-                
-                return $actorAux;
-	} 
 
-//    public function mostrar() {
-//        $query="SELECT * FROM actor;";				
-//		$con = new db();
-//		$arraydeActors = $con->rebreActors($query);
-//		$con->close();
-//		return $arraydeActors;		
-//    }
+    public function eliminar($nif) {
+
+        $query = "DELETE FROM actor WHERE nif='" . $nif . "';";
+        $con = new db();
+        $actorAux = $con->consulta($query);
+        $con->close();
+
+        return $actorAux;
+    }
+
 }

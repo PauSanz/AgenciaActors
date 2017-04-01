@@ -61,7 +61,7 @@ class actor {
     public function inserirActor() {
         //$actorDb = new actordb();        
         //$actorDb->inserir($this);
-        
+
         $v = $this->validaActor(false);
 
         if ($v->getOk()) {
@@ -80,7 +80,7 @@ class actor {
         $actorDb = new actordb();
         return $actorDb->cercarPerNif($nif);
     }
-    
+
     public function obtenirActor($nif) {
         $actorDb = new actordb();
         return $actorDb->obtenirActor($nif);
@@ -89,7 +89,7 @@ class actor {
     public function modificarActor($old_nif) {
         //$actorDb = new actordb();
         //$actorDb->modificar($old_nif, $this);
-        
+
         $v = $this->validaActor(true);
 
         if ($v->getOk()) {
@@ -103,7 +103,7 @@ class actor {
 
         return $v;
     }
-    
+
     public function eliminarActor() {
 
         $v = new validar();
@@ -121,20 +121,18 @@ class actor {
 
     public function validaActor($modificant) {
         $v = new validar();
-        
+
         $v->validarCampBuit($this->getNif());
-        $v->validarCampBuit($this->getNom()); 
+        $v->validarCampBuit($this->getNom());
         $v->validarCampBuit($this->getCognom());
         $v->validarDNI($this->getNif());
-        $v->stringSenseNumeros($this->getNom()); 
+        $v->stringSenseNumeros($this->getNom());
         $v->stringSenseNumeros($this->getCognom());
-        if(!$modificant){
+        if (!$modificant) {
             $v->actorDuplicat($this->getNif());
         }
-        
+
         return $v;
     }
-    
-
 
 }

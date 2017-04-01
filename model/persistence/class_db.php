@@ -124,6 +124,19 @@ class db implements interface_db {
         }
         return $arrayPapers;
     }
+    
+//    public function rebreActorsAmbNifConcret($query) {
+//        $con = $this->connect();
+//        $consulta = mysqli_query($con, $query) or die('Error, query failed: ' . $this->error());
+//        $cont = 0;
+//        $arrayActors = array();
+//        while ($row = mysqli_fetch_array($consulta)) {
+//            $actor = new actor($row["nif"]);
+//            $arrayActors[$cont] = $actor;
+//            $cont++;
+//        }
+//        return $arrayActors;
+//    }
 
 }
 

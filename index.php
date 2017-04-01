@@ -57,6 +57,9 @@ switch ($ctl) {
             case "llista":
                 include "controller/llistapelicules_ctl.php";
                 break;
+            case "veure":
+                include "controller/detallspeli_ctl.php";
+                break;
             default:
                 break;
         }

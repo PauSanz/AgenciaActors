@@ -91,15 +91,6 @@ include('mostrar_selects.php');
                         </div>
                     </div>
                 </div>
-
-                <!--                Select-->
-
-
-
-
-
-
-
                 <div class="form-group">
                     <label>Valoració</label>
                     <p class="clasificacion">                        

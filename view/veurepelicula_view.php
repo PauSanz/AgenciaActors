@@ -1,3 +1,6 @@
+<?php
+include('vistapeli.php');
+?>
 <div class="container fonsdirector">
     <div class="row main">
         <div class="panel-heading">
@@ -5,7 +8,7 @@
 
             </div>
         </div> 
-        <div class="main-login main-center">
+<!--        <div class="main-login main-center">
             <div class="text-center">
                 <img class="rodona" src="view/images/pelicula/starwars.jpg">
             </div>
@@ -61,8 +64,8 @@
                         </textarea>
                     </div>
                 </div>
-            </div>
-            <div class="form-group ">
+            </div>-->
+<!--            <div class="form-group ">
                 <label for="valoracio" class="cols-sm-2 control-label colorlabel">Valoració</label>
                 <p class="clasificacion">                        
                     <input id="radio1" disabled name="estrellas" value="5" type="radio">
@@ -76,10 +79,12 @@
                     <input id="radio5" disabled name="estrellas" value="1" type="radio">
                     <label class="star" for="radio5">★</label>
                 </p>
-            </div>
+            </div>-->
+            <?php mostrapeli();?>            
         </div>
+        <div class="espaibot"></div>
     </div>
-    <div class="espaibot"></div>
+    
 </div>
 
 

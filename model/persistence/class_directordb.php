@@ -25,7 +25,16 @@ class directordb{
 		$directorAux = $con->consulta($query);
 		$con->close();
 		return $directorAux;
-	} 
+	}
+        
+//        public function cercarPerId ($id){
+//            
+//            $query="SELECT * FROM director WHERE id = '".$id."';";				
+//		$con = new db();
+//		$directorAux = $con->consulta($query);
+//		$con->close();
+//		return $directorAux;
+//        }
         
         public function modificar($old_nif,$director) {		
 	

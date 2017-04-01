@@ -76,6 +76,11 @@ class director {
         return $directorDb->cercarPerNif($nif);
     }
     
+//     public function cercarPerIdDirector($id) {
+//        $directorDb = new directordb();
+//        return $directorDb->cercarPerId(id);
+//    }
+    
     public function obtenirDirector($nif) {
         $directorDb = new directordb();
         return $directorDb->obtenirDirector($nif);
