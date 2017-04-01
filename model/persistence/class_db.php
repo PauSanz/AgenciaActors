@@ -105,7 +105,7 @@ class db implements interface_db {
         $cont = 0;
         $arrayPelicules[] = array();
         while ($row = mysqli_fetch_array($consulta)) {
-            $peli = new pelicula($row["idPelicula"], $row["nom"], $row["descripcio"], $row["tipus"], $row["dataInici"], $row["dataFi"], $row["valoracio"], $row["foto"], $row["valoracio"], $row["idDirector"]);
+            $peli = new pelicula($row["idPelicula"], $row["nom"], $row["descripcio"], $row["tipus"], $row["dataInici"], $row["dataFi"], $row["valoracio"], $row["foto"], $row["idDirector"]);
             $arrayPelicules[$cont] = $peli;
             $cont++;
         }
