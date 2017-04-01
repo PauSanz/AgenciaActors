@@ -57,14 +57,17 @@ include('mostrar_selects.php');
                     </div>
                 </div>
 
+                <span id="errorIntervalDates"></span>
+
                 <div class="form-group">
                     <label for="foto" class="cols-sm-2 control-label">Foto</label>
                     <div class="inputWrapper">
                         <span class="input-group-addon"><i class="fa fa-image fa" aria-hidden="true"></i>
-                            <input class="fileInput" type="file" name="fotoPujada" src="<?php echo (isset($x) ? $x->foto : '') ?>"/>
+                            <input class="fileInput" id="imatge" type="file" name="fotoPujada" src="<?php echo (isset($x) ? $x->foto : '') ?>"/>
                         </span>
                     </div>
                 </div>
+                <span id="errorImg"></span>
                 <div class="form-group">
                     <label for="descripcio" class="cols-sm-2 control-label">Descripció</label>
                     <div class="cols-sm-10">
@@ -90,13 +93,13 @@ include('mostrar_selects.php');
                 </div>
 
                 <!--                Select-->
-                
-                
-                
-                
-                
-                
-                
+
+
+
+
+
+
+
                 <div class="form-group">
                     <label>Valoració</label>
                     <p class="clasificacion">                        
