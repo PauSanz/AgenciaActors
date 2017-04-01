@@ -9,8 +9,7 @@ function mostrapeli() {
     $director = new director('', '', '', '');
     $idpel = $_REQUEST['id'];
     $peli = $pelicula->obtenirPelicula($idpel);
-    $directorDeLaPeli = $peli->getIdDirector();
-    $directorVista = $director->cercarPerNifDirector($directorDeLaPeli);
+    $directorPeli = $director->obtenirDirector($peli->getIdDirector());
     $arrActorsPeliConcreta = array();
     $papersDeLaPeliConcreta = $pelicula->obtenirPapersDeLaPeli($idpel);
 
@@ -39,8 +38,10 @@ function mostrapeli() {
     echo"<div class = 'cols-sm-10'>";
     echo"<div class = 'input-group labelbord'>";
     echo"<span class = 'input-group-addon'><i class = 'fa fa-bullhorn fa-lg fa1' aria-hidden = 'true'></i></span>";
-    //$aux = $directorVista->getNom();
-    echo"<p class = 'espaidir'><b>NOM DIRECTOR</b></p>";
+    $nomDirector = $directorPeli->getNom();
+    $cognomDirector = $directorPeli->getCognom();
+    $nomComplet = $nomDirector . " " . $cognomDirector;
+    echo"<p class = 'espaidir'><b>$nomComplet</b></p>";
     echo"</div>";
     echo"</div>";
     echo"</div>";
@@ -54,8 +55,10 @@ function mostrapeli() {
         $nifActor = $papersDeLaPeliConcreta[$i]->getIdActor();
         $nomPaper = $papersDeLaPeliConcreta[$i]->getNom();
         $actorParticipant = $actor->obtenirActor($nifActor);
-        $nomactors = $actorParticipant->getNom();
-        echo"<p class = 'espaidir'><b>$nomPaper: $nomactors  </b></p>";
+        $nomActor = $actorParticipant->getNom();
+        $cognomActor = $actorParticipant->getCognom();
+        $nomComplet = $nomActor . " " . $cognomActor;
+        echo"<p class = 'espaidir'><b>$nomPaper: $nomComplet  </b></p>";
     }
     echo"</div>";
     echo"</div>";
