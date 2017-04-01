@@ -5,7 +5,7 @@ require_once("controller/function_AutoLoad.php");
 function mostrarPelis() {
     $agencia = new agencia("agen");
     $arrayDePelis = $agencia->rebrePelis();
-   
+   if(count($arrayDePelis) > 0){
     echo "<div>";
     foreach ($arrayDePelis as $data) {
         echo"<div class='col-md-3 col-sm-6'>";
@@ -36,7 +36,7 @@ function mostrarPelis() {
         echo"</div>";
         echo"<div class='col-lg-4'>";
         if(isset($_COOKIE['user'])){
-            echo"<a href='#'><i class='fa fa-trash-o fa-2x colorwhite'></i></a>";
+            echo"<a href='?ctl=pelicula&act=eliminar&id=" . $data->getIdPelicula() . "'><i class='fa fa-trash-o fa-2x colorwhite'></i></a>";
         }
         echo"</div>";
         echo"</div>";
@@ -45,6 +45,7 @@ function mostrarPelis() {
         echo"</div>";
     }
     echo"</div>";
+   }
 }
 
 ?>  

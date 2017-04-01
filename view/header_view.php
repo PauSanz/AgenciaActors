@@ -44,6 +44,11 @@
                         <li>
                             <a href="?ctl=director&act=llista">Directors</a>
                         </li>
+                        <?php if (isset($_COOKIE['user'])) { ?>
+                        <li>
+                            <a href="?ctl=paper&act=llista">Papers</a>
+                        </li>
+                        <?php } ?>
                         <li>
                             <a href="?ctl=contact">Contacte</a>
                         </li>

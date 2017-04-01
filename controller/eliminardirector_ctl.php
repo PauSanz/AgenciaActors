@@ -6,16 +6,20 @@ require_once("config/db.inc.php");
 $msg = null;
 try {    
             $director = new director('','','','');
-            $nifdir = $director->getNif();
-            $res = $director->cercarPerNifDirector($nifdir);            
-            $msg = $res;
-            echo "<script type='text/javascript'>alert('$msg');</script>";
-            if ($res) {
-             $elimina = $director->eliminarDirector($res); 
-             alert("S'ha eliminat");
+            $nifdir = $_REQUEST['dni'];
+            $director = $director->obtenirDirector($nifdir);            
+            $res = $director->eliminarDirector();
+            
+            if ($res->getOk()) {
+             $msg = "Director eliminat";
+             echo "<script type='text/javascript'>alert('$msg');</script>";
+             
             }else{
-             alert("ERROR");
+             $msg = "Error: ".$res->getMsg();
+             echo "<script type='text/javascript'>alert('$msg');</script>";
             }
+            
+            include "llistadirectors_ctl.php";;
           
 } catch (Exception $e) {
     $msg = "Error al eliminar.";
