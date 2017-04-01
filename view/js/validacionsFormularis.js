@@ -6,7 +6,7 @@ $(document).ready(function () {
     $('#datafi').focusout(validarDataFi);
     validarImatge(); //Tant per Peli, Actor i Director.
     $('#imatge').change(validarImatge);
-    $('#message').change(validarDescripcio);
+    $('#message').focusout(validarDescripcio);
 
     /* ACTOR I DIRECTOR */
     $('#nif').focusout(validarNif);
@@ -156,7 +156,9 @@ function validarIntervalDates() {
 
 
     if (formatDataInici == true && formatDataFi == true) {
-        if (!comparararDates(dataInicial, dataFinal)) {
+        if (dataFinal == "NaN/NaN/NaN") {
+            $('#errorIntervalDates').html("Introdueix la data final.");
+        } else if (!comparararDates(dataInicial, dataFinal)) {
             $('#errorIntervalDates').html("La data fi no pot ser anterior ni igual que la d'inici.");
             interval = false;
             totOkFormulari = false;
@@ -178,27 +180,15 @@ function comparararDates(dataInici, dataFi) {
     var mesFinal = dataFi.substring(5, 6);
     var diaFinal = dataFi.substring(7, 10);
     var anyFInal = dataFi.substring(0, 4);
-    if (anyInicial < anyFInal) {
+
+    var f1 = new Date(anyInicial, mesInicial, diaInicial);
+    var f2 = new Date(anyFInal, mesFinal, diaFinal);
+
+    if (f1 < f2) {
         return(true);
-    } else {
-        if (anyInicial == anyFInal) {
-            if (mesInicial < mesFinal) {
-                return(true);
-            } else {
-                if (mesInicial == mesFinal) {
-                    if (diaInicial < diaFinal) {
-                        return(true);
-                    } else {
-                        return(false);
-                    }
-                } else {
-                    return(false);
-                }
-            }
-        } else {
-            return(false);
-        }
     }
+
+    return(false);
 }
 
 function validarImatge() {
@@ -239,9 +229,9 @@ function validarDescripcio() {
         $('#errorDescripcio').html("Si us plau, escriu una breu descripció de la pel·lícula.");
         totOkFormulari = false;
     } else {
+        $('#errorDescripcio').html("");
         totOkFormulari = true;
     }
-    //totOkFormulari = true;
 
 }
 function validarNoBuitIAlfaNom() {
