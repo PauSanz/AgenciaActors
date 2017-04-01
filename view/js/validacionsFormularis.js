@@ -1,18 +1,30 @@
 $(document).ready(function () {
-    $('#name').focusout(validarNoBuitIAlfaNom);
+    /* PELI */
+    $('#name').focusout(validarNoBuitIAlfaNomPeli);
     $('#tipus').focusout(validarNoBuitIAlfaTipus);
     $('#datainici').focusout(validarDataInici);
     $('#datafi').focusout(validarDataFi);
-    validarImatge();
+    validarImatge(); //Tant per Peli, Actor i Director.
     $('#imatge').change(validarImatge);
     $('#message').change(validarDescripcio);
-    $("#formulariPeli").click(validarFormulari);
+
+    /* ACTOR I DIRECTOR */
+    $('#nif').focusout(validarNif);
+    $('#nom').focusout(validarNoBuitIAlfaNom);
+    $('#cognom').focusout(validarNoBuitIAlfaCognom);
+    $('#imatge').change(validarImatge);
+    $("#botoGuardar").click(validarFormulari); //Tant per Peli, Actor i Director.
+
+    /* PAPER*/
+    $('#nomPaper').focusout(validarNoBuitIAlfaNomPaper);
+    $("#botoGuardarPaper").click(validarFormulariPaper);
 });
+
 var formatDataInici = true;
 var formatDataFi = true;
 var totOkFormulari = true;
 
-function validarNoBuitIAlfaNom() {
+function validarNoBuitIAlfaNomPeli() {
     var val = $('#name').val();
     var valor = val.trim();
 
@@ -22,8 +34,24 @@ function validarNoBuitIAlfaNom() {
         totOkFormulari = false;
     } else {
         $('#errorNom').html("");
+        totOkFormulari = true;
     }
 
+}
+
+function validarNoBuitIAlfaNomPaper() {
+
+    var val = $('#nomPaper').val();
+    var valor = val.trim();
+
+    if (valor == '' || !Alfabetic(valor)) {
+        $('#nomPaper').focus();
+        $('#errorNom').html("El nom ha de ser alfabètic i no pot estar buit.");
+        totOkFormulari = false;
+    } else {
+        $('#errorNom').html("");
+        totOkFormulari = true;
+    }
 }
 
 function validarNoBuitIAlfaTipus() {
@@ -35,6 +63,7 @@ function validarNoBuitIAlfaTipus() {
         totOkFormulari = false;
     } else {
         $('#errorTipus').html("");
+        totOkFormulari = true;
     }
 
 }
@@ -128,11 +157,12 @@ function validarIntervalDates() {
 
     if (formatDataInici == true && formatDataFi == true) {
         if (!comparararDates(dataInicial, dataFinal)) {
-            $('#errorIntervalDates').html("La data fi no pot ser antarior ni igual que la d'inici.");
+            $('#errorIntervalDates').html("La data fi no pot ser anterior ni igual que la d'inici.");
             interval = false;
             totOkFormulari = false;
         } else if (interval == false || comparararDates(dataInicial, dataFinal)) {
             $('#errorIntervalDates').html("");
+            totOkFormulari = true;
         }
 
 
@@ -173,7 +203,6 @@ function comparararDates(dataInici, dataFi) {
 
 function validarImatge() {
     var archivo = $('#imatge').val();
-    //var archi2 = $('#imatge');
     var extensiones_permitidas = new Array(".png", ".jpg", ".jpeg");
     var mierror = "";
     if (!archivo) {
@@ -199,26 +228,89 @@ function validarImatge() {
             totOkFormulari = false;
         } else {
             $('#errorImg').html("Imatge correcte!");
+            totOkFormulari = true;
         }
     }
 }
 
 function validarDescripcio() {
 
-    if ($('#message').val() == "") {
+    if ($('#message').val().trim() == "") {
         $('#errorDescripcio').html("Si us plau, escriu una breu descripció de la pel·lícula.");
         totOkFormulari = false;
+    } else {
+        totOkFormulari = true;
+    }
+    //totOkFormulari = true;
+
+}
+function validarNoBuitIAlfaNom() {
+    var val = $('#nom').val();
+    var valor = val.trim();
+
+    if (valor == '' || !Alfabetic(valor)) {
+        $('#nom').focus();
+        $('#errorNom').html("El nom ha de ser alfabètic i no pot estar buit.");
+        totOkFormulari = false;
+    } else {
+        $('#errorNom').html("");
+        totOkFormulari = true;
+    }
+
+}
+
+function validarNoBuitIAlfaCognom() {
+    var val = $('#cognom').val();
+    var valor = val.trim();
+    if (valor == '' || !Alfabetic(valor)) {
+        $('#cognom').focus();
+        $('#errorCogom').html("El cognom ha de ser alfabètic i no pot estar buit.");
+        totOkFormulari = false;
+    } else {
+        $('#errorCogom').html("");
+        totOkFormulari = true;
+    }
+
+}
+
+function validarNif() {
+    var dni = $('#nif').val();
+
+    var lockup = 'TRWAGMYFPDXBNJZSQVHLCKE';
+    var valueDni = dni.substr(0, dni.length - 1);
+    var letra = dni.substr(dni.length - 1, 1).toUpperCase();
+
+    if (lockup.charAt(valueDni % 23) == letra) {
+        $('#errorDNI').html("El NIF introduït és vàlid.");
+    } else {
+        $('#nif').focus();
+        $('#errorDNI').html("El NIF introduït no és vàlid.");
     }
 
 }
 
 function validarFormulari() {
-
-    if (totOkFormulari) {
-        return true;
-    } else {
-        return false;
-        alert("HOLA NO HAS VALIDAT");
+    if (!$('#imatge').val()) {
+        var mierror = "No has seleccionat cap imatge encara.";
+        $('#errorImg').html(mierror);
+        totOkFormulari = false;
     }
 
+    if (totOkFormulari == true) {
+        return true;
+    } else {
+        $('#errorFormulari').html("Revisa els camps del formulari, falten dades o dades errònies.");
+        return false;
+    }
+
+}
+
+function validarFormulariPaper() {
+
+    if (totOkFormulari == true) {
+        return true;
+    } else {
+        $('#errorFormulari').html("Revisa els camps del formulari, falten dades o dades errònies.");
+        return false;
+    }
 }

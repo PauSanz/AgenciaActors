@@ -9,6 +9,7 @@ window.onload = function () {
 
     document.getElementById('password2').onkeyup = message;
     document.getElementById('password2').onchange = message;
+
 }
 
 function stat(action, user) {
@@ -27,7 +28,7 @@ function fGetCookie(NameOfCookie) {
         if (begin != -1) {
 
             begin += NameOfCookie.length + 1;
-            end = document.cookie.indexOf(";", begin);
+            var end = document.cookie.indexOf(";", begin);
             if (end == -1) {
                 end = document.cookie.length;
             }
@@ -39,7 +40,7 @@ function fGetCookie(NameOfCookie) {
 
 
 function message() {
-    var message = "La contrasenya no es la mateixa en el dos camps."
+    var message = "La contrasenya no és la mateixa en el dos camps.";
     var p1 = document.getElementById("password1").value;
     var p2 = document.getElementById("password2").value;
     if (p1 != p2) {

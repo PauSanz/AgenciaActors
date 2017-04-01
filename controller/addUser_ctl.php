@@ -1,6 +1,6 @@
 <?php
 
-require_once("controller/function_AutoLoad.php");
+require_once("function_AutoLoad.php");
 require_once("config/config.inc.php");
 require_once("config/db.inc.php");
 require_once("controller/cookie_ctl.php");
