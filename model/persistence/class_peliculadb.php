@@ -8,7 +8,7 @@ class peliculadb {
 
     public function inserirPelicula($peli) {
 
-        $query = "insert into pelicula values('', '" . $peli->getNom() . "', '" . $peli->getDescripcio() . "', '" . $peli->getTipus() . "', '" . $peli->getDataInici() . "', '" . $peli->getDataFi() . "', '" . $peli->getValoracio() . "', 'images/pelicula/" . $peli->getFoto() . "','".$peli->getIdDirector()."');";
+        $query = "insert into pelicula values('', '" . $peli->getNom() . "', '" . $peli->getDescripcio() . "', '" . $peli->getTipus() . "', '" . $peli->getDataInici() . "', '" . $peli->getDataFi() . "', '" . $peli->getValoracio() . "', 'images/pelicula/" . $peli->getFoto() . "','" . $peli->getIdDirector() . "');";
         $con = new db();
         $peliculaAux = $con->consulta($query);
         $con->close();
@@ -41,20 +41,30 @@ class peliculadb {
         $con->close();
         return $peliculaAux;
     }
+
     public function obtenirPelicula($id) {
-        $query = "SELECT * FROM pelicula WHERE idPelicula = '".$id."';";
+        $query = "SELECT * FROM pelicula WHERE idPelicula = '" . $id . "';";
         $con = new db();
         $arrayDePelicules = $con->rebrePelicules($query); //Consultar PDO
         $con->close();
-        
-        
+
+
         if (count($arrayDePelicules) > 0) {
             $peliculaAux = $arrayDePelicules[0];
             return $peliculaAux;
-        }else{
-            $peliculaAux = new pelicula('','','','','','','','','');
+        } else {
+            $peliculaAux = new pelicula('', '', '', '', '', '', '', '', '');
             return $peliculaAux;
         }
+    }
+
+    public function obtenirPapersDeLaPeli($id) {
+        $query = "SELECT * FROM paper WHERE idPelicula = '" . $id . "';";
+        $con = new db();
+        $arrayDePapers = $con->rebrePapers($query); //Consultar PDO
+        $con->close();
+
+        return $arrayDePapers;
     }
 
 }
