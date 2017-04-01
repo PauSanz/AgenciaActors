@@ -229,6 +229,7 @@ function validarDescripcio() {
         $('#errorDescripcio').html("Si us plau, escriu una breu descripció de la pel·lícula.");
         totOkFormulari = false;
     } else {
+        $('#errorDescripcio').html("");
         totOkFormulari = true;
     }
     //totOkFormulari = true;
