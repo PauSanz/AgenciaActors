@@ -5,13 +5,13 @@ require_once("config/db.inc.php");
 
 $msg = null;
 try {    
-            $director = new director('','','','');
-            $nifdir = $_REQUEST['dni'];
-            $director = $director->obtenirDirector($nifdir);            
-            $res = $director->eliminarDirector();
+            $pelicula = new pelicula('','','','','','','','','');
+            $idpel = $_REQUEST['id'];
+            $pelicula = $pelicula->obtenirPelicula($idpel);            
+            $res = $pelicula->esborrarPelicula();
             
             if ($res->getOk()) {
-             $msg = "Director eliminat";
+             $msg = "Pelicula eliminada";
              echo "<script type='text/javascript'>alert('$msg');</script>";
              
             }else{
@@ -19,7 +19,7 @@ try {
              echo "<script type='text/javascript'>alert('$msg');</script>";
             }
             
-            include "llistadirectors_ctl.php";;
+            include "llistapelicules_ctl.php";
           
 } catch (Exception $e) {
     $msg = "Error al eliminar.";
