@@ -17,7 +17,7 @@ function mostrapeli() {
 
     echo"<div class = 'main-login main-center espaitop'>";
     echo "<div class = 'text-center'>";
-    $imatge = "<img class='rodona'heigh ='150px' width='150px' src='view/";
+    $imatge = "<img class='rodona2'heigh ='150px' width='150px' src='view/";
     $foto = $peli->getFoto();
 
     $pathphoto = $imatge . $foto . "'>";
@@ -80,7 +80,7 @@ function mostrapeli() {
     echo"<div class = 'input-group labelbord'>";
     $descripcio = $peli->getDescripcio();
     echo"<span class = 'input-group-addon'><i class = 'fa fa-file-text-o fa-lg fa1' aria-hidden = 'true'></i></span>";
-    echo"<textarea text-center disabled name = 'descripcio' rows = '5' cols = '30' class = 'form-control'>";
+    echo"<textarea text-center disabled name = 'descripcio' rows = '15' cols = '15' class = 'form-control'>";
     echo $descripcio;
     echo"</textarea>";
     echo"</div>";

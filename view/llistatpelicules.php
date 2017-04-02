@@ -9,7 +9,7 @@ function mostrarPelis() {
     if (count($arrayDePelis) > 0) {
         echo "<div>";
         foreach ($arrayDePelis as $data) {
-            echo"<div class='col-md-3 col-sm-6'>";
+            echo"<div class='col-md-3 col-sm-6 col-lg-4'>";
             echo"<div class='panel panel-default text-center'>";
             echo"<div class='panel-heading2'>";
             echo"<span class='fa-stack fa-5x'>";
