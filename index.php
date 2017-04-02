@@ -17,7 +17,7 @@ if (isset($_REQUEST['ctl'])) {
 }
 
 if (!isset($_COOKIE['user'])) {
-    if ($act == "afegir" OR $act == "modificar" OR $act == "eliminar" OR $act == "add") {
+    if ($act == "afegir" OR $act == "modificar" OR $act == "eliminar" OR $act == "add" OR $ctl == "paper") {
         $ctl = "home";
         $act = null;
     }
