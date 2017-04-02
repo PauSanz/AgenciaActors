@@ -16,8 +16,8 @@ if (isset($_REQUEST['ctl'])) {
     }
 }
 
-if(!isset($_COOKIE['user'])){
-    if($act == "afegir" OR $act == "modificar" OR $act == "eliminar" OR $act == "add"){
+if (!isset($_COOKIE['user'])) {
+    if ($act == "afegir" OR $act == "modificar" OR $act == "eliminar" OR $act == "add") {
         $ctl = "home";
         $act = null;
     }
@@ -30,7 +30,7 @@ switch ($ctl) {
                 include "controller/afegirdirector_ctl.php";
                 break;
             case "modificar":
-                include "controller/modificardirector_ctl.php";
+                include "controller/modificarDirector_ctl.php";
                 break;
             case "eliminar":
                 include "controller/eliminardirector_ctl.php";
@@ -38,6 +38,13 @@ switch ($ctl) {
             case "llista":
                 include "controller/llistadirectors_ctl.php";
                 break;
+            case "veure":
+                include "controller/detallsdirector_ctl.php";
+                break;
+            case "formModify":
+                include "controller/modificarDirector.php";
+                break;
+
             default:
                 break;
         }
@@ -48,8 +55,7 @@ switch ($ctl) {
                 include "controller/afegirpelicula_ctl.php";
                 break;
             case "modificar":
-                include "controller/afegirpelicula_ctl.php";
-                //include "controller/modificarpelicula_ctl.php";
+                include "controller/modificarPelicula_ctl.php";
                 break;
             case "eliminar":
                 include "controller/eliminarpelicula_ctl.php";
@@ -57,24 +63,36 @@ switch ($ctl) {
             case "llista":
                 include "controller/llistapelicules_ctl.php";
                 break;
+            case "veure":
+                include "controller/detallspeli_ctl.php";
+                break;
+            case "formModify":
+                include "controller/modificarPelicula.php";
+                break;
+
             default:
                 break;
         }
         break;
-     case "actor":
+    case "actor":
         switch ($act) {
             case "afegir":
                 include "controller/afegiractor_ctl.php";
                 break;
             case "modificar":
-                include "controller/modificaractor_ctl.php";
+                include "controller/modificarActor_ctl.php";
                 break;
-            
             case "eliminar":
                 include "controller/eliminaractor_ctl.php";
                 break;
             case "llista":
                 include "controller/llistaactors_ctl.php";
+                break;
+            case "veure":
+                include "controller/detallsactor_ctl.php";
+                break;
+            case "formModify":
+                include "controller/modificarActor.php";
                 break;
         }
         break;
@@ -83,9 +101,9 @@ switch ($ctl) {
             case "afegir":
                 include "controller/afegirpaper_ctl.php";
                 break;
-            case "modificar":
-                include "controller/modificarpaper_ctl.php";
-                break;
+//            case "modificar":
+//                include "controller/modificarpaper_ctl.php";
+//                break;
             case "eliminar":
                 include "controller/eliminarpaper_ctl.php";
                 break;

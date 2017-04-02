@@ -6,14 +6,14 @@
             </div>
         </div> 
         <div class="main-login main-center">
-            <form class="form-horizontal" method="post" action="?ctl=director&act=afegir" enctype="multipart/form-data">
+            <form class="form-horizontal" method="post" action="?ctl=director&act=modificar" enctype="multipart/form-data">
 
                 <div class="form-group">
                     <label for="nif" class="cols-sm-2 control-label">Nif</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-id-card fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="nif" id="nif"  placeholder="Nif"/>
+                            <input type="text" class="form-control" name="nif" id="nif"  placeholder="Nif" value="<?php echo (isset($x) ? $x->getNif() : '') ?>"/>
                         </div>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="nom" id="nom"  placeholder="Nom"/>
+                            <input type="text" class="form-control" name="nom" id="nom"  placeholder="Nom" value="<?php echo (isset($x) ? $x->getNom() : '') ?>"/>
                         </div>
                     </div>
                 </div>
@@ -37,29 +37,19 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="cognom" id="cognom"  placeholder="Cognom"/>
+                            <input type="text" class="form-control" name="cognom" id="cognom"  placeholder="Cognom" value="<?php echo (isset($x) ? $x->getCognom() : '') ?>"/>
                         </div>
                     </div>
-                </div>            
+                </div>           
 
                 <span id="errorCogom"></span>
 
-                <div class="form-group">
-                    <label for="foto" class="cols-sm-2 control-label">Foto</label>
-                    <div class="inputWrapper">
-                        <span class="input-group-addon"><i class="fa fa-image fa" aria-hidden="true"></i>
-                            <input class="fileInput" id="imatge" type="file" name="fotoPujada"/>
-                        </span>
-                    </div>
-                </div>
-
-                <span id="errorImg"></span>
-
                 <div class="form-group ">
-                    <input type="submit" id="botoGuardar" name="submit" value="Guardar" class="btn btn-danger btn-lg btn-block login-button"></input>
+                    <input type="submit" name="submit" value="Guardar" class="btn btn-danger btn-lg btn-block login-button"></input>
                 </div>
 
                 <span id="errorFormulari"></span>
+
             </form>
         </div>
         <div class="espaibot"></div>

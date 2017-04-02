@@ -57,22 +57,23 @@ include('mostrar_selects.php');
                     </div>
                 </div>
 
+                <span id="errorIntervalDates"></span>
+
                 <div class="form-group">
                     <label for="foto" class="cols-sm-2 control-label">Foto</label>
                     <div class="inputWrapper">
                         <span class="input-group-addon"><i class="fa fa-image fa" aria-hidden="true"></i>
-                            <input class="fileInput" type="file" name="fotoPujada" src="<?php echo (isset($x) ? $x->foto : '') ?>"/>
+                            <input class="fileInput" id="imatge" type="file" name="fotoPujada" src="<?php echo (isset($x) ? $x->foto : '') ?>"/>
                         </span>
                     </div>
                 </div>
+                <span id="errorImg"></span>
                 <div class="form-group">
                     <label for="descripcio" class="cols-sm-2 control-label">Descripció</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-file-text-o fa-lg" aria-hidden="true"></i></span>
-                            <textarea name="descripcio" rows="5" cols="30" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none">
-                                <?php echo (isset($x) ? $x->nom : '') ?>
-                            </textarea>
+                            <textarea name="descripcio" rows="5" cols="30" class="form-control colornegre" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"><?php echo (isset($x) ? $x->descripcio : '') ?></textarea>
                         </div>
                         <span id="errorDescripcio"></span>
                     </div>
@@ -90,13 +91,13 @@ include('mostrar_selects.php');
                 </div>
 
                 <!--                Select-->
-                
-                
-                
-                
-                
-                
-                
+
+
+
+
+
+
+
                 <div class="form-group">
                     <label>Valoració</label>
                     <p class="clasificacion">                        
@@ -113,8 +114,9 @@ include('mostrar_selects.php');
                     </p>
                 </div>
                 <div class="form-group ">
-                    <input type="submit" name="submit" value="Guardar" class="btn btn-danger btn-lg btn-block login-button"></input>
-                </div> 
+                    <input id="botoGuardar" type="submit" name="submit" value="Guardar" class="btn btn-danger btn-lg btn-block login-button"></input>
+                </div>
+                <span id="errorFormulari"></span>
 
             </form>
         </div>

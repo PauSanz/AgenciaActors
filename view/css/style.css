@@ -438,7 +438,9 @@ input[type="radio"]:checked ~ label {
 .espaibot{
     margin-bottom: 80px;
 }
-
+.espaitop{
+    margin-top: 20px;
+}
 /*Logo Footer*/
 .logo{
     width:150px;
@@ -537,4 +539,40 @@ a .colorwhite {
 /*Textarea estils*/
 textarea{
 text-align: justify;    
+}
+
+/*Estils error missatges form*/
+#errorDNI{
+    color:red;
+}
+#errorNom{
+    color:red;
+}
+#errorCogom{
+    color:red;
+}
+#errorImg{
+    color:red;
+}
+#errorFormulari{
+    color:red;
+}
+#errorTipus{
+    color:red;
+}
+#errorDataInici{
+    color:red;
+}
+#errorDataFi{
+    color:red;
+}
+#errorIntervalDates{
+    color:red;
+}
+#errorDescripcio{
+    color:red;
+}
+/*textarea color*/
+.colornegre{
+    color:black !important;
 }
