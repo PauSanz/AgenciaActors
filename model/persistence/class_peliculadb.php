@@ -65,16 +65,6 @@ class peliculadb {
         $con->close();
 
         return $arrayDePapers;
-<<<<<<< HEAD
-//        if (count($arrayDePapers) > 0) {
-//            $peliculaAux = $arrayDePapers[0];
-//            return $peliculaAux;
-//        }else{
-//            $peliculaAux = new pelicula('','','','','','','','','');
-//            return $peliculaAux;
-//        }
-=======
->>>>>>> master
     }
 
 }

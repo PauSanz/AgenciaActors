@@ -1,11 +1,6 @@
 <?php
 
 require_once("controller/function_AutoLoad.php");
-<<<<<<< HEAD
-require_once("config/config.inc.php");
-require_once("config/db.inc.php");
-=======
->>>>>>> master
 
 function mostrapeli() {
     $pelicula = new pelicula('', '', '', '', '', '', '', '', '');
@@ -14,19 +9,10 @@ function mostrapeli() {
     $director = new director('', '', '', '');
     $idpel = $_REQUEST['id'];
     $peli = $pelicula->obtenirPelicula($idpel);
-<<<<<<< HEAD
-    $directorDeLaPeli = $peli->getIdDirector(); //et
-    var_dump($directorDeLaPeli); exit();
-    $directorVista = $director->cercarPerNifDirector($directorDeLaPeli);
-    $arrActorsPeliConcreta = array();
-    $papersDeLaPeliConcreta = $pelicula->obtenirPapersDeLaPeli($idpel);
- 
-=======
     $directorPeli = $director->obtenirDirector($peli->getIdDirector());
     $arrActorsPeliConcreta = array();
     $papersDeLaPeliConcreta = $pelicula->obtenirPapersDeLaPeli($idpel);
 
->>>>>>> master
 
 
     echo"<div class = 'main-login main-center'>";
@@ -52,16 +38,10 @@ function mostrapeli() {
     echo"<div class = 'cols-sm-10'>";
     echo"<div class = 'input-group labelbord'>";
     echo"<span class = 'input-group-addon'><i class = 'fa fa-bullhorn fa-lg fa1' aria-hidden = 'true'></i></span>";
-<<<<<<< HEAD
-    //$id = $peli->getIdDirector();
-    $aux = $directorVista->getNom();
-    echo"<p class = 'espaidir'><b>$aux</b></p>";
-=======
     $nomDirector = $directorPeli->getNom();
     $cognomDirector = $directorPeli->getCognom();
     $nomComplet = $nomDirector . " " . $cognomDirector;
     echo"<p class = 'espaidir'><b>$nomComplet</b></p>";
->>>>>>> master
     echo"</div>";
     echo"</div>";
     echo"</div>";
@@ -75,15 +55,10 @@ function mostrapeli() {
         $nifActor = $papersDeLaPeliConcreta[$i]->getIdActor();
         $nomPaper = $papersDeLaPeliConcreta[$i]->getNom();
         $actorParticipant = $actor->obtenirActor($nifActor);
-<<<<<<< HEAD
-        $nomactors = $actorParticipant->getNom();
-        echo"<p class = 'espaidir'><b>$nomPaper: $nomactors  </b></p>";
-=======
         $nomActor = $actorParticipant->getNom();
         $cognomActor = $actorParticipant->getCognom();
         $nomComplet = $nomActor . " " . $cognomActor;
         echo"<p class = 'espaidir'><b>$nomPaper: $nomComplet  </b></p>";
->>>>>>> master
     }
     echo"</div>";
     echo"</div>";

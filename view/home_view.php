@@ -84,32 +84,32 @@
         </div>
         <div class="col-md-4 col-sm-6">
             <a href="#">
-                <a href="?ctl=pelicula&act=llista"><img class="img-responsive img-portfolio img-hover" src="view/images/home/peli1.png" alt=""></a>
+                <img class="img-responsive img-portfolio img-hover" src="view/images/home/peli1.png" alt="">
             </a>
         </div>
         <div class="col-md-4 col-sm-6">
             <a href="#">
-                <a href="?ctl=pelicula&act=llista"><img class="img-responsive img-portfolio img-hover" src="view/images/home/peli2.png" alt=""></a>
+                <img class="img-responsive img-portfolio img-hover" src="view/images/home/peli2.png" alt="">
             </a>
         </div>
         <div class="col-md-4 col-sm-6">
             <a href="#">
-                <a href="?ctl=pelicula&act=llista"><img class="img-responsive img-portfolio img-hover" src="view/images/home/peli3.png" alt=""></a>
+                <img class="img-responsive img-portfolio img-hover" src="view/images/home/peli3.png" alt="">
             </a>
         </div>
         <div class="col-md-4 col-sm-6">
             <a href="#">
-                <a href="?ctl=pelicula&act=llista"><img class="img-responsive img-portfolio img-hover" src="view/images/home/peli4.png" alt=""></a>
+                <img class="img-responsive img-portfolio img-hover" src="view/images/home/peli4.png" alt="">
             </a>
         </div>
         <div class="col-md-4 col-sm-6">
             <a href="#">
-                <a href="?ctl=pelicula&act=llista"><img class="img-responsive img-portfolio img-hover" src="view/images/home/peli5.png" alt=""></a>
+                <img class="img-responsive img-portfolio img-hover" src="view/images/home/peli5.png" alt="">
             </a>
         </div>
         <div class="col-md-4 col-sm-6">
             <a href="#">
-                <a href="?ctl=pelicula&act=llista"><img class="img-responsive img-portfolio img-hover" src="view/images/home/peli6.png" alt=""></a>
+                <img class="img-responsive img-portfolio img-hover" src="view/images/home/peli6.png" alt="">
             </a>
         </div>
     </div>
