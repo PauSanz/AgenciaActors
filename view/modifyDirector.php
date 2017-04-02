@@ -18,6 +18,8 @@
                     </div>
                 </div>
 
+                <span id="errorDNI"></span>
+
                 <div class="form-group">
                     <label for="name" class="cols-sm-2 control-label">Nom</label>
                     <div class="cols-sm-10">
@@ -27,6 +29,8 @@
                         </div>
                     </div>
                 </div>
+
+                <span id="errorNom"></span>
 
                 <div class="form-group">
                     <label for="cognom" class="cols-sm-2 control-label">Cognom</label>
@@ -38,9 +42,14 @@
                     </div>
                 </div>           
 
-                 <div class="form-group ">
+                <span id="errorCogom"></span>
+
+                <div class="form-group ">
                     <input type="submit" name="submit" value="Guardar" class="btn btn-danger btn-lg btn-block login-button"></input>
-                </div>               
+                </div>
+
+                <span id="errorFormulari"></span>
+
             </form>
         </div>
         <div class="espaibot"></div>
