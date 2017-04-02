@@ -168,12 +168,12 @@ class pelicula {
         $peliculaDb = new peliculadb();
         return $peliculaDb->obtenirPelisDirector($id);
     }
-    
+
     public function obtenirPapersActor($id) {
         $peliculaDb = new peliculadb();
         return $peliculaDb->obtenirPapersActor($id);
     }
-    
+
     public function validaPelicula() {
 
         $v = new validar();

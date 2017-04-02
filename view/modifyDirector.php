@@ -13,7 +13,7 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-id-card fa" aria-hidden="true"></i></span>
-                            <input disabled type="text" class="form-control" name="nif" id="nif"  placeholder="Nif" value="<?php echo (isset($x) ? $x->getNif() : '') ?>"/>
+                            <input readonly="<?php echo $x->getNif() ?>" type="text" class="form-control" name="nif" id="nif"  placeholder="Nif" value="<?php echo (isset($x) ? $x->getNif() : '') ?>"/>
                         </div>
                     </div>
                 </div>

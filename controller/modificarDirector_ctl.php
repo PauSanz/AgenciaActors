@@ -11,7 +11,7 @@ require_once("config/db.inc.php");
 $msg = null;
 try {
     if (isset($_POST['submit'])) {
-        $oldDirector = new director('','','','');
+        $oldDirector = new director('', '', '', '');
         $oldDirector = $oldDirector->obtenirDirector($_POST['nif']);
         $director = new director(addslashes($_POST['nif']), addslashes($_POST['nom']), addslashes($_POST['cognom']), addslashes($oldDirector->getFoto()));
         $res = $director->modificarDirector($director->getNif());
@@ -23,7 +23,6 @@ try {
             $msg = "Error: " . $res->getMsg();
             echo "<script type='text/javascript'>alert('$msg');</script>";
         }
-      
     } else {
         $msg = "Acces denegat";
     }

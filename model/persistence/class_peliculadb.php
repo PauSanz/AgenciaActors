@@ -35,7 +35,7 @@ class peliculadb {
 
     public function modificarPelicula($old_id, $peli) {
 
-        $query = "UPDATE `pelicula` SET `idPelicula`='" . $peli->getNif() . "',`Nom`='" . $peli->getNom() . "',`Cognom`='" . $peli->getCognom() . "',`Foto`='" . $peli->getFoto() . "' WHERE id='" . $old_id . "';";
+        $query = "UPDATE `pelicula` SET `idPelicula`='" . $peli->getIdPelicula() . "',`Nom`='" . $peli->getNom() . "',`Descripcio`='" . $peli->getDescripcio() . "',`Tipus`='" . $peli->getTipus() . "',`DataInici`='" . $peli->getDataInici() . "',`DataFi`='" . $peli->getDataFi() . "',`Valoracio`='" . $peli->getValoracio() . "',`Foto`='" . $peli->getFoto() . "',`IdDirector`='" . $peli->getIdDirector() . "' WHERE idPelicula='" . $old_id . "';";
         $con = new db();
         $peliculaAux = $con->consulta($query);
         $con->close();
@@ -66,8 +66,8 @@ class peliculadb {
 
         return $arrayDePapers;
     }
-    
-     public function obtenirPelisDirector($id) {
+
+    public function obtenirPelisDirector($id) {
         $query = "SELECT * FROM pelicula WHERE idDirector = '" . $id . "';";
         $con = new db();
         $arrayDePelisDirector = $con->rebrePelicules($query); //Consultar PDO
@@ -75,7 +75,8 @@ class peliculadb {
 
         return $arrayDePelisDirector;
     }
-     public function obtenirPapersActor($id) {
+
+    public function obtenirPapersActor($id) {
         $query = "SELECT * FROM paper WHERE idActor = '" . $id . "';";
         $con = new db();
         $arrayDePelisActor = $con->rebrePapers($query); //Consultar PDO
@@ -83,7 +84,7 @@ class peliculadb {
 
         return $arrayDePelisActor;
     }
-    
+
 }
 
 ?>
