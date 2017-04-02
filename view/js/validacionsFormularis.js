@@ -175,10 +175,22 @@ function validarIntervalDates() {
 function comparararDates(dataInici, dataFi) {
 
     var mesInicial = dataInici.substring(5, 6);
+    if (mesInicial <= 9) {
+        mesInicial = "0" + mesInicial;
+    }
     var diaInicial = dataInici.substring(7, 10);
+    if (diaInicial <= 9) {
+        diaInicial = "0" + diaInicial;
+    }
     var anyInicial = dataInici.substring(0, 4);
     var mesFinal = dataFi.substring(5, 6);
+    if (mesFinal <= 9) {
+        mesFinal = "0" + mesFinal;
+    }
     var diaFinal = dataFi.substring(7, 10);
+    if (diaFinal <= 9) {
+        diaFinal = "0" + diaFinal;
+    }
     var anyFInal = dataFi.substring(0, 4);
 
     var f1 = new Date(anyInicial, mesInicial, diaInicial);
