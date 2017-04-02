@@ -16,7 +16,7 @@ include('llistatpelicules.php');
         <div class="col-sm-6">
             <h1 class="page-header text-center">Pel·licules</h1>
         </div>
-        <div class="col-sm-3 centrevertical">
+        <div class="col-sm-3 centrevertical margtop">
             <div class="input-group ">
                 <span class="input-group-addon"><i class="fa fa-search fa" aria-hidden="true"></i></span>
                 <input type="text" class="form-control" id="buscar" name="buscar" id="name"  placeholder="Buscar" value="<?php echo (isset($x) ? $x->nom : '') ?>"/>

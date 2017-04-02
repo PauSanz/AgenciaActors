@@ -14,7 +14,7 @@ function mostrarPapers() {
             $actor = new actor('', '', '', '', '');
             $actor = $actor->obtenirActor($data->getIdActor());
 
-            echo"<div class='col-md-3 col-sm-6'>";
+            echo"<div class='col-md-4 col-sm-4 col-lg-4'>";
             echo"<div class='panel panel-default text-center'>";
 
             echo"<div class='panel-danger'>";
@@ -25,12 +25,12 @@ function mostrarPapers() {
             echo $actor->getNom() . " " . $actor->getCognom() . " -> " . $data->getNom();
             echo"</p>";
             echo"<div class='row'>";
-            echo"<div class='col-lg-6'>";
+            echo"<div class='col-md-4 col-sm-4 col-lg-4'>";
             if (isset($_COOKIE['user'])) {
                 echo"<a href='?ctl=paper&act=formModify&id=" . $data->getIdPaper() . "'><i class='fa fa-pencil-square-o fa-2x colorwhite'></i></a>";
             }
             echo"</div>";
-            echo"<div class='col-lg-6'>";
+            echo"<div class='col-md-4 col-sm-4 col-lg-4'>";
             if (isset($_COOKIE['user'])) {
                 echo"<a href='?ctl=paper&act=eliminar&id=" . $data->getIdPaper() . "'><i class='fa fa-trash-o fa-2x colorwhite'></i></a>";
             }
