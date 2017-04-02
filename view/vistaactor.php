@@ -43,7 +43,7 @@ function mostraactor() {
     echo"</h3>";
     for ($i = 0; $i < count($papersActor); $i++) {
         $nomPeliActor = $pelicula->obtenirPelicula($papersActor[$i]->getIdPelicula());
-        echo "<b>" .  $nomPeliActor->getNom() . "</b>" . " " . "<i class='fa fa-arrow-right'> " . $papersActor[$i]->getNom() . "</i>" . "<br/><br/>"; // Nom de la peli.
+        echo "<b>" . $nomPeliActor->getNom() . "</b>" . " " . "<i class='fa fa-arrow-right'> " . $papersActor[$i]->getNom() . "</i>" . "<br/><br/>"; // Nom de la peli.
     }
     echo"</div>";
     echo"</div>";

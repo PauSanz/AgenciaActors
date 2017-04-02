@@ -12,7 +12,7 @@ function mostradirector() {
 
     echo"<div class = 'main-login main-center espaitop'>";
     echo "<div class = 'text-center '>";
-    $imatge = "<img class='rodona'heigh ='150px' width='150px' src='view/";
+    $imatge = "<img class='rodona3' heigh ='150px' width='150px' src='view/";
     $foto = $director->getFoto();
 
     $pathphoto = $imatge . $foto . "'>";
