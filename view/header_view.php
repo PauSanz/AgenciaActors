@@ -53,7 +53,7 @@
                             <a href="?ctl=contact">Contacte</a>
                         </li>
                         <?php addMenu() ?>
-                        <li class="login_action"><a id="login_action" href="?ctl=session&act=check"></a></li>
+                        <li class="login_action"><a id="login_action" href="?ctl=session&act=check"> Sessió</a></li>
 
                         <li class="login_user colorlink"><a id="login_user"></a></li>                                           
 
