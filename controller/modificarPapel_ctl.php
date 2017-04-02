@@ -11,9 +11,10 @@ require_once("config/db.inc.php");
 $msg = null;
 try {
     if (isset($_POST['submit'])) {
+        $oldPaper = new rol('','','','');
+        $oldPaper = $oldPaper->obtenirRol($_POST['idPaper']);
         
-        
-            $paper = new rol('', addslashes($_POST['nom']), addslashes($_POST['actor']), addslashes($_POST['pelicula']));
+            $paper = new rol($_POST['idPaper'], addslashes($_POST['nom']), addslashes($_POST['actor']), addslashes($_POST['pelicula']));
             $res = $paper->modificarPaper();
 
             if ($res->getOk()) {
