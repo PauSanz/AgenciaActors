@@ -28,7 +28,7 @@ function mostrarDirectors() {
         echo"<div class='row'>";
         echo"<div class='col-lg-4'>";
         if(isset($_COOKIE['user'])){
-            echo"<a href='?ctl=director&act=modificar&id=" . $data->getNif() . "'><i class='fa fa-pencil-square-o fa-2x colorwhite'></i></a>";
+            echo"<a href='?ctl=director&act=formModify&id=" . $data->getNif() . "'><i class='fa fa-pencil-square-o fa-2x colorwhite'></i></a>";
         }
         echo"</div>";
         echo"<div class='col-lg-4'>";        

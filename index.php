@@ -29,13 +29,19 @@ switch ($ctl) {
             case "afegir":
                 include "controller/afegirdirector_ctl.php";
                 break;
+            case "modificar":
+                include "controller/modificarDirector_ctl.php";
+                break;
             case "eliminar":
                 include "controller/eliminardirector_ctl.php";
                 break;
             case "llista":
                 include "controller/llistadirectors_ctl.php";
                 break;
-            case "modificar":
+            case "veure":
+                include "controller/detallsdirector_ctl.php";
+                break;
+            case "formModify":
                 include "controller/modificarDirector.php";
                 break;
 
@@ -48,6 +54,9 @@ switch ($ctl) {
             case "afegir":
                 include "controller/afegirpelicula_ctl.php";
                 break;
+            case "modificar":
+                include "controller/modificarPelicula_ctl.php";
+                break;
             case "eliminar":
                 include "controller/eliminarpelicula_ctl.php";
                 break;
@@ -57,7 +66,7 @@ switch ($ctl) {
             case "veure":
                 include "controller/detallspeli_ctl.php";
                 break;
-            case "modificar":
+            case "formModify":
                 include "controller/modificarPelicula.php";
                 break;
 
@@ -70,13 +79,19 @@ switch ($ctl) {
             case "afegir":
                 include "controller/afegiractor_ctl.php";
                 break;
+            case "modificar":
+                include "controller/modificarActor_ctl.php";
+                break;
             case "eliminar":
                 include "controller/eliminaractor_ctl.php";
                 break;
             case "llista":
                 include "controller/llistaactors_ctl.php";
                 break;
-            case "modificar":
+            case "veure":
+                include "controller/detallsactor_ctl.php";
+                break;
+            case "formModify":
                 include "controller/modificarActor.php";
                 break;
         }
