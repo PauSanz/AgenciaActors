@@ -66,7 +66,24 @@ class peliculadb {
 
         return $arrayDePapers;
     }
+    
+     public function obtenirPelisDirector($id) {
+        $query = "SELECT * FROM pelicula WHERE idDirector = '" . $id . "';";
+        $con = new db();
+        $arrayDePelisDirector = $con->rebrePelicules($query); //Consultar PDO
+        $con->close();
 
+        return $arrayDePelisDirector;
+    }
+     public function obtenirPapersActor($id) {
+        $query = "SELECT * FROM paper WHERE idActor = '" . $id . "';";
+        $con = new db();
+        $arrayDePelisActor = $con->rebrePapers($query); //Consultar PDO
+        $con->close();
+
+        return $arrayDePelisActor;
+    }
+    
 }
 
 ?>

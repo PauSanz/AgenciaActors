@@ -29,9 +29,6 @@ switch ($ctl) {
             case "afegir":
                 include "controller/afegirdirector_ctl.php";
                 break;
-//            case "modificar":
-//                include "controller/modificardirector_ctl.php";
-//                break;
             case "eliminar":
                 include "controller/eliminardirector_ctl.php";
                 break;
@@ -51,10 +48,6 @@ switch ($ctl) {
             case "afegir":
                 include "controller/afegirpelicula_ctl.php";
                 break;
-//            case "modificar":
-//                include "controller/afegirpelicula_ctl.php";
-//                //include "controller/modificarpelicula_ctl.php";
-//                break;
             case "eliminar":
                 include "controller/eliminarpelicula_ctl.php";
                 break;
@@ -77,10 +70,6 @@ switch ($ctl) {
             case "afegir":
                 include "controller/afegiractor_ctl.php";
                 break;
-//            case "modificar":
-//                include "controller/modificaractor_ctl.php";
-//                break;
-
             case "eliminar":
                 include "controller/eliminaractor_ctl.php";
                 break;

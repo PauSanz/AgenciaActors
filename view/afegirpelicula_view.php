@@ -73,7 +73,7 @@ include('mostrar_selects.php');
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-file-text-o fa-lg" aria-hidden="true"></i></span>
-                            <textarea name="descripcio" rows="5" cols="30" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"><?php echo (isset($x) ? $x->descripcio : '') ?></textarea>
+                            <textarea name="descripcio" rows="5" cols="30" class="form-control colornegre" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"><?php echo (isset($x) ? $x->descripcio : '') ?></textarea>
                         </div>
                         <span id="errorDescripcio"></span>
                     </div>

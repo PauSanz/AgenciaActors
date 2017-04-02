@@ -124,6 +124,18 @@ class db implements interface_db {
         }
         return $arrayPapers;
     }
+    public function rebrePelisDirector($query) {
+        $con = $this->connect();
+        $consulta = mysqli_query($con, $query) or die('Error, query failed: ' . $this->error());
+        $cont = 0;
+        $arrayPapers = array();
+        while ($row = mysqli_fetch_array($consulta)) {
+            $paper = new rol($row["idPaper"], $row["nom"], $row["idActor"], $row["idPelicula"]);
+            $arrayPapers[$cont] = $paper;
+            $cont++;
+        }
+        return $arrayPapers;
+    }
 
 }
 
