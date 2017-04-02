@@ -6,8 +6,7 @@ window.onload = function () {
     }
     $('#password1').change(message);
     $('#password2').change(message);
-//    document.getElementById("password1").onchange(message);
-//    document.getElementById("password2").onchange(message);
+
 }
 
 function stat(action, user) {
