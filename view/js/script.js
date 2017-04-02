@@ -4,11 +4,11 @@ window.onload = function () {
     } else {
         stat('Login');
     }
-    document.getElementById('password1').onkeyup = message;
-    document.getElementById('password1').onchange = message;
+    $('#password1').keyup(message);
+    $('#password1').change(message);
 
-    document.getElementById('password2').onkeyup = message;
-    document.getElementById('password2').onchange = message;
+    $('#password2').keyup(message);
+    $('#password2').change(message);
 
 }
 

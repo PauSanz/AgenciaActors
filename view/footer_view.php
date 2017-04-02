@@ -56,12 +56,11 @@
     });
 </script>
 <!-- Altres Scripts -->
+
+<!--<script src="view/js/user.js"></script>-->
 <script src="view/js/script.js"></script>
-<script src="view/js/search.js">
-<script src="view/js/user.js"></script>
+<script src="view/js/search.js"></script>
 <script src="view/js/custom-js.js"></script>
 <script src="view/js/validacionsFormularis.js"></script>
-<script type="text/javascript" src="view/js/jquery.js"></script>
-
 </body>
 </html>
