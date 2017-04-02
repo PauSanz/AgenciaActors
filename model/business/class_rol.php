@@ -85,7 +85,11 @@ class rol {
     }
 
     public function eliminarPaper() {
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> master
         $v = new validar();
         $paperDb = new roldb();
         $r = $paperDb->eliminar($this);
@@ -100,7 +104,11 @@ class rol {
 
     public function validaPaper() {
         $v = new validar();
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> master
         $v->validarCampBuit($this->getNom());
         $v->stringSenseNumeros($this->getNom());
 

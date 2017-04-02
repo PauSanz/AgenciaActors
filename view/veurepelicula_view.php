@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 include('vistapeli.php');
 ?>
 <div class="container fonsdirector">
@@ -87,4 +88,9 @@ include('vistapeli.php');
     
 </div>
 
+=======
+>>>>>>> master
 
+include('vistapeli.php');
+mostrapeli();
+?>

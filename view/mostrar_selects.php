@@ -10,7 +10,6 @@ function mostrarDirectors() {
         echo "<option value='" . $director->getNif() . "'>" . $director->getNom() . " " . $director->getCognom() . "</option>";
     }
     echo "</select>";
-    //}
 }
 
 function mostrarActors() {
@@ -22,7 +21,6 @@ function mostrarActors() {
         echo "<option value='" . $actor->getNif() . "'>" . $actor->getNom() . " " . $actor->getCognom() . "</option>";
     }
     echo "</select>";
-    //}
 }
 
 function mostrarPelis() {

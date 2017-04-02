@@ -16,8 +16,8 @@ if (isset($_REQUEST['ctl'])) {
     }
 }
 
-if(!isset($_COOKIE['user'])){
-    if($act == "afegir" OR $act == "modificar" OR $act == "eliminar" OR $act == "add"){
+if (!isset($_COOKIE['user'])) {
+    if ($act == "afegir" OR $act == "modificar" OR $act == "eliminar" OR $act == "add") {
         $ctl = "home";
         $act = null;
     }
@@ -64,7 +64,7 @@ switch ($ctl) {
                 break;
         }
         break;
-     case "actor":
+    case "actor":
         switch ($act) {
             case "afegir":
                 include "controller/afegiractor_ctl.php";
@@ -72,7 +72,7 @@ switch ($ctl) {
             case "modificar":
                 include "controller/modificaractor_ctl.php";
                 break;
-            
+
             case "eliminar":
                 include "controller/eliminaractor_ctl.php";
                 break;
