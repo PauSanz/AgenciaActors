@@ -38,6 +38,11 @@ class agencia {
         $agenciadb = new agenciadb();
         return $agenciadb->obtenirTotsPapers();
     }
+    
+    public function cercarPelicules($str) {
+        $agenciadb = new agenciadb();
+        return $agenciadb->cercarPelicules($str);
+    }
 
 }
 

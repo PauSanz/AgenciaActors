@@ -37,5 +37,13 @@ class agenciadb {
         $con->close();
         return $arrayDePelis;
     }
+    
+    public function cercarPelicules($str) {
+        $query = "SELECT * FROM pelicula where nom like '".$str."%';";
+        $con = new db();
+        $arrayDePelis = $con->rebrePelicules($query);
+        $con->close();
+        return $arrayDePelis;
+    }
 
 }
