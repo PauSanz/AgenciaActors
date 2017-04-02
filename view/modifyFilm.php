@@ -87,7 +87,7 @@ include('mostrar_selects.php');
                         <div class="cols-sm-10">
                             <div class="input-group select">
                                 <span class="input-group-addon"><i class="fa fa-bullhorn fa-lg" aria-hidden="true"></i></span>
-                                <?php mostrarDirectors(); ?>
+                                <?php mostrarDirectors($x->getIdDirector()); ?>
                             </div>
                         </div>
                     </div>
