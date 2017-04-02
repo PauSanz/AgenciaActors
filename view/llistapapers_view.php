@@ -8,7 +8,7 @@ include('llistatpapers.php');
         </div>
     </div>
     <div class="row"> 
-       <?php mostrarPapers(); ?>
+        <?php mostrarPapers(); ?>
     </div>
 </div>
 

@@ -101,14 +101,17 @@ switch ($ctl) {
             case "afegir":
                 include "controller/afegirpaper_ctl.php";
                 break;
-//            case "modificar":
-//                include "controller/modificarpaper_ctl.php";
-//                break;
+            case "modificar":
+                include "controller/modificarPapel_ctl.php";
+                break;
             case "eliminar":
                 include "controller/eliminarpaper_ctl.php";
                 break;
             case "llista":
                 include "controller/llistapapers_ctl.php";
+                break;
+            case "formModify":
+                include "controller/modificarPapel.php";
                 break;
         }
         break;
