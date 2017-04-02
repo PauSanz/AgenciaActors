@@ -14,6 +14,16 @@ include('mostrar_selects.php');
             <form class="form-horizontal" method="post" action="?ctl=paper&act=modificar" enctype='multipart/form-data'>
 
                 <div class="form-group">
+                    <label for="idPeli" class="cols-sm-2 control-label">ID</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-id-card fa" aria-hidden="true"></i></span>
+                            <input readonly="<?php echo $x->getIdPaper() ?>" type="text" class="form-control" name="idPaper" id="idPaper"   value="<?php echo (isset($x) ? $x->getIdPaper() : '') ?>"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
                     <label for="nom" class="cols-sm-2 control-label">Nom</label>
                     <div class="cols-sm-10">
                         <div class="input-group">

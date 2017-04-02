@@ -18,8 +18,7 @@ Array.prototype.formateaLista = function () {
     for (var i = 0; i < this.length; i++) {
         if (i == elementoSeleccionado) {
             codigoHtml += "<li class=\"seleccionado\">" + this[i] + "</li>";
-        }
-        else {
+        } else {
             codigoHtml += "<li>" + this[i] + "</li>";
         }
     }
@@ -37,17 +36,14 @@ function autocompleta() {
             elementoSeleccionado++;
         }
         muestraSugerencias();
-    }
-    else if (tecla == 38) { // Flecha Arriba
+    } else if (tecla == 38) { // Flecha Arriba
         if (elementoSeleccionado > 0) {
             elementoSeleccionado--;
         }
         muestraSugerencias();
-    }
-    else if (tecla == 13) { // ENTER o Intro
+    } else if (tecla == 13) { // ENTER o Intro
         seleccionaElemento();
-    }
-    else {
+    } else {
         var texto = document.getElementById("buscar").value;
 
         // Si es la tecla de borrado y el texto es vacío, ocultar la lista
@@ -117,8 +113,7 @@ function autocompleta() {
                     sugerencias = eval('(' + data + ')');
                     if (sugerencias.length == 0) {
                         sinResultados();
-                    }
-                    else {
+                    } else {
                         cacheSugerencias[texto] = sugerencias;
                         actualizaSugerencias();
                     }
@@ -127,8 +122,7 @@ function autocompleta() {
                 }
             });
 
-        }
-        else {
+        } else {
             sugerencias = cacheSugerencias[texto];
             actualizaSugerencias();
         }
@@ -161,13 +155,13 @@ function actualizaSugerencias() {
 function seleccionaElemento() {
     if (sugerencias[elementoSeleccionado]) {
         /*
-        document.getElementById("buscar").value = sugerencias[elementoSeleccionado];
-        borraLista();
-        */
+         document.getElementById("buscar").value = sugerencias[elementoSeleccionado];
+         borraLista();
+         */
         var res = sugerencias[elementoSeleccionado].split(" -");
         //alert(res[0]);
-        window.location.href = '?ctl=pelicula&act=veure&id='+res[0];
-        
+        window.location.href = '?ctl=pelicula&act=veure&id=' + res[0];
+
     }
 }
 
@@ -188,7 +182,8 @@ window.onload = function () {
     //var elDiv = document.createElement("div");
     //elDiv.id = "sugerencias";
     //document.body.appendChild(elDiv);
-
-    document.getElementById("buscar").onkeyup = autocompleta;
-    document.getElementById("buscar").focus();
+    $("#buscar").keyup(autocompleta);
+    //document.getElementById("buscar").onkeyup = autocompleta;
+    $("#buscar").focus();
+    //document.getElementById("buscar").focus();
 }
