@@ -30,7 +30,7 @@
                 </div>
 
                 <span id="errorNom"></span>
-
+                
                 <div class="form-group">
                     <label for="cognom" class="cols-sm-2 control-label">Cognom</label>
                     <div class="cols-sm-10">

@@ -540,3 +540,39 @@ a .colorwhite {
 textarea{
 text-align: justify;    
 }
+
+/*Estils error missatges form*/
+#errorDNI{
+    color:red;
+}
+#errorNom{
+    color:red;
+}
+#errorCogom{
+    color:red;
+}
+#errorImg{
+    color:red;
+}
+#errorFormulari{
+    color:red;
+}
+#errorTipus{
+    color:red;
+}
+#errorDataInici{
+    color:red;
+}
+#errorDataFi{
+    color:red;
+}
+#errorIntervalDates{
+    color:red;
+}
+#errorDescripcio{
+    color:red;
+}
+/*textarea color*/
+.colornegre{
+    color:black !important;
+}
