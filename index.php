@@ -38,6 +38,9 @@ switch ($ctl) {
             case "llista":
                 include "controller/llistadirectors_ctl.php";
                 break;
+            case "veure":
+                include "controller/detallsdirector_ctl.php";
+                break;
             default:
                 break;
         }
@@ -78,6 +81,9 @@ switch ($ctl) {
                 break;
             case "llista":
                 include "controller/llistaactors_ctl.php";
+                break;
+            case "veure":
+                include "controller/detallsactor_ctl.php";
                 break;
         }
         break;

@@ -15,7 +15,7 @@ function mostrapeli() {
 
 
 
-    echo"<div class = 'main-login main-center'>";
+    echo"<div class = 'main-login main-center espaitop'>";
     echo "<div class = 'text-center'>";
     $imatge = "<img class='rodona'heigh ='150px' width='150px' src='view/";
     $foto = $peli->getFoto();
@@ -34,7 +34,7 @@ function mostrapeli() {
     echo"</div>";
     echo"<hr class = 'colorhr'>";
     echo"<div class = 'form-group'>";
-    echo"<label for = 'nom' class = 'cols-sm-2 control-label colorlabel'>Director</label>";
+    echo"<label for = 'nom' class = 'cols-sm-2 control-label colorlabel text-left'>Director</label>";
     echo"<div class = 'cols-sm-10'>";
     echo"<div class = 'input-group labelbord'>";
     echo"<span class = 'input-group-addon'><i class = 'fa fa-bullhorn fa-lg fa1' aria-hidden = 'true'></i></span>";
@@ -84,6 +84,118 @@ function mostrapeli() {
     echo $descripcio;
     echo"</textarea>";
     echo"</div>";
+    //valoracio
+    $valoracio = $peli->getValoracio();
+    switch ($valoracio) {
+        case "1":
+            echo"<br>";
+            echo"<div class='form-group'>";
+            echo"<label for = 'valoracio' class = 'colorlabel'>Valoració</label>";
+            echo"<p class='clasificacion'>";
+            echo"<input id='radio1' name='estrellas'disabled value='5' type='radio'>";
+            echo"<label class='star' for='radio1'>★</label>";
+            echo"<input id='radio2' name='estrellas' disabled value='4' type='radio'>";
+            echo"<label class='star' for='radio2'>★</label>";
+            echo"<input id='radio3' name='estrellas' disabled value='3' type='radio'>";
+            echo"<label class='star' for='radio3'>★</label>";
+            echo"<input id='radio4' name='estrellas' disabled value='2' type='radio'>";
+            echo"<label class='star' for='radio4'>★</label>";
+            echo"<input id='radio5' name='estrellas' checked='checked' value='1' type='radio'>";
+            echo"<label class='star' for='radio5'>★</label>";
+            echo"</p>";
+            echo"</div>";
+            break;
+        case "2":
+            echo"<br>";
+            echo"<div class='form-group'>";
+            echo"<label for = 'valoracio' class = 'colorlabel'>Valoració</label>";
+            echo"<p class='clasificacion'>";
+            echo"<input id='radio1' name='estrellas'disabled value='5' type='radio'>";
+            echo"<label class='star' for='radio1'>★</label>";
+            echo"<input id='radio2' name='estrellas' disabled value='4' type='radio'>";
+            echo"<label class='star' for='radio2'>★</label>";
+            echo"<input id='radio3' name='estrellas' disabled value='3' type='radio'>";
+            echo"<label class='star' for='radio3'>★</label>";
+            echo"<input id='radio4' name='estrellas' checked='checked' value='2' type='radio'>";
+            echo"<label class='star' for='radio4'>★</label>";
+            echo"<input id='radio5' name='estrellas' disabled value='1' type='radio'>";
+            echo"<label class='star' for='radio5'>★</label>";
+            echo"</p>";
+            echo"</div>";
+            break;
+        case "3":
+            echo"<br>";
+            echo"<div class='form-group'>";
+            echo"<label for = 'valoracio' class = 'colorlabel'>Valoració</label>";
+            echo"<p class='clasificacion'>";
+            echo"<input id='radio1' name='estrellas'disabled value='5' type='radio'>";
+            echo"<label class='star' for='radio1'>★</label>";
+            echo"<input id='radio2' name='estrellas' disabled value='4' type='radio'>";
+            echo"<label class='star' for='radio2'>★</label>";
+            echo"<input id='radio3' name='estrellas' checked='checked' value='3' type='radio'>";
+            echo"<label class='star' for='radio3'>★</label>";
+            echo"<input id='radio4' name='estrellas' disabled value='2' type='radio'>";
+            echo"<label class='star' for='radio4'>★</label>";
+            echo"<input id='radio5' name='estrellas' disabled value='1' type='radio'>";
+            echo"<label class='star' for='radio5'>★</label>";
+            echo"</p>";
+            echo"</div>";
+            break;
+        case "4":
+            echo"<br>";
+            echo"<div class='form-group'>";
+            echo"<label for = 'valoracio' class = 'colorlabel'>Valoració</label>";
+            echo"<p class='clasificacion'>";
+            echo"<input id='radio1' name='estrellas'disabled value='5' type='radio'>";
+            echo"<label class='star' for='radio1'>★</label>";
+            echo"<input id='radio2' name='estrellas' checked='checked' value='4' type='radio'>";
+            echo"<label class='star' for='radio2'>★</label>";
+            echo"<input id='radio3' name='estrellas' disabled value='3' type='radio'>";
+            echo"<label class='star' for='radio3'>★</label>";
+            echo"<input id='radio4' name='estrellas' disabled value='2' type='radio'>";
+            echo"<label class='star' for='radio4'>★</label>";
+            echo"<input id='radio5' name='estrellas' disabled value='1' type='radio'>";
+            echo"<label class='star' for='radio5'>★</label>";
+            echo"</p>";
+            echo"</div>";
+            break;
+        case "5":
+            echo"<br>";
+            echo"<div class='form-group'>";
+            echo"<label for = 'valoracio' class = 'colorlabel'>Valoració</label>";
+            echo"<p class='clasificacion'>";
+            echo"<input id='radio1' name='estrellas' checked='checked' value='5' type='radio'>";
+            echo"<label class='star' for='radio1'>★</label>";
+            echo"<input id='radio2' name='estrellas' disabled value='4' type='radio'>";
+            echo"<label class='star' for='radio2'>★</label>";
+            echo"<input id='radio3' name='estrellas' disabled value='3' type='radio'>";
+            echo"<label class='star' for='radio3'>★</label>";
+            echo"<input id='radio4' name='estrellas' disabled value='2' type='radio'>";
+            echo"<label class='star' for='radio4'>★</label>";
+            echo"<input id='radio5' name='estrellas' disabled value='1' type='radio'>";
+            echo"<label class='star' for='radio5'>★</label>";
+            echo"</p>";
+            echo"</div>";
+            break;
+        default:
+            echo"<br>";
+            echo"<div class='form-group'>";
+            echo"<label for = 'valoracio' class = 'colorlabel'>Valoració</label>";
+            echo"<p class='clasificacion'>";
+            echo"<input id='radio1' name='estrellas' disabled value='5' type='radio'>";
+            echo"<label class='star' for='radio1'>★</label>";
+            echo"<input id='radio2' name='estrellas' disabled value='4' type='radio'>";
+            echo"<label class='star' for='radio2'>★</label>";
+            echo"<input id='radio3' name='estrellas' disabled value='3' type='radio'>";
+            echo"<label class='star' for='radio3'>★</label>";
+            echo"<input id='radio4' name='estrellas' disabled value='2' type='radio'>";
+            echo"<label class='star' for='radio4'>★</label>";
+            echo"<input id='radio5' name='estrellas' disabled value='1' type='radio'>";
+            echo"<label class='star' for='radio5'>★</label>";
+            echo"</p>";
+            echo"</div>";
+            break;
+    }
     echo"</div>";
     echo"</div>";
     echo"</div>";

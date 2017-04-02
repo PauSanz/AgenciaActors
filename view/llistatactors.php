@@ -33,7 +33,7 @@ function mostrarActors() {
         }
         echo"</div>";
         echo"<div class='col-lg-4'>";        
-        echo"<a href='#'><i class='fa fa-search fa-2x colorwhite'></i></a>";
+        echo"<a href='?ctl=actor&act=veure&dni=" . $data->getNif() ."'><i class='fa fa-search fa-2x colorwhite'></i></a>";
         echo"</div>";
         echo"<div class='col-lg-4'>";
         if(isset($_COOKIE['user'])){
