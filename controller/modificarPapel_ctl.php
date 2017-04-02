@@ -15,7 +15,7 @@ try {
         $oldPaper = $oldPaper->obtenirRol($_POST['idPaper']);
         
             $paper = new rol($_POST['idPaper'], addslashes($_POST['nom']), addslashes($_POST['actor']), addslashes($_POST['pelicula']));
-            $res = $paper->modificarPaper();
+            $res = $paper->modificarPaper($paper->getIdPaper());
 
             if ($res->getOk()) {
                 $msg = "Dades introduides correctament!!";
@@ -32,5 +32,5 @@ try {
     $msg = "Error en introduir les dades.";
 }
 
-header('location:?act=papel&ctl=llista');
+header('location:?ctl=paper&act=llista');
 ?>
