@@ -8,6 +8,10 @@ and open the template in the editor.
     Author     : oriol
 */
 
+.centrevertical{
+    margin-top: 4.5%;
+}
+
 #login_user a{
     color: #9d9d9d;
 }

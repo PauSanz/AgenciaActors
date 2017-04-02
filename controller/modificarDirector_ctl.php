@@ -11,7 +11,9 @@ require_once("config/db.inc.php");
 $msg = null;
 try {
     if (isset($_POST['submit'])) {
-        $director = new director(addslashes($_POST['nif']), addslashes($_POST['nom']), addslashes($_POST['cognom']), addslashes($imgNeta));
+        $oldDirector = new director('','','','');
+        $oldDirector = $oldDirector->obtenirDirector($_POST['nif']);
+        $director = new director(addslashes($_POST['nif']), addslashes($_POST['nom']), addslashes($_POST['cognom']), addslashes($oldDirector->getFoto()));
         $res = $director->modificarDirector($director->getNif());
 
         if ($res->getOk()) {

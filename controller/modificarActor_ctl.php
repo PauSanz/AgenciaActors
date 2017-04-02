@@ -12,7 +12,9 @@ $msg = null;
 try {
     if (isset($_POST['submit'])) {
 
-        $actor = new actor(addslashes($_POST['nif']), addslashes($_POST['nom']), addslashes($_POST['cognom']), addslashes($_POST['genere']), "");
+        $oldActor = new actor('','','','','');
+        $oldActor = $oldActor->obtenirActor($_POST['nif']);
+        $actor = new actor(addslashes($_POST['nif']), addslashes($_POST['nom']), addslashes($_POST['cognom']), addslashes($_POST['genere']), $oldActor->getFoto());
 
         $res = $actor->modificarActor($actor->getNif());
         if ($res->getOk()) {

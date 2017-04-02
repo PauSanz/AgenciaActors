@@ -12,7 +12,18 @@ include('mostrar_selects.php');
         </div> 
         <div class="main-login main-center">
             <form class="form-horizontal" method="post" action="?ctl=pelicula&act=modificar" enctype='multipart/form-data'>
-
+                
+                <div class="form-group">
+                    <label for="idPeli" class="cols-sm-2 control-label">Id</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-id-card fa" aria-hidden="true"></i></span>
+                            <input disabled type="text" class="form-control" name="idPeli" id="name"   value="<?php echo (isset($x) ? $x->getIdPelicula() : '') ?>"/>
+                        </div>
+                        <span id="errorNom"></span>
+                    </div>
+                </div>
+                
                 <div class="form-group">
                     <label for="nom" class="cols-sm-2 control-label">Nom</label>
                     <div class="cols-sm-10">

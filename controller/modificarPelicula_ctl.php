@@ -10,9 +10,13 @@ require_once("config/db.inc.php");
 
 try {
     if (isset($_POST['submit'])) {
-            $peli = new pelicula("", addslashes($_POST['nom']), addslashes($_POST['descripcio']), addslashes($_POST['tipus']), addslashes($_POST['datainici']), addslashes($_POST['datafi']), addslashes($_POST['estrellas']), addslashes($imgDefinitivamentNet), addslashes($_POST['idDirector']));
+        
+        $oldPelicula = new pelicula('','','','','','','','','');
+        $oldPelicula = $oldPelicula->obtenirPelicula($_POST['idPeli']);
+        
+            $peli = new pelicula($_POST['idPeli'], addslashes($_POST['nom']), addslashes($_POST['descripcio']), addslashes($_POST['tipus']), addslashes($_POST['datainici']), addslashes($_POST['datafi']), addslashes($_POST['estrellas']), addslashes($oldPelicula->getFoto()), addslashes($_POST['idDirector']));
            
-        $res = $peli->modificarPelicula($x->getIdDirector());
+        $res = $peli->modificarPelicula($oldPelicula->getIdPelicula());
 
         if ($res->getOk()) {
             $msg = "Dades introduides correctament!!";
