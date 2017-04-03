@@ -8,8 +8,12 @@ and open the template in the editor.
     Author     : oriol
 */
 
+.navbar-collapse ul li a{
+    color: white !important;
+}
+
 #login_user a{
-    color: #9d9d9d;
+    color: #9d9d9d !important;
 }
 
 #login_user a:hover{
@@ -543,10 +547,10 @@ a .colorwhite {
     border-radius: 5px;
 }
 .fa1{
-   color: #b63926;
+    color: #b63926;
 }
 .colorlabel{
-   color: #000 !important;
+    color: #000 !important;
 }
 /*Margin entre iputs de actors a vista general*/
 .margin1{
@@ -554,7 +558,7 @@ a .colorwhite {
 }
 /*Textarea estils*/
 textarea{
-text-align: justify;    
+    text-align: justify;    
 }
 
 /*Estils error missatges form*/
