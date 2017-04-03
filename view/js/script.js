@@ -4,16 +4,17 @@ window.onload = function () {
     } else {
         stat('Login');
     }
-    document.getElementById('password1').onkeyup = message;
-    document.getElementById('password1').onchange = message;
+    $('#password1').keyup(message);
+    $('#password1').change(message);
 
-    document.getElementById('password2').onkeyup = message;
-    document.getElementById('password2').onchange = message;
+    $('#password2').keyup(message);
+    $('#password2').change(message);
+
 }
 
 function stat(action, user) {
     if (!user) {
-        user == "";
+        user = "";
     }
     document.getElementById('login_action').innerHTML = action;
     document.getElementById('login_user').innerHTML = "<a>" + user + "</a>";
@@ -23,11 +24,11 @@ function fGetCookie(NameOfCookie) {
 
     if (document.cookie.length > 0) {
 
-        begin = document.cookie.indexOf(NameOfCookie + "=");
+        var begin = document.cookie.indexOf(NameOfCookie + "=");
         if (begin != -1) {
 
             begin += NameOfCookie.length + 1;
-            end = document.cookie.indexOf(";", begin);
+            var end = document.cookie.indexOf(";", begin);
             if (end == -1) {
                 end = document.cookie.length;
             }
@@ -39,7 +40,7 @@ function fGetCookie(NameOfCookie) {
 
 
 function message() {
-    var message = "La contrasenya no es la mateixa en el dos camps."
+    var message = "La contrasenya no és la mateixa en el dos camps.";
     var p1 = document.getElementById("password1").value;
     var p2 = document.getElementById("password2").value;
     if (p1 != p2) {

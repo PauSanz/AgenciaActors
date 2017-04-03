@@ -52,19 +52,19 @@ class rol {
         $v = $this->validaPaper();
 
         if ($v->getOk()) {
-            $paperDb = new paperDb();
+            $paperDb = new roldb();
             $r = $paperDb->inserir($this);
             if ($r != 1) {
 
-                $v->getOk() = false;
-                $v->getMsg() = "S'ha produit un error a la base de dades";
+                $v->setOk(false);
+                $v->setMsg("S'ha produit un error a la base de dades");
             }
         }
         return $v;
     }
 
     public function cercarPerIdPaper($nif) {
-        $paperDb = new paperDb();
+        $paperDb = new roldb();
         return $paperDb->cercarPerNif($nif);
     }
 
@@ -72,13 +72,13 @@ class rol {
 
         $v = $this->validaPaper();
 
-        if ($v->ok) {
-            $paperDb = new paperDb();
+        if ($v->getOk()) {
+            $paperDb = new roldb();
             $r = $paperDb->modificar($old_id, $this);
             if ($r != 1) {
 
-                $v->ok = false;
-                $v->msg = "S'ha produit un error a la base de dades";
+                $v->setOk(false);
+                $v->setMsg("S'ha produit un error a la base de dades");
             }
         }
         return $v;
@@ -86,21 +86,25 @@ class rol {
 
     public function eliminarPaper() {
         
-        $v = new Validar();
-        $paperDb = new paperDb();
+        $v = new validar();
+        $paperDb = new roldb();
         $r = $paperDb->eliminar($this);
 
         if ($r != 1) {
 
-            $v->ok = false;
-            $v->msg = "Fallo al eliminar el paper en la base de dades.";
+            $v->setOk(false);
+            $v->setMsg("Fallo al eliminar el paper en la base de dades.");
         }
         return $v;
     }
 
     public function validaPaper() {
-        //$v = new Validar();
-        //return $v;
+        $v = new validar();
+        
+        $v->validarCampBuit($this->getNom());
+        $v->stringSenseNumeros($this->getNom());
+
+        return $v;
     }
     
     public function obtenirRol($id) {

@@ -36,7 +36,7 @@
                             <a href="?ctl=home">Home</a>
                         </li>
                         <li>
-                            <a href="?ctl=pelicula&act=llista">Pel·licules</a>
+                            <a href="?ctl=pelicula&act=llista">Pel·lícules</a>
                         </li>
                         <li>
                             <a href="?ctl=actor&act=llista">Actors</a>
@@ -44,6 +44,11 @@
                         <li>
                             <a href="?ctl=director&act=llista">Directors</a>
                         </li>
+                        <?php if (isset($_COOKIE['user'])) { ?>
+                            <li>
+                                <a href="?ctl=paper&act=llista">Papers</a>
+                            </li>
+                        <?php } ?>
                         <li>
                             <a href="?ctl=contact">Contacte</a>
                         </li>

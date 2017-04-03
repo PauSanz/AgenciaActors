@@ -438,7 +438,9 @@ input[type="radio"]:checked ~ label {
 .espaibot{
     margin-bottom: 80px;
 }
-
+.espaitop{
+    margin-top: 20px;
+}
 /*Logo Footer*/
 .logo{
     width:150px;
@@ -474,6 +476,22 @@ input[type="radio"]:checked ~ label {
     width: 150px; height: 150px; border-radius: 150px;
     -webkit-border-radius: 150px; -moz-border-radius: 150px; 
     background: url(http://www.tublog.com/tuimagen.jpg) no-repeat; 
+}
+
+/*Imatge vista peli estil*/ 
+.rodona2 { 
+    width: 200px; height: 300px; border-radius: 150px;
+    border-radius: 15px 15px 15px 15px ;
+}
+
+/*Imatge vista actor estil*/ 
+.rodona3 { 
+    width: 150px; height: 200px; border-radius: 150px;
+    border-radius: 15px 15px 15px 15px ;
+}
+.margtop{
+    margin-top: 100px;
+    margin-bottom: 20px;
 }
 
 .panel-heading2{
@@ -537,4 +555,40 @@ a .colorwhite {
 /*Textarea estils*/
 textarea{
 text-align: justify;    
+}
+
+/*Estils error missatges form*/
+#errorDNI{
+    color:red;
+}
+#errorNom{
+    color:red;
+}
+#errorCogom{
+    color:red;
+}
+#errorImg{
+    color:red;
+}
+#errorFormulari{
+    color:red;
+}
+#errorTipus{
+    color:red;
+}
+#errorDataInici{
+    color:red;
+}
+#errorDataFi{
+    color:red;
+}
+#errorIntervalDates{
+    color:red;
+}
+#errorDescripcio{
+    color:red;
+}
+/*textarea color*/
+.colornegre{
+    color:black !important;
 }

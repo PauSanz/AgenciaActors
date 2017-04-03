@@ -105,7 +105,7 @@ class db implements interface_db {
         $cont = 0;
         $arrayPelicules[] = array();
         while ($row = mysqli_fetch_array($consulta)) {
-            $peli = new pelicula($row["idPelicula"], $row["nom"], $row["descripcio"], $row["tipus"], $row["dataInici"], $row["dataFi"], $row["valoracio"], $row["foto"], $row["valoracio"], $row["idDirector"]);
+            $peli = new pelicula($row["idPelicula"], $row["nom"], $row["descripcio"], $row["tipus"], $row["dataInici"], $row["dataFi"], $row["valoracio"], $row["foto"], $row["idDirector"]);
             $arrayPelicules[$cont] = $peli;
             $cont++;
         }
@@ -113,6 +113,18 @@ class db implements interface_db {
     }
 
     public function rebrePapers($query) {
+        $con = $this->connect();
+        $consulta = mysqli_query($con, $query) or die('Error, query failed: ' . $this->error());
+        $cont = 0;
+        $arrayPapers = array();
+        while ($row = mysqli_fetch_array($consulta)) {
+            $paper = new rol($row["idPaper"], $row["nom"], $row["idActor"], $row["idPelicula"]);
+            $arrayPapers[$cont] = $paper;
+            $cont++;
+        }
+        return $arrayPapers;
+    }
+    public function rebrePelisDirector($query) {
         $con = $this->connect();
         $consulta = mysqli_query($con, $query) or die('Error, query failed: ' . $this->error());
         $cont = 0;
