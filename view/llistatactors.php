@@ -5,7 +5,7 @@ require_once("controller/function_AutoLoad.php");
 function mostrarActors() {
     $agencia = new agencia("agen");
     $arrayDeActors = $agencia->rebreActors();
-    
+    if(count($arrayDeActors) > 0){
     echo "<div>";
     foreach ($arrayDeActors as $data) {
         echo"<div class='col-md-3 col-sm-6'>";
@@ -29,15 +29,15 @@ function mostrarActors() {
         echo"<div class='row'>";
         echo"<div class='col-lg-4'>";
         if(isset($_COOKIE['user'])){
-            echo"<a href='?ctl=actor&act=modificar&id=" . $data->getId() . "><i class='fa fa-pencil-square-o fa-2x colorwhite'></i></a>";
+            echo"<a href='?ctl=actor&act=formModify&id=" . $data->getNif() . "'><i class='fa fa-pencil-square-o fa-2x colorwhite'></i></a>";
         }
         echo"</div>";
         echo"<div class='col-lg-4'>";        
-        echo"<a href='#'><i class='fa fa-search fa-2x colorwhite'></i></a>";
+        echo"<a href='?ctl=actor&act=veure&dni=" . $data->getNif() ."'><i class='fa fa-search fa-2x colorwhite'></i></a>";
         echo"</div>";
         echo"<div class='col-lg-4'>";
         if(isset($_COOKIE['user'])){
-            echo"<a href='#'><i class='fa fa-trash-o fa-2x colorwhite'></i></a>";
+            echo"<a href='?ctl=actor&act=eliminar&dni=" . $data->getNif() ."'><i class='fa fa-trash-o fa-2x colorwhite'></i></a>";
         }
         echo"</div>";
         echo"</div>";
@@ -46,6 +46,7 @@ function mostrarActors() {
         echo"</div>";
     }
     echo"</div>";
+    }
 }
 
 ?>  

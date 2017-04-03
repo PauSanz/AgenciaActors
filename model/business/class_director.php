@@ -80,7 +80,8 @@ class director {
         $directorDb = new directordb();
         return $directorDb->obtenirDirector($nif);
     }
-
+    
+    
     public function modificarDirector($old_nif) {
         //UPDATE `director` SET `Nif`='47838294K',`Nom`='Steven',`Cognom`='Spielberg',`Foto`='images/director/Spielberg.jpg' WHERE nif='46573829H'
 
@@ -103,7 +104,7 @@ class director {
 
         $v = new validar();
         $directorDb = new directordb();
-        $r = $directorDb->eliminar($this);
+        $r = $directorDb->eliminar($this->getNif());
 
         if ($r != 1) {
 

@@ -9,10 +9,7 @@ require_once("config/db.inc.php");
 if (isset($_REQUEST['id'])) {
     $id = $_REQUEST['id'];
     $pelicula = new pelicula("", "", "", "", "", "", "", "", "");
-    var_dump($pelicula);
     $x = $pelicula->cercarPerIdPelicula($id);
-    var_dump($x);
-    die();
 }
 
 try {

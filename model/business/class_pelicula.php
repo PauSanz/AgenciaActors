@@ -12,7 +12,7 @@ class pelicula {
     private $dataFi;
     private $valoracio;
     private $foto;
-   private $idDirector;
+    private $idDirector;
 
     function __construct($idPelicula, $nom, $descripcio, $tipus, $dataInici, $dataFi, $valoracio, $foto, $idDirector) {
         $this->setIdPelicula($idPelicula);
@@ -94,7 +94,7 @@ class pelicula {
         $this->foto = $foto;
     }
 
-   function setIdDirector($idDirector) {
+    function setIdDirector($idDirector) {
         $this->idDirector = $idDirector;
     }
 
@@ -122,7 +122,7 @@ class pelicula {
 
         $v = new validar();
         $peliculaDb = new peliculadb();
-        $r = $peliculaDb->esborrarPelicula($this);
+        $r = $peliculaDb->esborrarPelicula($this->getIdPelicula());
 
         if ($r != 1) {
 
@@ -153,10 +153,25 @@ class pelicula {
         $peliculaDb = new peliculadb();
         return $peliculaDb->cercarPeliPerId($id);
     }
-    
+
     public function obtenirPelicula($id) {
         $peliculaDb = new peliculadb();
         return $peliculaDb->obtenirPelicula($id);
+    }
+
+    public function obtenirPapersDeLaPeli($id) {
+        $peliculaDb = new peliculadb();
+        return $peliculaDb->obtenirPapersDeLaPeli($id);
+    }
+
+    public function obtenirPeliculaDirector($id) {
+        $peliculaDb = new peliculadb();
+        return $peliculaDb->obtenirPelisDirector($id);
+    }
+
+    public function obtenirPapersActor($id) {
+        $peliculaDb = new peliculadb();
+        return $peliculaDb->obtenirPapersActor($id);
     }
 
     public function validaPelicula() {

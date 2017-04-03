@@ -6,7 +6,7 @@ include_once("controller/function_AutoLoad.php");
 require_once("config/config.inc.php");
 require_once("config/db.inc.php");
 
-class rolDb{
+class roldb{
 
 	public function inserir($paper) {		
 	
@@ -37,9 +37,9 @@ class rolDb{
                 return $paperAux;
 	} 
         
-        public function eliminar($nif) {		
+        public function eliminar($paper) {		
 	
-		$query="DELETE FROM paper WHERE idPaper='".$nif."';";				
+		$query="DELETE FROM paper WHERE idPaper='".$paper->getIdPaper()."';";				
 		$con = new db();
 		$paperAux = $con->consulta($query);
 		$con->close();
@@ -48,7 +48,7 @@ class rolDb{
 	} 
         
         public function obtenirPaper($id) {
-        $query = "SELECT * FROM paper WHERE id = '".$id."';";
+        $query = "SELECT * FROM paper WHERE idPaper = '".$id."';";
         $con = new db();
         $arrayDePapers = $con->rebrePapers($query); //Consultar PDO
         $con->close();
